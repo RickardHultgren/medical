@@ -109,11 +109,12 @@
                 if idx == 0 :
                     subl = subitem.split(" ")
                     newitem = subl[0]
+                if idx == 2 :
+                    newlist = newlist.replace('tablett ', 'x ')
+                    newlist = newlist.replace('kapsel ', 'x ')
                 else:
-                    newitem = subitem
+                    newitem = subitem   
                 newlist += newitem
-            newlist = newlist.replace('tablett ', 'x ')
-            newlist = newlist.replace('kapsel ', 'x ')
             newlist = newlist.replace('gånger ', '')
             newlist = newlist.replace('dagligen ', '')        
             newlist = newlist.replace('tills vidare', 'tv')
