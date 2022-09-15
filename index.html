@@ -110,17 +110,15 @@
                     newitem = subl[0]
                 else:
                     newitem = subitem
-                rawitemlist += newitem
-            rawitemlist = rawitemlist.replace('tablett ', 'x ')
-            rawitemlist = rawitemlist.replace('kapsel ', 'x ')
-            rawitemlist = rawitemlist.replace('gånger ', '')
-            rawitemlist = rawitemlist.replace('dagligen ', '')        
-            rawitemlist = rawitemlist.replace('tills vidare', 'tv')
-            rawitemlist = rawitemlist.replace('vid behov', 'vb')        
+                newlist += newitem
+            newlist = newlist.replace('tablett ', 'x ')
+            newlist = newlist.replace('kapsel ', 'x ')
+            newlist = newlist.replace('gånger ', '')
+            newlist = newlist.replace('dagligen ', '')        
+            newlist = newlist.replace('tills vidare', 'tv')
+            newlist = newlist.replace('vid behov', 'vb')        
         
-            #finelist.append(fineitem)
-        #finestring = "\n".join(finelist)
-            finestring += rawitemlist + "\n"
+            finestring += newlist + "\n"
         #finelist.clear()
         Element('pharma-fine').element.innerText = (finestring)
         
