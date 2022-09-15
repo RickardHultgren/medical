@@ -110,7 +110,9 @@
                     subl = subitem.split(" ")
                     newitem = subl[0]
                 if idx == 3 :
-                    newitem = subitem.replace('tablett ', 'x ')
+                    newitem = subitem.replace('tabletter ', 'x ')
+                    newitem = newitem.replace('tablett ', 'x ')
+                    newitem = newitem.replace('kapslar ', 'x ')
                     newitem = newitem.replace('kapsel ', 'x ')
                 else:
                     newitem = subitem   
