@@ -95,14 +95,14 @@
         raw = Element('pharma-raw').element.value
         rawlist = raw.split("\n")
         for rawitem in rawlist:
-
+            prerawlist = list()
             if "Tiden har" in rawitem :
                 prerawlist = rawitem.split("Tiden har")
             else:
                 prerawlist = rawitem.split("  ")
             
             rawitemlist = prerawlist[0]
-            rawl = split(",")
+            rawl = rawitemlist.split(",")
             newitem = ""
             for idx, subitem in enumerate(rawl):
                 if idx == 0 :
