@@ -124,7 +124,9 @@
             newlist = newlist.replace('tills vidare', 'tv')
             newlist = newlist.replace('vid behov', 'vb')        
             newlist = newlist.replace('vecka', 'v')
-            newlist = newlist.replace('veckor', 'v')        
+            newlist = newlist.replace('veckor', 'v')     
+            newlist = newlist.replace('högst', 'max')             
+            newlist = newlist.replace('per dygn', '/d')                     
             finestring += newlist + "\n"
         #finelist.clear()
         Element('pharma-fine').element.innerText = (finestring)
