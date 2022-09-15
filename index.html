@@ -49,6 +49,10 @@
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 <b>Läkemdel</b><br>
 <div id="pharma-list">
+    
+<input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee; line-height:10px; width:10em;height:10em;" type="text" id="pharma-raw" /> 
+<button id="translate" type="submit" pys-onClick="translate_function" style="border-color:#000;border-width:1px;"/>translate</button>    
+<div style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee; line-height:10px; width:10em;height:10em;" id="pharma-fine">    </div>
 </div>
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
@@ -80,6 +84,28 @@
     today = date.today()
     yesterday = today - timedelta(days = 1)
 
+    def translate_function(*args, **kwargs):        
+        finelist = list()
+        fineitem = ""
+        subfineitem = ""
+        raw = Element('pharma-translate').element.value
+        rawlist = raw.split("\n")
+        for rawitem in rawlist:
+            prerawitemlist = rawitem.split("  ")
+            rawitemlist = prerawitemlist[0]
+            for idx, subitem in enumerate(rawitemlist):
+                if idx == 3 :
+                    subitem.replace('tablett ', 'x ')
+                    subitem.replace('kapsel ', 'x ')
+                    subitem.replace('gånger ', '')
+                    subitem.replace('tills vidare', 'tv')
+                    subitem.replace('vid behov', 'vb')        
+                fineitem += subitem
+            finelist.append(fineitem)
+        finestring = "\n".join(finelist)
+        Element('fine').element.innerText = (finestring)
+        
+        
     def select_function(*args, **kwargs):
 
         console.log(f'args: {args}')
