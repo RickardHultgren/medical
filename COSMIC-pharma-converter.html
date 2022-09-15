@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    </head>
+<body style="margin:3em;">
+<h1 style="font-style:bold;font-size:2em;font-style:serif;">COSMIC-konverterare för<br>läkemedelslista till aktuella läkemedel i epikris</h1>
+
+<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
+Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i rutan nedan och kopiera in texten genom att trycka på Ctrl + V. Klicka sedan på knappen "Konvertera".
+<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
+<br>
+<br>
+<b>Konverterare för läkemdel enligt lista</b><br>
+<textarea name="Text1" cols="40" rows="5" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="pharma-raw"> </textarea>
+<br>
+<button id="translate" type="submit" pys-onClick="translate_function" style="border-color:#000;border-width:1px;margin:0em 0em 1.5em 0em;border-color:#000;">Konvertera</button>    
+<br>
+<div style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee; " id="pharma-fine">    </div>
+
+<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+    <py-env>
+    </py-env>
+    <py-script>
+    from js import console
+    pharma_entire = str("")
+
+
+    def translate_function(*args, **kwargs):        
+        finelist = list()
+        fineitem = ""
+        subfineitem = ""
+        finestring = ""
+        raw = Element('pharma-raw').element.value
+        rawlist = raw.split("\n")
+        for rawitem in rawlist:
+            prerawlist = list()
+            if "Tiden har" in rawitem :
+                prerawlist = rawitem.split("Tiden har")
+            else:
+                prerawlist = rawitem.split("  ")
+            
+            rawitemlist = prerawlist[0]
+            rawl = rawitemlist.split(",")
+            newitem = ""
+            newlist = ""
+            for idx, subitem in enumerate(rawl):
+                if idx == 0 :
+                    subl = subitem.split(" ")
+                    newitem = subl[0]
+                elif idx == 3 :
+                    newitem = subitem.replace('tabletter ', 'x ')
+                    newitem = newitem.replace('tablett ', 'x ')
+                    newitem = newitem.replace('kapslar ', 'x ')
+                    newitem = newitem.replace('kapsel ', 'x ')
+                else:
+                    newitem = subitem   
+                newlist += newitem
+            newlist = newlist.replace('gånger ', '')
+            newlist = newlist.replace('dagligen ', '')        
+            newlist = newlist.replace('tills vidare', 'tv')
+            newlist = newlist.replace('vid behov', 'vb')        
+            newlist = newlist.replace('vecka', 'v')
+            newlist = newlist.replace('veckor', 'v')     
+            newlist = newlist.replace('högst', 'max')             
+            newlist = newlist.replace('per dygn', '/d')                     
+            newlist = subitem.replace('tabletter ', '')
+            newlist = newitem.replace('tablett ', '')
+            newlist = newitem.replace('kapslar ', '')
+            newlist = newitem.replace('kapsel ', '')
+            finestring += newlist + "\n"
+        #finelist.clear()
+        Element('pharma-fine').element.innerText = (finestring)
+        
+    </py-script>
+</body>
+</html>
