@@ -96,6 +96,7 @@
         rawlist = raw.split("\n")
         for rawitem in rawlist:
             prerawitemlist = rawitem.split("  ")
+            prerawitemlist = rawitem.split(" Tiden har")
             rawitemlist = prerawitemlist[0]
             #for idx, subitem in enumerate(rawitemlist):
             #    if idx == 3 :
@@ -115,7 +116,7 @@
         
             #finelist.append(fineitem)
         #finestring = "\n".join(finelist)
-            finestring += rawitemlist
+            finestring += rawitemlist + "\n"
         #finelist.clear()
         Element('pharma-fine').element.innerText = (finestring)
         
