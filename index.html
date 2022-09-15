@@ -96,15 +96,22 @@
         for rawitem in rawlist:
             prerawitemlist = rawitem.split("  ")
             rawitemlist = prerawitemlist[0]
-            for idx, subitem in enumerate(rawitemlist):
-                if idx == 3 :
-                    subitem.replace('tablett ', 'x ')
-                    subitem.replace('kapsel ', 'x ')
-                    subitem.replace('gånger ', '')
-                    subitem.replace('tills vidare', 'tv')
-                    subitem.replace('vid behov', 'vb')        
-                fineitem += subitem
-                subitem = ""
+            #for idx, subitem in enumerate(rawitemlist):
+            #    if idx == 3 :
+            #        subitem.replace('tablett ', 'x ')
+            #        subitem.replace('kapsel ', 'x ')
+            #        subitem.replace('gånger ', '')
+            #        subitem.replace('tills vidare', 'tv')
+            #        subitem.replace('vid behov', 'vb')        
+            #    fineitem += subitem
+            #    subitem = ""
+
+            rawitemlist.replace('tablett ', 'x ')
+            rawitemlist.replace('kapsel ', 'x ')
+            rawitemlist.replace('gånger ', '')
+            rawitemlist.replace('tills vidare', 'tv')
+            rawitemlist.replace('vid behov', 'vb')        
+        
             finelist.append(fineitem)
         finestring = "\n".join(finelist)
         finelist.clear()
