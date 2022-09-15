@@ -34,6 +34,9 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
         finestring = ""
         raw = Element('pharma-raw').element.value
         rawlist = raw.split("\n")
+
+        newitem = ""
+        newlist = ""
         for rawitem in rawlist:
             prerawlist = list()
             if "Tiden har" in rawitem :
@@ -43,8 +46,6 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
             
             rawitemlist = prerawlist[0]
             rawl = rawitemlist.split(",")
-            newitem = ""
-            newlist = ""
             for idx, subitem in enumerate(rawl):
                 if idx == 0 :
                     subl = subitem.split(" ")
