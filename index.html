@@ -104,8 +104,10 @@
                     subitem.replace('tills vidare', 'tv')
                     subitem.replace('vid behov', 'vb')        
                 fineitem += subitem
+                subitem = ""
             finelist.append(fineitem)
         finestring = "\n".join(finelist)
+        finelist.clear()
         Element('pharma-fine').element.innerText = (finestring)
         
         
