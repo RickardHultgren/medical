@@ -95,9 +95,13 @@
         raw = Element('pharma-raw').element.value
         rawlist = raw.split("\n")
         for rawitem in rawlist:
-            prerawitemlist = rawitem.split("  ")
-            prerawitemlist = rawitem.split(" Tiden har")
-            rawitemlist = prerawitemlist[0]
+
+            if "Tiden har" in rawitem :
+                prerawlist = rawitem.split("Tiden har")
+            else:
+                prerawlist = rawitem.split("  ")
+            
+            rawitemlist = prerawlist[0]
             #for idx, subitem in enumerate(rawitemlist):
             #    if idx == 3 :
             #        subitem.replace('tablett ', 'x ')
