@@ -129,6 +129,10 @@
             newlist = newlist.replace('veckor', 'v')     
             newlist = newlist.replace('högst', 'max')             
             newlist = newlist.replace('per dygn', '/d')                     
+            newlist = subitem.replace('tabletter ', '')
+            newlist = newitem.replace('tablett ', '')
+            newlist = newitem.replace('kapslar ', '')
+            newlist = newitem.replace('kapsel ', '')
             finestring += newlist + "\n"
         #finelist.clear()
         Element('pharma-fine').element.innerText = (finestring)
