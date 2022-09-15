@@ -108,11 +108,11 @@
             #    fineitem += subitem
             #    subitem = ""
 
-            rawitemlist.replace('tablett ', 'x ')
-            rawitemlist.replace('kapsel ', 'x ')
-            rawitemlist.replace('gånger ', '')
-            rawitemlist.replace('tills vidare', 'tv')
-            rawitemlist.replace('vid behov', 'vb')        
+            rawitemlist = rawitemlist.replace('tablett ', 'x ')
+            rawitemlist = rawitemlist.replace('kapsel ', 'x ')
+            rawitemlist = rawitemlist.replace('gånger ', '')
+            rawitemlist = rawitemlist.replace('tills vidare', 'tv')
+            rawitemlist = rawitemlist.replace('vid behov', 'vb')        
         
             #finelist.append(fineitem)
         #finestring = "\n".join(finelist)
