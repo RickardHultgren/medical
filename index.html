@@ -102,16 +102,15 @@
                 prerawlist = rawitem.split("  ")
             
             rawitemlist = prerawlist[0]
-            #for idx, subitem in enumerate(rawitemlist):
-            #    if idx == 3 :
-            #        subitem.replace('tablett ', 'x ')
-            #        subitem.replace('kapsel ', 'x ')
-            #        subitem.replace('gånger ', '')
-            #        subitem.replace('tills vidare', 'tv')
-            #        subitem.replace('vid behov', 'vb')        
-            #    fineitem += subitem
-            #    subitem = ""
-
+            rawl = split(",")
+            newitem = ""
+            for idx, subitem in enumerate(rawl):
+                if idx == 0 :
+                    subl = subitem.split(" ")
+                    newitem = subl[0]
+                else:
+                    newitem = subitem
+                rawitemlist += newitem
             rawitemlist = rawitemlist.replace('tablett ', 'x ')
             rawitemlist = rawitemlist.replace('kapsel ', 'x ')
             rawitemlist = rawitemlist.replace('gånger ', '')
