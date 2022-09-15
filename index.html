@@ -4,7 +4,7 @@
         <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     </head>
 <body style="margin:3em;">
-<h1>Medical Record</h1>
+<h1 style="font-style:bold;font-size:2em;font-style:serif;">Medical Record</h1>
     Select ICD:
     <select id="ICD" name="ICD" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;">
         <option value="NFB29">NFB29 Primär total höftledsplastik utan cement</option>
@@ -14,9 +14,9 @@
     </select>
     <button id="select-button" type="submit" pys-onClick="select_function" style="border-color:#000;border-width:1px;"/>OK</button>
 
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
 
 
     <div>Type in date input here</div>
@@ -44,10 +44,11 @@
     <button id="submit-button" type="submit" pys-onClick="submit_function" style="border-color:#000;border-width:1px;">OK</button>
     <hr style="border:1em;">
     <div id="output"></div>
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<b>Läkemdel</b><br>
+<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
+<br>
+<b>Läkemdel enligt lista</b><br>
 <div id="pharma-list"></div>
 
 
@@ -144,7 +145,7 @@
         ICD = Element('ICD').element.value        
         if ICD == "NFB29" :
             pharma_pat = ("Cilaxoral 7,5mg/ml 10 droppar i 1 vecka. Förebygger förstoppning.\nEliquis 2,5mg 1 tablett 2 gånger dagligen i 30 dagar. Förebygger blodproppar.\nOmeprazol 20mg 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\nOxynorm 5mg 1 vid behov, max 4 per dag. Smärtlindrande.\nParacetamol 500mg 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande.\n")
-            pharma = ("Cilaxoral 7,5mg/ml 10 droppar i 1 vecka.\nEliquis 2,5mg 1x2 i 30 dagar.\nOmeprazol 20mg 1x1 i 2 veckor. \nOxynorm 5mg 1vb, max 4 per dag.\nParacetamol 500mg 2x3 i 4 veckor.\n")
+            pharma = ("NYINSATTA LÄKEMEDEL:\n\nCilaxoral 7,5mg/ml 10 droppar i 1 vecka.\nEliquis 2,5mg 1x2 i 30 dagar.\nOmeprazol 20mg 1x1 i 2 veckor. \nOxynorm 5mg 1vb, max 4 per dag.\nParacetamol 500mg 2x3 i 4 veckor.\n")
             #pharma = "Enligt medicinlistan"
             Element('type-input').element.value = "primär total höftledsplastik utan cement"
             Element('ward-input').element.value = "78"
@@ -153,7 +154,7 @@
             Element('epikris').element.innerText = ("Ansvarig läkare:\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nHöftledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 14 dagar. Telefonkontakt med operatör om 4 månader.\n\nLäkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, ICD))
         if ICD == "NFB49" :
             pharma_pat = ("Cilaxoral 7,5mg/ml 10 droppar i 1 vecka. Förebygger förstoppning.\nEliquis 2,5mg 1 tablett 2 gånger dagligen i 30 dagar. Förebygger blodproppar.\nOmeprazol 20mg 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\nOxynorm 5mg 1 vid behov, max 4 per dag. Smärtlindrande.\nParacetamol 500mg 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande.\n")
-            pharma = "Enligt medicinlistan"
+            pharma = "NYINSATTA LÄKEMEDEL:\n\n"
             Element('type-input').element.value = "primär total höftledsplastik med cement"
             Element('ward-input').element.value = "78"
             Element('pharma-list').element.innerText = pharma_pat
@@ -161,7 +162,7 @@
             Element('epikris').element.innerText = ("Ansvarig läkare:\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nHöftledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 14 dagar. Telefonkontakt med operatör om 3 månader.\n\nLäkemedelslista\n%s\n\nNyinsatta läkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, pharma_entire, ICD))
         if ICD == "NGB49" :
             pharma_pat = ("Etoricoxib 120mg 1 tablett 1 gånger dagligen i 5 dagar. Mot smärta.\nCilaxoral 7,5mg/ml 10 droppar i 1 vecka. Förebygger förstoppning.\nEliquis 2,5mg 1 tablett 2 gånger dagligen i 20 dagar. Förebygger blodpropp.\nOmeprazol 20mg 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\nOxynorm 5mg 1 vid behov, max 4 dagligen, i 2 veckor. Smärtlindrande.\nParacetamol 500mg 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande. ")
-            pharma = "Enligt medicinlistan"
+            pharma = "NYINSATTA LÄKEMEDEL:\n\n"
             Element('type-input').element.value = "primär totalprotes i knäled med cement"
             Element('ward-input').element.value = "78"
             Element('pharma-list').element.innerText = pharma_pat
@@ -169,7 +170,7 @@
             Element('epikris').element.innerText = ("Ansvarig läkare:\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nHöftledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 14 dagar. Telefonkontakt med operatör om 4 månader.\n\nLäkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, ICD))
         if ICD == "ABC99" :
             pharma_pat = ("Arcoxia120mg 1 tablett 1 gånger dagligen i 6 dagar. Mot smärta.\nCilaxoral 7,5mg/ml 10 droppar i 1 vecka. Förebygger förstoppning.\nOmeprazol 20mg 1 tablett 1 gång dagligen i 10 dagar. Magskyddande.\nOxynorm 5mg 1 vid behov, max 4 dagligen, i 2 veckor. Smärtlindrande.\nParacetamol 500mg 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande. ")
-            pharma = "Enligt medicinlistan"
+            pharma = "NYINSATTA LÄKEMEDEL:\n\n"
             Element('type-input').element.value = "dekompression av ryggmärgen och nervrötter"
             Element('ward-input').element.value = "78"
             Element('pharma-list').element.innerText = pharma_pat
