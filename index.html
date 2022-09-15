@@ -75,7 +75,7 @@
     side = str("")
     ward = str("")
     pharma = str("")
-    pharma-entire = str("")
+    pharma_entire = str("")
 
     today = date.today()
     yesterday = today - timedelta(days = 1)
@@ -110,7 +110,7 @@
             Element('ward-input').element.value = "78"
             Element('pharma-list').element.innerText = pharma_pat
             Element('plan').element.innerText = ("Sårkontroll om 14 dagar.\nTelefonkontakt med operatören om 3 månader.")
-            Element('epikris').element.innerText = ("Ansvarig läkare:\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nHöftledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 14 dagar. Telefonkontakt med operatör om 3 månader.\n\nLäkemedelslista\n%s\n\nNyinsatta läkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, pharma-entire, ICD))
+            Element('epikris').element.innerText = ("Ansvarig läkare:\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nHöftledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 14 dagar. Telefonkontakt med operatör om 3 månader.\n\nLäkemedelslista\n%s\n\nNyinsatta läkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, pharma_entire, ICD))
         if ICD == "NGB49" :
             pharma_pat = ("Etoricoxib 120mg 1 tablett 1 gånger dagligen i 5 dagar. Mot smärta.\nCilaxoral 7,5mg/ml 10 droppar i 1 vecka. Förebygger förstoppning.\nEliquis 2,5mg 1 tablett 2 gånger dagligen i 20 dagar. Förebygger blodpropp.\nOmeprazol 20mg 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\nOxynorm 5mg 1 vid behov, max 4 dagligen, i 2 veckor. Smärtlindrande.\nParacetamol 500mg 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande. ")
             pharma = "Enligt medicinlistan"
