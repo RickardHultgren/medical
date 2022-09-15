@@ -91,6 +91,7 @@
         finelist = list()
         fineitem = ""
         subfineitem = ""
+        finestring = ""
         raw = Element('pharma-raw').element.value
         rawlist = raw.split("\n")
         for rawitem in rawlist:
@@ -112,9 +113,10 @@
             rawitemlist.replace('tills vidare', 'tv')
             rawitemlist.replace('vid behov', 'vb')        
         
-            finelist.append(fineitem)
-        finestring = "\n".join(finelist)
-        finelist.clear()
+            #finelist.append(fineitem)
+        #finestring = "\n".join(finelist)
+            finestring += rawitemlist
+        #finelist.clear()
         Element('pharma-fine').element.innerText = (finestring)
         
         
