@@ -110,8 +110,8 @@
                     subl = subitem.split(" ")
                     newitem = subl[0]
                 if idx == 3 :
-                    newitem = newlist.replace('tablett ', 'x ')
-                    newitem = newlist.replace('kapsel ', 'x ')
+                    newitem = subitem.replace('tablett ', 'x ')
+                    newitem = newitem.replace('kapsel ', 'x ')
                 else:
                     newitem = subitem   
                 newlist += newitem
