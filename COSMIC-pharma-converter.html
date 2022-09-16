@@ -49,7 +49,7 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                 for lstitem in lst:
 			             if str(lstitem) == str(pos) and (rawitem[pos-1].isdigit()) and (rawitem[pos+1].isdigit()):
                         rawitem = rawitem[:pos] + "#" + rawitem[pos+1:]
-            rawitem = rawitem.replace('\d\,\d', '\d\.\d')
+            #rawitem = rawitem.replace('\d\,\d', '\d\.\d')
             while rawitem[0] == " " :
                 rawitem = rawitem[1:]
                 if rawitem[0] != " " :
