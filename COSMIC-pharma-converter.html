@@ -58,10 +58,10 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                 elif idx == 3 :
                     subitem = subitem.replace("tablett till natten", "tn")        
                     subitem = subitem.replace("tabletter till natten", "tn")                
-                    if ("tablett" in submit) or ("kaps" in submit) :
-                        pass
-                    else:
-                        subitem = subitem.replace('gånger daligen', 'x 1')
+                    #if ("tablett" in submit) or ("kaps" in submit) :
+                    #    pass
+                    #else:
+                    #    subitem = subitem.replace('gånger daligen', 'x 1')
                     subitem = subitem.replace('tabletter ', 'x ')
                     subitem = subitem.replace('tablett ', 'x ')
                     subitem = subitem.replace('kapslar ', 'x ')
@@ -73,7 +73,7 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                 newitem = ""  
 
             newlist = newlist.replace('gånger ', '')
-            newlist = newlist.replace('dagligen ', '')        
+            newlist = newlist.replace('dagligen ', '1')        
             newlist = newlist.replace('tills vidare', 'tv')
             newlist = newlist.replace('vid behov', 'vb')        
             newlist = newlist.replace('vecka', 'v')
