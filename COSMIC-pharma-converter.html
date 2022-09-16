@@ -40,7 +40,7 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
         for rawitem in rawlist:
             while rawitem[0] == " " :
                 rawitem = rawitem[1:]
-                if rawitem[0] == " " :
+                if rawitem[0] != " " :
                     break
         
             prerawlist = list()
@@ -60,9 +60,9 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                     if not "tablett" in submit or not "kaps" in submit :
                         newitem = subitem.replace('gånger daligen', 'x 1')
                     newitem = subitem.replace('tabletter ', 'x ')
-                    newitem = newitem.replace('tablett ', 'x ')
-                    newitem = newitem.replace('kapslar ', 'x ')
-                    newitem = newitem.replace('kapsel ', 'x ')
+                    newitem = subitem.replace('tablett ', 'x ')
+                    newitem = subitem.replace('kapslar ', 'x ')
+                    newitem = subitem.replace('kapsel ', 'x ')
         
                 else:
                     newitem = subitem   
