@@ -54,26 +54,25 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
             for idx, subitem in enumerate(rawl):
                 if idx == 0 :
                     subl = subitem.split(" ")
-                    newitem = subl[0]
+                    subitem = subl[0]
                 elif idx != 2 :
-                    newlist = newlist.replace('tabletter ', '')
-                    newlist = newlist.replace('tablett ', '')
-                    newlist = newlist.replace('kapslar ', '')
-                    newlist = newlist.replace('kapsel ', '')
+                    subitem = subitem.replace('tabletter ', '')
+                    subitem = subitem.replace('tablett ', '')
+                    subitem = subitem.replace('kapslar ', '')
+                    subitem = subitem.replace('kapsel ', '')
                 elif idx == 3 or idx == 4 :
-                    subitem = subitem.replace("tablett till natten", "tn")        
-                    subitem = subitem.replace("tabletter till natten", "tn")                
-                    #if ("tablett" in submit) or ("kaps" in submit) :
-                    #    pass
-                    #else:
-                    #    subitem = subitem.replace('gånger daligen', 'x 1')
-                    subitem = subitem.replace('tabletter ', 'x ')
-                    subitem = subitem.replace('tablett ', 'x ')
-                    subitem = subitem.replace('kapslar ', 'x ')
-                    subitem = subitem.replace('kapsel ', 'x ')
-                    newitem = subitem           
-                else:
-                    newitem = subitem   
+                    #elif idx == 3 or idx == 4 :        
+                        subitem = subitem.replace("tablett till natten", "tn")        
+                        subitem = subitem.replace("tabletter till natten", "tn")                
+                        #if ("tablett" in submit) or ("kaps" in submit) :
+                        #    pass
+                        #else:
+                        #    subitem = subitem.replace('gånger daligen', 'x 1')
+                        subitem = subitem.replace('tabletter ', 'x ')
+                        subitem = subitem.replace('tablett ', 'x ')
+                        subitem = subitem.replace('kapslar ', 'x ')
+                        subitem = subitem.replace('kapsel ', 'x ')
+                newitem = subitem   
                 newlist += newitem
                 newitem = ""  
 
