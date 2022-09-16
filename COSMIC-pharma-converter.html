@@ -22,6 +22,7 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
 
     <py-env>
     </py-env>
+    - re
     <py-script>
     from js import console
     pharma_entire = str("")
@@ -39,7 +40,7 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
         newlist = ""
         for rawitem in rawlist:
 
-            rawitem = re.sub('\d\,\d', '\d\.\d', rawitem))
+            rawitem = re.sub('\d,\d', '\d.\d', rawitem))
             while rawitem[0] == " " :
                 rawitem = rawitem[1:]
                 if rawitem[0] != " " :
