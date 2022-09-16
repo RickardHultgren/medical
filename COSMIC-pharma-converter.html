@@ -55,6 +55,11 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                 if idx == 0 :
                     subl = subitem.split(" ")
                     newitem = subl[0]
+                elif idx != 2 :
+                    newlist = newlist.replace('tabletter ', '')
+                    newlist = newlist.replace('tablett ', '')
+                    newlist = newlist.replace('kapslar ', '')
+                    newlist = newlist.replace('kapsel ', '')
                 elif idx == 3 :
                     subitem = subitem.replace("tablett till natten", "tn")        
                     subitem = subitem.replace("tabletter till natten", "tn")                
@@ -80,10 +85,7 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
             newlist = newlist.replace('veckor', 'v')     
             newlist = newlist.replace('högst', 'max')             
             newlist = newlist.replace('per dygn', '/d')                     
-            newlist = newlist.replace('tabletter ', '')
-            newlist = newlist.replace('tablett ', '')
-            newlist = newlist.replace('kapslar ', '')
-            newlist = newlist.replace('kapsel ', '')
+
             finestring += newlist + "\n"
             newitem = ""        
             newlist = ""        
