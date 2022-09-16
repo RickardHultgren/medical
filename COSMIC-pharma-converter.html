@@ -25,7 +25,7 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
     <py-script>
     from js import console
     pharma_entire = str("")
-
+    import re
     def translate_function(*args, **kwargs):      
         global pharma_entire
         finelist = list()
@@ -38,6 +38,8 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
         newitem = ""
         newlist = ""
         for rawitem in rawlist:
+
+            rawitem = re.sub('\d,\d', '\d.\d', rawitem))
             while rawitem[0] == " " :
                 rawitem = rawitem[1:]
                 if rawitem[0] != " " :
@@ -56,10 +58,10 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                     subl = subitem.split(" ")
                     subitem = subl[0]
                 elif idx != 2 :
-                    subitem = subitem.replace('tabletter ', '')
-                    subitem = subitem.replace('tablett ', '')
-                    subitem = subitem.replace('kapslar ', '')
-                    subitem = subitem.replace('kapsel ', '')
+                    subitem = subitem.replace('tabletter ', 'x')
+                    subitem = subitem.replace('tablett ', 'x')
+                    subitem = subitem.replace('kapslar ', 'x')
+                    subitem = subitem.replace('kapsel ', 'x')
                 elif idx == 3 or idx == 4 :
                     #elif idx == 3 or idx == 4 :        
                         subitem = subitem.replace("tablett till natten", "tn")        
