@@ -84,51 +84,6 @@
     today = date.today()
     yesterday = today - timedelta(days = 1)
 
-    def translate_function(*args, **kwargs):        
-        finelist = list()
-        fineitem = ""
-        subfineitem = ""
-        finestring = ""
-        raw = Element('pharma-raw').element.value
-        rawlist = raw.split("\n")
-        for rawitem in rawlist:
-            prerawlist = list()
-            if "Tiden har" in rawitem :
-                prerawlist = rawitem.split("Tiden har")
-            else:
-                prerawlist = rawitem.split("  ")
-            
-            rawitemlist = prerawlist[0]
-            rawl = rawitemlist.split(",")
-            newitem = ""
-            newlist = ""
-            for idx, subitem in enumerate(rawl):
-                if idx == 0 :
-                    subl = subitem.split(" ")
-                    newitem = subl[0]
-                elif idx == 3 :
-                    newitem = subitem.replace('tabletter ', 'x ')
-                    newitem = newitem.replace('tablett ', 'x ')
-                    newitem = newitem.replace('kapslar ', 'x ')
-                    newitem = newitem.replace('kapsel ', 'x ')
-                else:
-                    newitem = subitem   
-                newlist += newitem
-            newlist = newlist.replace('gånger ', '')
-            newlist = newlist.replace('dagligen ', '')        
-            newlist = newlist.replace('tills vidare', 'tv')
-            newlist = newlist.replace('vid behov', 'vb')        
-            newlist = newlist.replace('vecka', 'v')
-            newlist = newlist.replace('veckor', 'v')     
-            newlist = newlist.replace('högst', 'max')             
-            newlist = newlist.replace('per dygn', '/d')                     
-            newlist = subitem.replace('tabletter ', '')
-            newlist = newitem.replace('tablett ', '')
-            newlist = newitem.replace('kapslar ', '')
-            newlist = newitem.replace('kapsel ', '')
-            finestring += newlist + "\n"
-        #finelist.clear()
-        Element('pharma-fine').element.innerText = (finestring)
         
         
     def select_function(*args, **kwargs):
