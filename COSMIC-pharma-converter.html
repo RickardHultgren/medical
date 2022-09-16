@@ -54,14 +54,18 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                     subl = subitem.split(" ")
                     newitem = subl[0]
                 elif idx == 3 :
+                    if not "tablett" in submit or not "kaps" in submit :
+                        newitem = subitem.replace('gånger daligen', 'x 1')
                     newitem = subitem.replace('tabletter ', 'x ')
                     newitem = newitem.replace('tablett ', 'x ')
                     newitem = newitem.replace('kapslar ', 'x ')
                     newitem = newitem.replace('kapsel ', 'x ')
+        
                 else:
                     newitem = subitem   
                 newlist += newitem
                 newitem = ""  
+
             newlist = newlist.replace('gånger ', '')
             newlist = newlist.replace('dagligen ', '')        
             newlist = newlist.replace('tills vidare', 'tv')
