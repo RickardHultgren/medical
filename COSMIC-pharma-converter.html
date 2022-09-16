@@ -21,12 +21,12 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 
     <py-env>
-    - re
+    #- re
     </py-env>
     <py-script>
     from js import console
     pharma_entire = str("")
-    import re
+    #import re
     def translate_function(*args, **kwargs):      
         global pharma_entire
         finelist = list()
@@ -40,7 +40,9 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
         newlist = ""
         for rawitem in rawlist:
 
-            rawitem = re.sub('\d\,\d', '\d\.\d', rawitem))
+            #rawitem = re.sub('\d\,\d', '\d\.\d', rawitem))
+        #https://www.w3schools.com/python/trypython.asp?filename=demo_ref_string_isdigit
+            rawitem = rawitem.replace('\d\,\d', '\d\.\d')
             while rawitem[0] == " " :
                 rawitem = rawitem[1:]
                 if rawitem[0] != " " :
