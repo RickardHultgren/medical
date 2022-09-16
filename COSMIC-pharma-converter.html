@@ -40,6 +40,8 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
         for rawitem in rawlist:
             while rawitem[0] == " " :
                 rawitem = rawitem[1:]
+                if rawitem[0] == " " :
+                    break
         
             prerawlist = list()
             if "Tiden har" in rawitem :
