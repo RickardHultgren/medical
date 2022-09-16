@@ -41,7 +41,13 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
         for rawitem in rawlist:
 
             #rawitem = re.sub('\d\,\d', '\d\.\d', rawitem))
-        #https://www.w3schools.com/python/trypython.asp?filename=demo_ref_string_isdigit
+            lst = []
+            for pos,char in enumerate(rawitem):
+                if(char == ","):
+                    lst.append(pos)
+            for pos,char in enumerate(rawitem):
+                if(rawitem[pos-1].isdigit()) and (rawitem[pos+1].isdigit()):
+                    rawitem = rawitem[:pos] + "#" + rawitem[pos+1:]
             rawitem = rawitem.replace('\d\,\d', '\d\.\d')
             while rawitem[0] == " " :
                 rawitem = rawitem[1:]
@@ -89,7 +95,8 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
             newlist = newlist.replace('veckor', 'v')     
             newlist = newlist.replace('högst', 'max')             
             newlist = newlist.replace('per dygn', '/d')                     
-
+            newlist = newlist.replace('#', ',')  
+			
             finestring += newlist + "\n"
             newitem = ""        
             newlist = ""        
