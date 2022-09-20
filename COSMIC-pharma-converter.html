@@ -75,7 +75,7 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                 prerawlist = rawitem.split("  ")
             
             rawitemlist = prerawlist[0]
-            rawitemlist = rawitemlist.replace(", hård, ", " ",")
+            rawitemlist = rawitemlist.replace(", hård, ", ", ")
             rawl = rawitemlist.split(",")
             for idx, subitem in enumerate(rawl):
                 if idx == 0 :
