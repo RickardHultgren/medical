@@ -15,7 +15,8 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
 <textarea name="Text1" cols="100" rows="10" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="pharma-raw"> </textarea>
 <br>
 <button id="translate" type="submit" pys-onClick="translate_function" style="border-color:#000;border-width:1px;margin:0em 0em 1.5em 0em;border-color:#000;">Konvertera</button>    
-<button style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee; " id="pharma-fine"><div id="a" onclick="copyDivToClipboard()" style="background-color:#333;color:#fff;"> Click to copy </button>
+<br><br><br><button style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee; " id="pharma-fine"><div id="a" onclick="copyDivToClipboard()" style="background-color:#333;color:#fff;"> 
+ Klisk för att kopiera från rutan nedanför </button>
 <br>
 
 	<script>
@@ -74,7 +75,7 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                 prerawlist = rawitem.split("  ")
             
             rawitemlist = prerawlist[0]
-            rawitemlist = rawitemlist.replace(", hård, ",")
+            rawitemlist = rawitemlist.replace(", hård, ", " ",")
             rawl = rawitemlist.split(",")
             for idx, subitem in enumerate(rawl):
                 if idx == 0 :
