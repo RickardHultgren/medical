@@ -108,7 +108,7 @@
             Element('type-input').element.value = "primär total höftledsplastik med cement"
             Element('ward-input').element.value = "78"
             Element('pharma-list').element.innerText = pharma_pat
-            Element('plan').element.innerText = ("Sårkontroll om 14 dagar.\nTelefonkontakt med operatören om 3 månader.\n\nVid frågor, sårläckage, feber eller andra symptom hör av dig till avdelning 78.")
+            Element('plan').element.innerText = ("Sårkontroll om 2-3 veckor.\nTelefonkontakt med operatören om 3 månader.\n\nVid frågor, sårläckage, feber eller andra symptom hör av dig till avdelning 78.")
 
             Element('epikris').element.innerText = ("Ansvarig läkare:\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nHöftledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 14 dagar. Telefonkontakt med operatör om 3 månader.\n\nLäkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, ICD))
         if ICD == "NGB49" :
