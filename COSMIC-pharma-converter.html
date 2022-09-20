@@ -24,7 +24,7 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
 	<script>
                 function copyDivToClipboard() {
                     var range = document.createRange();
-                    range.selectNode(document.getElementById("pharma-list"));
+                    range.selectNode(document.getElementById("pharma-fine"));
                     window.getSelection().removeAllRanges();
                     window.getSelection().addRange(range);
                     document.execCommand("copy");
