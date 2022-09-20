@@ -67,8 +67,9 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                 if idx == 0 :
                     subl = subitem.split(" ")
                     subitem = subl[0]
-                elif idx == 1 :
+                elif idx == 2 :
 			              subitem = subitem.lower()
+                    subitem += "# "
                 elif idx != 2 :
                     if "engångsdos" in subitem :
                         subitem = subitem.replace('tabletter engångsdos' , "engångsdos")
@@ -96,8 +97,8 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                         subitem = subitem.replace('tablett ', 'x ')
                         subitem = subitem.replace('kapslar ', 'x ')
                         subitem = subitem.replace('kapsel ', 'x ')
-                        subitem += "# "
-                newitem = subitem   
+
+                newitem = subitem + "."   
                 newlist += newitem
                 newitem = ""  
 
