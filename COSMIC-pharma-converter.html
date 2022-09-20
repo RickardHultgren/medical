@@ -67,18 +67,22 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                 if idx == 0 :
                     subl = subitem.split(" ")
                     subitem = subl[0]
+                elif idx == 1 :
+			              subitem = subitem.lower()
                 elif idx != 2 :
                     if "engångsdos" in subitem :
                         subitem = subitem.replace('tabletter engångsdos' , "engångsdos")
                         subitem = subitem.replace('tablett engångsdos' , "engångsdos")
                         subitem = subitem.replace('kapslar engångsdos' , "engångsdos")
                         subitem = subitem.replace('kapsel engångsdos' , "engångsdos")
+                        subitem = subitem.replace('kl' , "klockan ")			
                     else:
-                        subitem = subitem.replace('tabletter ', 'x')
-                        subitem = subitem.replace('tablett ', 'x')
-                        subitem = subitem.replace('kapslar ', 'x')
-                        subitem = subitem.replace('kapsel ', 'x')
-                elif idx == 3 or idx == 4 :
+                        subitem = subitem.replace('tabletter ', 'x ')
+                        subitem = subitem.replace('tablett ', 'x ')
+                        subitem = subitem.replace('kapslar ', 'x ')
+                        subitem = subitem.replace('kapsel ', 'x ')
+                        subitem = subitem.replace('dopot ', 'x depot')
+                elif idx == 3:
                     #elif idx == 3 or idx == 4 :        
                         subitem = subitem.replace("tablett till natten", "tn")        
                         subitem = subitem.replace("tabletter till natten", "tn")                
@@ -86,22 +90,25 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                         #    pass
                         #else:
                         #    subitem = subitem.replace('gånger daligen', 'x 1')
+                        subitem = subitem.replace('brustabletter ', 'x ')
+                        subitem = subitem.replace('brustablett ', 'x ')
                         subitem = subitem.replace('tabletter ', 'x ')
                         subitem = subitem.replace('tablett ', 'x ')
                         subitem = subitem.replace('kapslar ', 'x ')
                         subitem = subitem.replace('kapsel ', 'x ')
+			                  subitem += "# "
                 newitem = subitem   
                 newlist += newitem
                 newitem = ""  
 
             newlist = newlist.replace('gånger ', '')
             newlist = newlist.replace('dagligen ', '')        
-            newlist = newlist.replace('tills vidare', 'tv')
-            newlist = newlist.replace('vid behov', 'vb')        
-            newlist = newlist.replace('vecka', 'v')
-            newlist = newlist.replace('veckor', 'v')     
+            newlist = newlist.replace('Tills vidare', 'tills vidare')
+            newlist = newlist.replace('vid behov', 'vid behov')        
+            #newlist = newlist.replace('vecka', 'v')
+            #newlist = newlist.replace('veckor', 'v')     
             newlist = newlist.replace('högst', 'max')             
-            newlist = newlist.replace('per dygn', '/d')                     
+            newlist = newlist.replace('per dygn', 'per dygn')                     
             newlist = newlist.replace('#', ',')  
 			
             finestring += newlist + "\n"
