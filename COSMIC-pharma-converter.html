@@ -98,7 +98,6 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                         subitem = subitem.replace('kapslar ', 'x ')
                         subitem = subitem.replace('kapsel ', 'x ')
 
-                newitem = subitem + "."   
                 newlist += newitem
                 newitem = ""  
 
@@ -112,7 +111,7 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
             newlist = newlist.replace('per dygn', 'per dygn')                     
             newlist = newlist.replace('#', ',')  
 			
-            finestring += newlist + "\n"
+            finestring += newlist + ".\n"
             newitem = ""        
             newlist = ""        
         Element('pharma-fine').element.innerText = (finestring)
