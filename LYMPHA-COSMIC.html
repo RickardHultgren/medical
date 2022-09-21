@@ -34,16 +34,16 @@ Provsvar
     <py-script>
     from js import console
     pharma_entire = str("")
-    #import re
+    lab-tests = dict()
     def calculate(*args, **kwargs):      
         global pharma_entire
         finelist = list()
         fineitem = ""
         subfineitem = ""
         finestring = ""
-        raw = Element('pharma-raw').element.value
-        rawlist = raw.split("\n")
-
+        heads = Element('heads').element.value
+        rawlist = heads.split("\n")
+        table = dict()
         newitem = ""
         newlist = ""
         for rawitem in rawlist:
@@ -58,6 +58,8 @@ Provsvar
             rawl = rawitemlist.split("\t")
             for idx, subitem in enumerate(rawl):
                 if idx == 0 :
+                    row = dict
+                    table[subitem] = row
                     subl = subitem.split(" ")
                     subitem = subl[0]
                 elif idx == 2 :
