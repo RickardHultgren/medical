@@ -33,85 +33,33 @@ Provsvar
     </py-env>
     <py-script>
     from js import console
-    pharma_entire = str("")
-    lab-tests = dict()
-    def calculate(*args, **kwargs):      
-        global pharma_entire
-        finelist = list()
-        fineitem = ""
-        subfineitem = ""
-        finestring = ""
+    lab_tests = dict()
+    def calculate(*args, **kwargs):     
         heads = Element('heads').element.value
-        rawlist = heads.split("\n")
+        rows = heads.split("\n")
         table = dict()
-        newitem = ""
-        newlist = ""
-        for rawitem in rawlist:
-
-
-            while rawitem[0] == " " :
-                rawitem = rawitem[1:]
-                if rawitem[0] != " " :
+        for row in rows:
+            rowspecific = dict()
+            title = str()
+            while row[0] == " " :
+                row = row[1:]
+                if row[0] != " " :
                     break
             
-            rawitemlist = prerawlist[0]
-            rawl = rawitemlist.split("\t")
-            for idx, subitem in enumerate(rawl):
+            rowlist = row.split("\t")
+            for idx, subitem in enumerate(rowlist):
                 if idx == 0 :
-                    row = dict
-                    table[subitem] = row
-                    subl = subitem.split(" ")
-                    subitem = subl[0]
+                    title = subitem
+                elif idx == 1 :
+                    pass
                 elif idx == 2 :
-                    subitem = subitem.lower()
-                    subitem += "# "
-                elif idx != 2 :
-                    if "engångsdos" in subitem :
-                        subitem = subitem.replace('tabletter engångsdos' , "engångsdos")
-                        subitem = subitem.replace('tablett engångsdos' , "engångsdos")
-                        subitem = subitem.replace('kapslar engångsdos' , "engångsdos")
-                        subitem = subitem.replace('kapsel engångsdos' , "engångsdos")
-                        subitem = subitem.replace('kl' , "klockan ")			
-                    else:
-                        subitem = subitem.replace('applicering ', 'applicering x ')
-                        subitem = subitem.replace('tabletter ', 'x ')
-                        subitem = subitem.replace('tablett ', 'x ')
-                        subitem = subitem.replace('kapslar ', 'x ')
-                        subitem = subitem.replace('kapsel ', 'x ')
-                        subitem = subitem.replace('dopot ', 'x depot')
-                elif idx == 3:
-                    #elif idx == 3 or idx == 4 :        
-                        subitem = subitem.replace("tablett till natten", "tn")        
-                        subitem = subitem.replace("tabletter till natten", "tn")                
-                        #if ("tablett" in submit) or ("kaps" in submit) :
-                        #    pass
-                        #else:
-                        #    subitem = subitem.replace('gånger daligen', 'x 1')
-                        subitem = subitem.replace('brustabletter ', 'x ')
-                        subitem = subitem.replace('brustablett ', 'x ')
-                        subitem = subitem.replace('tabletter ', 'x ')
-                        subitem = subitem.replace('tablett ', 'x ')
-                        subitem = subitem.replace('kapslar ', 'x ')
-                        subitem = subitem.replace('kapsel ', 'x ')
-                subitem = subitem.replace('Enligt särskild ordination', 'enligt särskild ordination')
-                newitem = subitem  
-                newlist += newitem
-                newitem = ""  
-
-            newlist = newlist.replace('gånger ', '')
-            newlist = newlist.replace('dagligen ', '')        
-            newlist = newlist.replace('Tills vidare', 'tills vidare')
-            newlist = newlist.replace('vid behov', 'vid behov')        
-            #newlist = newlist.replace('vecka', 'v')
-            #newlist = newlist.replace('veckor', 'v')     
-            newlist = newlist.replace('högst', 'max')             
-            newlist = newlist.replace('per dygn', 'per dygn')                     
-            newlist = newlist.replace('#', ',')  
-			
-            finestring += newlist + ".\n"
-            newitem = ""        
-            newlist = ""        
-        Element('pharma-fine').element.innerText = (finestring)
+                    norms = subitem.split("-")
+                    for idx2, norm in enumerate(norms):
+                         if idx2 == 0:
+                            rowspecific[low] = norm
+                         if idx2 == 0:
+                            rowspecific[high] = norm
+             table[title] = rowspecific
         
     </py-script>
 </body>
