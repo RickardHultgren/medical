@@ -35,8 +35,8 @@ Provsvar
     <py-script>
     from js import console
     #lab_tests = dict()
-
-			def calculate(*args, **kwargs):     
+    Element('assessment').element.innerText = ("1")
+    def calculate(*args, **kwargs):     
         heads = Element('heads').element.value
         headrows = heads.split("\n")
         data = Element('data').element.value
@@ -44,8 +44,8 @@ Provsvar
         rowspecific = dict()
         rowsdata = dict()
 			
-
-    #For data specifications:
+        Element('assessment').element.innerText = ("2")
+        #For data specifications:
         for rowidx, row in enumerate(headrows):
             title = str()
             while row[0] == " " :
@@ -63,7 +63,8 @@ Provsvar
         rows = heads.split("\n")
         table = dict()
 
-    #For table data:
+        Element('assessment').element.innerText = ("3")
+        #For table data:
         for rowidx, row in datarows:
             rowvalue = dict()
             while row[0] == " " :
@@ -78,7 +79,7 @@ Provsvar
                     rowspecific[rowidx] = subitem            
             rowsdata[rowidx] = rowvalue
 
-    #Assessment:
+        #Assessment:
         for i in range(len(rowspecific)):
                         
             specs = rowspecific[i]
