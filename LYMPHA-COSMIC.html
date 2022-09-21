@@ -36,10 +36,15 @@ Provsvar
     lab_tests = dict()
     def calculate(*args, **kwargs):     
         heads = Element('heads').element.value
-        rows = heads.split("\n")
-        table = dict()
-        for row in rows:
-            rowspecific = dict()
+        headrows = heads.split("\n")
+        data = Element('data').element.value
+        datarows = heads.split("\n")
+        rowspecific = dict()
+        rowsdata = dict()
+			
+
+#For data specifications:
+        for row in headrows:
             title = str()
             while row[0] == " " :
                 row = row[1:]
@@ -50,6 +55,25 @@ Provsvar
             for idx, subitem in enumerate(rowlist):
                 if idx == 0 :
                     title = subitem
+                    index_table[idx] = title                
+
+        heads = Element('heads').element.value
+        rows = heads.split("\n")
+        table = dict()
+
+#For table data:
+        for row in datarows:
+            rowspecific = dict()
+            title = str()
+            while row[0] == " " :
+                row = row[1:]
+                if row[0] != " " :
+                    break
+			
+            rowlist = row.split("\t")			
+            for idx, subitem in enumerate(rowlist):
+                if idx == 0 :
+                    
                 elif idx == 1 :
                     pass
                 elif idx == 2 :
@@ -59,7 +83,11 @@ Provsvar
                             rowspecific[low] = norm
                          if idx2 == 0:
                             rowspecific[high] = norm
-            table[title] = rowspecific
+            
+                index_table[idx] = 
+            
+            
+            index_table[title] = rowspecific
         
     </py-script>
 </body>
