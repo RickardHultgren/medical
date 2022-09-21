@@ -44,7 +44,7 @@ Provsvar
         rowsdata = dict()
 			
 
-#For data specifications:
+    #For data specifications:
         for rowidx, row in enumerate(headrows):
             title = str()
             while row[0] == " " :
@@ -62,7 +62,7 @@ Provsvar
         rows = heads.split("\n")
         table = dict()
 
-#For table data:
+    #For table data:
         for rowidx, row in datarows:
             rowvalue = dict()
             while row[0] == " " :
@@ -77,7 +77,7 @@ Provsvar
                     rowspecific[rowidx] = subitem            
             rowsdata[rowidx] = rowvalue
 
-#Assessment:
+    #Assessment:
 			  for i in range(len(rowspecific)):
                         
             specs = rowspecific[i]
