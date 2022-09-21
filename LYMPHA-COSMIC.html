@@ -44,7 +44,7 @@ Provsvar
 			
 
 #For data specifications:
-        for row in headrows:
+        for rowidx, row in enumerate(headrows):
             title = str()
             while row[0] == " " :
                 row = row[1:]
@@ -55,22 +55,20 @@ Provsvar
             for idx, subitem in enumerate(rowlist):
                 if idx == 0 :
                     title = subitem
-                    index_table[idx] = title                
+                    index_table[rowidx] = title                
 
         heads = Element('heads').element.value
         rows = heads.split("\n")
         table = dict()
 
 #For table data:
-        for row in datarows:
+        for rowidx, row in datarows:
             rowspecific = dict()
-            title = str()
             while row[0] == " " :
                 row = row[1:]
                 if row[0] != " " :
                     break
-			
-            rowlist = row.split("\t")			
+            rowlist = row.split("\t")		
             for idx, subitem in enumerate(rowlist):
                 if idx == 0 :
                     
@@ -83,9 +81,6 @@ Provsvar
                             rowspecific[low] = norm
                          if idx2 == 0:
                             rowspecific[high] = norm
-            
-                index_table[idx] = 
-            
             
             index_table[title] = rowspecific
         
