@@ -25,6 +25,7 @@ Provsvar
 		Kalkylera
 	</button>
 
+<div id="assessment"></div>
 	
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 
@@ -55,7 +56,7 @@ Provsvar
             for idx, subitem in enumerate(rowlist):
                 if idx == 0 :
                     title = subitem
-                    index_table[rowidx] = title                
+                    rowspecific[rowidx] = title                
 
         heads = Element('heads').element.value
         rows = heads.split("\n")
@@ -63,27 +64,27 @@ Provsvar
 
 #For table data:
         for rowidx, row in datarows:
-            rowspecific = dict()
+            rowvalue = dict()
             while row[0] == " " :
                 row = row[1:]
                 if row[0] != " " :
                     break
             rowlist = row.split("\t")		
-            for idx, subitem in enumerate(rowlist):
-                if idx == 0 :
-                    
-                elif idx == 1 :
-                    pass
-                elif idx == 2 :
-                    norms = subitem.split("-")
-                    for idx2, norm in enumerate(norms):
-                         if idx2 == 0:
-                            rowspecific[low] = norm
-                         if idx2 == 0:
-                            rowspecific[high] = norm
-            
-            index_table[title] = rowspecific
-        
+            for subitem in enumerate(rowlist):
+                if subitem == "" :
+                    break
+                else:
+                    rowspecific[rowidx] = subitem            
+            rowsdata[rowidx] = rowvalue
+
+#Assessment:
+			  for i in range(len(rowspecific)):
+                        
+            specs = rowspecific[i]
+
+			
+            number = rowsdata[i]		
+            Element('assessment').element.innerText = (specs + number)
     </py-script>
 </body>
 </html>
