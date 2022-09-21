@@ -37,6 +37,7 @@ Provsvar
     #lab_tests = dict()
     Element('assessment').element.innerText = ("1")
     def calculate(*args, **kwargs):     
+        Element('assessment').element.innerText = ("1.1")
         heads = Element('heads').element.value
         headrows = heads.split("\n")
         data = Element('data').element.value
