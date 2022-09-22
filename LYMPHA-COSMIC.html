@@ -96,10 +96,15 @@ Provsvar
             
 
             specs = str(rowspec[str(i)])
-
-			
             number = str(rowsdata[str(i)])
-            toprint = toprint + str(specs[title]) + "min: " + str(specs[norm_min]) + "max: " + str(specs[norm_max]) + number + "\n"
+            evaluation =str()		
+            if int(number) < int(specs[norm_min]) :
+                evaluation="too low"
+
+            elif int(number) > int(specs[norm_mac]) :
+                evaluation="too high"
+            else:
+                evaluation="normal"            toprint = toprint + str(specs[title]) + " ; min: " + str(specs[norm_min]) + " ; max: " + str(specs[norm_max]) + " ; value: " number + evaluation + "\n"
         Element('assessment').element.innerText = (str(toprint))
     </py-script>
 </body>
