@@ -50,6 +50,7 @@ Provsvar
         Element('assessment').element.innerText = ("2")
         #For data specifications:
         for rowidx, row in enumerate(headrows):
+            Element('assessment').element.innerText = ("3")
             title = str()
             while row[0] == " " :
                 row = row[1:]
@@ -64,7 +65,7 @@ Provsvar
 
         rows = heads.split("\n")
 
-        Element('assessment').element.innerText = ("3")
+        #Element('assessment').element.innerText = ("3")
         #For table data:
         for rowidx, row in datarows:
             rowvalue = dict()
@@ -78,10 +79,10 @@ Provsvar
                     break
                 else:
                     rowspec[rowidx] = subitem            
-            rowsdata[rowidx] = rowvalue
+            rowsdata[eval(rowidx)] = rowvalue
 
         #Assessment:
-        for i in range(len(rowspecific)):
+        for i in range(len(rowspec)):
                         
             specs = rowspec[i]
 
