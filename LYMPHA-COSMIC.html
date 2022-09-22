@@ -37,7 +37,6 @@ Provsvar
     #lab_tests = dict()
 
     def calculate(*args, **kwargs): 
-        Element('assessment').element.innerText = ("test")
         headrows = list()
         datarows = list()
         heads = str(Element('heads').element.value)
@@ -47,27 +46,31 @@ Provsvar
         rowspec = dict()
         rowsdata = dict()
 			
-        Element( 'assessment' ).element.innerText("test")
         #For data specifications:
         for rowidx, row in enumerate(headrows):
             title = str()
-            while row[0] == " " :
+            try:
+              while row[0] == " " :
                 row = row[1:]
                 if row[0] != " " :
                     break
-            
+            except:
+              pass
             rowlist = row.split("\t")
             for idx, subitem in enumerate(rowlist):
                 if idx == 0 :
                     title = subitem
-                    rowspec[rowidx] = title                
+                    rowspec[str(rowidx)] = title                
         #For table data:
-        for rowidx2, row2 in enumerate(datarows):
-            while row2[0] == " " :
-                row2 = row2[1:]
-                if row2[0] != " " :
+        for rowidx, row in enumerate(datarows):
+            try:
+              while row[0] == " " :
+                row = row[1:]
+                if row[0] != " " :
                     break
-            rowlist = row2.split("\t")		
+            except:
+              pass
+            rowlist = row.split("\t")		
 
             for subitem in enumerate(rowlist):
                 if subitem == "" :
@@ -76,18 +79,18 @@ Provsvar
                     else:
                         pass
                 else:
-                    rowsdata[rowidx]  = subitem            
+                    rowsdata[str(rowidx)]  = subitem            
             #rowsdata[eval(rowidx)] = rowvalue
-        Element( 'assessment' ).element.innerText("rowsdata")
+
         #Assessment:
         toprint = str()
         for i in range(len(rowspec)):
-            specs = rowspec[i]
+            specs = str(rowspec[str(i)])
 
 			
-            number = rowsdata[i]		
+            number = str(rowsdata[str(i)])
             toprint = toprint + specs + number + "\n"
-        Element( 'assessment' ).element.innerText = (toprint)
+        Element('assessment').element.innerText = (str(toprint))
     </py-script>
 </body>
 </html>
