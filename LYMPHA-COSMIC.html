@@ -59,7 +59,7 @@ Provsvar
             rowlist = row.split("\t")
             for idx, subitem in enumerate(rowlist):
                 if idx == 0 :
-                    Element('assessment').element.innerText = ("3")
+                    Element('assessment').element.innerText = ("4")
                     title = subitem
                     rowspec[rowidx] = title                
 
@@ -84,7 +84,7 @@ Provsvar
         #Assessment:
         toprint = str()
         for i in range(len(rowspec)):
-                        
+            Element('assessment').element.innerText = ("4")                        
             specs = rowspec[i]
 
 			
