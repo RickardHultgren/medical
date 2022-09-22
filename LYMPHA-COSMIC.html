@@ -65,7 +65,8 @@ Provsvar
                 if idx == 2 :
                     intervall = subitem 
                     ilist = intervall.split("-")
-                    specific[norm_min] = ilist[0]                           specific[norm_max] = ilist[1]       
+                    specific[norm_min] = str(ilist[0])
+                    specific[norm_max] = str(ilist[1])  
                 rowspec[str(rowidx)] = specific                
         #For table data:
         for rowidx, row in enumerate(datarows):
