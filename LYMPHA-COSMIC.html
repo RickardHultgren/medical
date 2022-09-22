@@ -37,12 +37,12 @@ Provsvar
     #lab_tests = dict()
 
     def calculate(*args, **kwargs): 
-        Element( 'assessment' ).element.innerText("test")
+        Element('assessment').element.innerText("test")
         headrows = list()
         datarows = list()
-        heads = Element('heads').element.value
+        heads = str(Element('heads').element.value)
         headrows = heads.split("\n")
-        thedata = Element('thedata').element.value
+        thedata = str(Element('thedata').element.value)
         datarows = thedata.split("\n")
         rowspec = dict()
         rowsdata = dict()
