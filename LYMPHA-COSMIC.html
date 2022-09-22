@@ -50,7 +50,6 @@ Provsvar
         Element('assessment').element.innerText = ("2")
         #For data specifications:
         for rowidx, row in enumerate(headrows):
-            Element('assessment').element.innerText = ("3")
             title = str()
             while row[0] == " " :
                 row = row[1:]
@@ -60,6 +59,7 @@ Provsvar
             rowlist = row.split("\t")
             for idx, subitem in enumerate(rowlist):
                 if idx == 0 :
+                    Element('assessment').element.innerText = ("3")
                     title = subitem
                     rowspec[rowidx] = title                
 
@@ -82,14 +82,15 @@ Provsvar
             rowsdata[eval(rowidx)] = rowvalue
 
         #Assessment:
+        toprint = str()
         for i in range(len(rowspec)):
                         
             specs = rowspec[i]
 
 			
             number = rowsdata[i]		
- 
-            Element( 'assessment' ).element.innerText = (specs + number)
+            toprint = toprint + specs + number
+        Element( 'assessment' ).element.innerText = (toprint)
     </py-script>
 </body>
 </html>
