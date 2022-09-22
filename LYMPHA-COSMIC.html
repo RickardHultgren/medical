@@ -36,12 +36,14 @@ Provsvar
     from js import console
     #lab_tests = dict()
 
-    def calculate(*args, **kwargs):     
+    def calculate(*args, **kwargs): 
+        headrows = list()
+        datarowa = list()
         Element('assessment').element.innerText = ("1.1")
         heads = Element('heads').element.value
         headrows = heads.split("\n")
         data = Element('data').element.value
-        datarows = heads.split("\n")
+        datarows = data.split("\n")
         rowspec = dict()
         rowsdata = dict()
 			
