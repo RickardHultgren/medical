@@ -49,6 +49,7 @@ Provsvar
         #For data specifications:
         for rowidx, row in enumerate(headrows):
             title = str()
+            intervall = str()
             try:
               while row[0] == " " :
                 row = row[1:]
@@ -58,9 +59,14 @@ Provsvar
               pass
             rowlist = row.split("\t")
             for idx, subitem in enumerate(rowlist):
+                specific = dict()
                 if idx == 0 :
                     title = subitem
-                    rowspec[str(rowidx)] = title                
+                if idx == 2 :
+                    intervall = subitem 
+                    ilist = intervall.split("-")
+                    specific[norm_min] = ilist[0]                           specific[norm_max] = ilist[1]       
+                rowspec[str(rowidx)] = specific                
         #For table data:
         for rowidx, row in enumerate(datarows):
             try:
@@ -85,11 +91,14 @@ Provsvar
         #Assessment:
         toprint = str()
         for i in range(len(rowspec)):
+            specs = rowspec[str(i)]
+            
+
             specs = str(rowspec[str(i)])
 
 			
             number = str(rowsdata[str(i)])
-            toprint = toprint + specs + number + "\n"
+            toprint = toprint + str(specs[title]) + "min: " + str(specs[norm_min]) + "max: " + str(specs[norm_max]) + number + "\n"
         Element('assessment').element.innerText = (str(toprint))
     </py-script>
 </body>
