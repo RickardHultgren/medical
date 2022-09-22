@@ -21,13 +21,13 @@ Provsvar
 <textarea cols="100" rows="10" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="data"> </textarea>
 <br>
 
-	<button pys-onClick="calculate">
+	<button id="calcbttn" type="submit" pys-onClick="calculate">
 		Kalkylera
 	</button>
 
 <div id="assessment"></div>
 	
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" />
 
     <py-env>
     #- re
@@ -35,14 +35,14 @@ Provsvar
     <py-script>
     from js import console
     #lab_tests = dict()
-    Element('assessment').element.innerText = ("1")
+
     def calculate(*args, **kwargs):     
         Element('assessment').element.innerText = ("1.1")
         heads = Element('heads').element.value
         headrows = heads.split("\n")
         data = Element('data').element.value
         datarows = heads.split("\n")
-        rowspecific = dict()
+        rowspec = dict()
         rowsdata = dict()
 			
         Element('assessment').element.innerText = ("2")
@@ -58,11 +58,9 @@ Provsvar
             for idx, subitem in enumerate(rowlist):
                 if idx == 0 :
                     title = subitem
-                    rowspecific[rowidx] = title                
+                    rowspec[rowidx] = title                
 
-        heads = Element('heads').element.value
-        rows = heads.split("\n")
-        table = dict()
+        rows = heads.split("\n"
 
         Element('assessment').element.innerText = ("3")
         #For table data:
@@ -77,17 +75,18 @@ Provsvar
                 if subitem == "" :
                     break
                 else:
-                    rowspecific[rowidx] = subitem            
+                    rowspec[rowidx] = subitem            
             rowsdata[rowidx] = rowvalue
 
         #Assessment:
         for i in range(len(rowspecific)):
                         
-            specs = rowspecific[i]
+            specs = rowspec[i]
 
 			
             number = rowsdata[i]		
-            Element('assessment').element.innerText = (specs + number)
+ 
+            Element( 'assessment' ).element.innerText = (specs + number)
     </py-script>
 </body>
 </html>
