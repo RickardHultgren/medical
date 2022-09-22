@@ -58,16 +58,17 @@ Provsvar
             except:
               pass
             rowlist = row.split("\t")
+            specific = dict()
             for idx, subitem in enumerate(rowlist):
-                specific = dict()
                 if idx == 0 :
                     title = subitem
+                    specific["title"] = title
                 if idx == 2 :
                     intervall = subitem 
                     ilist = intervall.split("-")
-                    specific[norm_min] = str(ilist[0])
-                    specific[norm_max] = str(ilist[1])  
-                rowspec[str(rowidx)] = specific                
+                    specific["norm_min"] = int(ilist[0])
+                    specific["norm_max"] = int(ilist[1])  
+            rowspec[str(rowidx)] = specific                
         #For table data:
         for rowidx, row in enumerate(datarows):
             try:
@@ -79,7 +80,8 @@ Provsvar
               pass
             rowlist = row.split("\t")		
 
-            for subitem in enumerate(rowlist):
+            for subitem in rowlist:
+                done = 0
                 if subitem == "" :
                     if done == 1 :
                         break
@@ -87,24 +89,30 @@ Provsvar
                         pass
                 else:
                     rowsdata[str(rowidx)]  = subitem            
-            #rowsdata[eval(rowidx)] = rowvalue
+                    done = 1
 
         #Assessment:
         toprint = str()
         for i in range(len(rowspec)):
-            specs = rowspec[str(i)]
-            
-
-            specs = str(rowspec[str(i)])
-            number = str(rowsdata[str(i)])
-            evaluation =str()		
-            if int(number) < int(specs[norm_min]) :
+            #try:
+            j = int(int(i))
+            specific = rowspec[str(j)]
+            #number = str(rowsdata[str(i)])
+            #number = number.replace(" ", "")
+            evaluation = str()
+            title = str(specific["title"])
+            min = int(specific["norm_min"])
+            max = int(specific["norm_max"])
+            intnumber = int(rowsdata[str(i)]) 
+            if   intnumber < min :
                 evaluation="too low"
-
-            elif int(number) > int(specs[norm_mac]) :
+            elif intnumber > max :
                 evaluation="too high"
             else:
-                evaluation="normal"            toprint = toprint + str(specs[title]) + " ; min: " + str(specs[norm_min]) + " ; max: " + str(specs[norm_max]) + " ; value: " number + evaluation + "\n"
+                evaluation="normal"
+            toprint = toprint + title + " ; min: " + str(min) + " ; max: " + str(max) + " ; value: " + str(intnumber) + " ; " + evaluation + "\n"
+            #except:
+            #pass
         Element('assessment').element.innerText = (str(toprint))
     </py-script>
 </body>
