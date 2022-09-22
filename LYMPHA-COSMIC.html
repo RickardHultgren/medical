@@ -18,7 +18,7 @@ Provtyper
 <br>
 Provsvar
 <br>
-<textarea cols="100" rows="10" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="data"> </textarea>
+<textarea cols="100" rows="10" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="thedata"> </textarea>
 <br>
 
 	<button id="calcbttn" type="submit" pys-onClick="calculate">
@@ -37,17 +37,17 @@ Provsvar
     #lab_tests = dict()
 
     def calculate(*args, **kwargs): 
+        Element( 'assessment' ).element.innerText("test")
         headrows = list()
-        datarowa = list()
-        Element('assessment').element.innerText = ("1.1")
+        datarows = list()
         heads = Element('heads').element.value
         headrows = heads.split("\n")
-        data = Element('data').element.value
-        datarows = data.split("\n")
+        thedata = Element('thedata').element.value
+        datarows = thedata.split("\n")
         rowspec = dict()
         rowsdata = dict()
 			
-        Element('assessment').element.innerText = ("2")
+        Element( 'assessment' ).element.innerText("test")
         #For data specifications:
         for rowidx, row in enumerate(headrows):
             title = str()
@@ -59,37 +59,34 @@ Provsvar
             rowlist = row.split("\t")
             for idx, subitem in enumerate(rowlist):
                 if idx == 0 :
-                    Element('assessment').element.innerText = ("4")
                     title = subitem
                     rowspec[rowidx] = title                
-
-        rows = heads.split("\n")
-
-        #Element('assessment').element.innerText = ("3")
         #For table data:
-        for rowidx, row in datarows:
-            rowvalue = dict()
-            while row[0] == " " :
-                row = row[1:]
-                if row[0] != " " :
+        for rowidx2, row2 in enumerate(datarows):
+            while row2[0] == " " :
+                row2 = row2[1:]
+                if row2[0] != " " :
                     break
-            rowlist = row.split("\t")		
+            rowlist = row2.split("\t")		
+
             for subitem in enumerate(rowlist):
                 if subitem == "" :
-                    break
+                    if done == 1 :
+                        break
+                    else:
+                        pass
                 else:
-                    rowspec[rowidx] = subitem            
-            rowsdata[eval(rowidx)] = rowvalue
-
+                    rowsdata[rowidx]  = subitem            
+            #rowsdata[eval(rowidx)] = rowvalue
+        Element( 'assessment' ).element.innerText("rowsdata")
         #Assessment:
         toprint = str()
         for i in range(len(rowspec)):
-            Element('assessment').element.innerText = ("4")                        
             specs = rowspec[i]
 
 			
             number = rowsdata[i]		
-            toprint = toprint + specs + number
+            toprint = toprint + specs + number + "\n"
         Element( 'assessment' ).element.innerText = (toprint)
     </py-script>
 </body>
