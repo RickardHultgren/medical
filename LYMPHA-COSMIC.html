@@ -44,7 +44,12 @@ Provsvar
 <div id="assessment"></div>
 	
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" />
-
+				<form id="steps">
+				
+				  <b>Number of steps that should be taken:</b><br>
+				  
+				
+				</form>
     <py-env>
     #- re
     </py-env>
@@ -129,8 +134,30 @@ Provsvar
             toprint = toprint + title + " ; min: " + str(min) + " ; max: " + str(max) + " ; value: " + str(intnumber) + " ; " + evaluation + "\n"
             #except:
             #pass
+							
         Element('assessment').element.innerText = (str(toprint))
-    </py-script>
+
+				#to form steps !!!			
+        for i in range(len(rowspec)):
+            #try:
+            j = int(int(i))
+            specific = rowspec[str(j)]
+            #number = str(rowsdata[str(i)])
+            #number = number.replace(" ", "")
+            evaluation = str()
+            title = str(specific["title"])
+            min = int(specific["norm_min"])
+            max = int(specific["norm_max"])
+            intnumber = int(rowsdata[str(i)]) 
+            if   intnumber < min :
+                evaluation="too low"
+            elif intnumber > max :
+                evaluation="too high"
+            else:
+                evaluation="normal"
+            Element('assessment').element.input = (str(title))
+<input type="text" id="stepNr" class="stepNr"/><br>
+		</py-script>
 
 			<script type="text/python">
 			from browser import document, bind, html, alert, window
