@@ -993,7 +993,8 @@ def zcripts(ev):
 	global urls
 
 
-	for an_item in document.select(".theItems"):
+	for an_item in ["https://raw.githubusercontent.com/RickardHultgren/LYMPHA-scripts/master/COSMIC-scripts/anemia"]:
+	#for an_item in document.select(".theItems"):
 		addresses.append(an_item.value)
 	
 	urls=list()
