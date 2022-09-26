@@ -78,6 +78,7 @@ Provsvar
                     break
             except:
               pass
+            Element('assessment').element.innerText = ("test 2.1")
             rowlist = row.split("\t")
             specific = dict()
             for idx, subitem in enumerate(rowlist):
@@ -90,7 +91,9 @@ Provsvar
                     specific["norm_min"] = int(ilist[0])
                     specific["norm_max"] = int(ilist[1])  
             rowspec[str(rowidx)] = specific                
+            Element('assessment').element.innerText = ("test 2.2")
         #For table data:
+        Element('assessment').element.innerText = ("test 2.3")
         for rowidx, row in enumerate(datarows):
             Element('assessment').element.innerText = ("test 3")
             try:
@@ -112,7 +115,7 @@ Provsvar
                 else:
                     rowsdata[str(rowidx)]  = subitem            
                     done = 1
-
+        Element('assessment').element.innerText = ("test 3.1")
         #Assessment:
         toprint = str()
         thestarts = document.querySelector('.theStarts')
