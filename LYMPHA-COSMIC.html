@@ -65,6 +65,7 @@ Provsvar
         datarows = thedata.split("\n")
         rowspec = dict()
         rowsdata = dict()
+        title = ""
         norm_max = 0 
         norm_min = 0
         #For data specifications:
@@ -132,16 +133,21 @@ Provsvar
             #number = str(rowsdata[str(i)])
             #number = number.replace(" ", "")
             evaluation = str()
+            Element('assessment').element.innerText = ("test 3.4")
             title = str(specific["title"])
             min = int(specific["norm_min"])
             max = int(specific["norm_max"])
             intnumber = int(rowsdata[str(i)]) 
-            if   intnumber < min :
+            Element('assessment').element.innerText = ("test 3.5")
+            try:
+              if   intnumber < min :
                 evaluation="too low"
-            elif intnumber > max :
+              elif intnumber > max :
                 evaluation="too high"
-            else:
+              else:
                 evaluation="normal"
+            except:
+              pass
             toprint = toprint + title + " ; min: " + str(min) + " ; max: " + str(max) + " ; value: " + str(intnumber) + " ; " + evaluation + "\n"
             #except:
             #pass
