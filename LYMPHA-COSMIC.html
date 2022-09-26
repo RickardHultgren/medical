@@ -86,10 +86,13 @@ Provsvar
                     title = subitem
                     specific["title"] = title
                 if idx == 2 :
+                  try:
                     intervall = subitem 
                     ilist = intervall.split("-")
                     specific["norm_min"] = int(ilist[0])
                     specific["norm_max"] = int(ilist[1])  
+                  except:
+                    pass
             rowspec[str(rowidx)] = specific                
             Element('assessment').element.innerText = ("test 2.2")
         #For table data:
