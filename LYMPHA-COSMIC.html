@@ -114,6 +114,7 @@ Provsvar
 
         #Assessment:
         toprint = str()
+        thestarts = document.querySelector('#thestarts')
         for i in range(len(rowspec)):
             #try:
             j = int(int(i))
@@ -134,10 +135,13 @@ Provsvar
             toprint = toprint + title + " ; min: " + str(min) + " ; max: " + str(max) + " ; value: " + str(intnumber) + " ; " + evaluation + "\n"
             #except:
             #pass
+
+            
+            start_element.appendChild(thestarts)
+
 							
         Element('assessment').element.innerText = (str(toprint))
 
-				#to form steps !!!			
         for i in range(len(rowspec)):
             #try:
             j = int(int(i))
