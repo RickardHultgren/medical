@@ -53,9 +53,9 @@ Provsvar
     <py-env>
     #- re
     </py-env>
-    <py-script>
-    from js import console
-    def calculate(*args, **kwargs): 
+<py-script>
+from js import console
+def calculate(*args, **kwargs): 
         headrows = list() 
         datarows = list()
         heads = str(Element('heads').element.value)
@@ -158,7 +158,7 @@ Provsvar
             else:
                 evaluation="normal"
             Element('assessment').element.input = (str(title))
-<input type="text" id="stepNr" class="stepNr"/><br>
+
 		</py-script>
 
 			<script type="text/python">
