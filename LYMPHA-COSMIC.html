@@ -65,12 +65,12 @@ Provsvar
         datarows = thedata.split("\n")
         rowspec = dict()
         rowsdata = dict()
-        title = ""
+        title = str()
         norm_max = 0 
         norm_min = 0
         #For data specifications:
         for rowidx, row in enumerate(headrows):
-            title = str()
+            #title = str()
             intervall = str()
             Element('assessment').element.innerText = ("test 2")
             try:
@@ -137,7 +137,10 @@ Provsvar
             title = str(specific["title"])
             min = int(specific["norm_min"])
             max = int(specific["norm_max"])
-            intnumber = int(rowsdata[str(i)]) 
+            try:
+              intnumber = int(rowsdata[str(i)]) 
+            except:
+              pass
             Element('assessment').element.innerText = ("test 3.5")
             try:
               if   intnumber < min :
