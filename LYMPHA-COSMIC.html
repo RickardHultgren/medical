@@ -56,6 +56,7 @@ Provsvar
 <py-script>
 from js import console
 def calculate(*args, **kwargs): 
+        Element('assessment').element.innerText = ("test 1")
         headrows = list() 
         datarows = list()
         heads = str(Element('heads').element.value)
@@ -69,6 +70,7 @@ def calculate(*args, **kwargs):
         for rowidx, row in enumerate(headrows):
             title = str()
             intervall = str()
+            Element('assessment').element.innerText = ("test 2")
             try:
               while row[0] == " " :
                 row = row[1:]
@@ -90,6 +92,7 @@ def calculate(*args, **kwargs):
             rowspec[str(rowidx)] = specific                
         #For table data:
         for rowidx, row in enumerate(datarows):
+            Element('assessment').element.innerText = ("test 3")
             try:
               while row[0] == " " :
                 row = row[1:]
