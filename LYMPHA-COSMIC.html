@@ -53,9 +53,9 @@ Provsvar
     <py-env>
     #- re
     </py-env>
-<py-script>
-from js import console
-def calculate(*args, **kwargs): 
+    <py-script>
+    from js import console
+    def calculate(*args, **kwargs): 
         Element('assessment').element.innerText = ("test 1")
         headrows = list() 
         datarows = list()
@@ -165,9 +165,8 @@ def calculate(*args, **kwargs):
                 evaluation="normal"
             Element('assessment').element.input = (str(title))
 
-		</py-script>
-
-			<script type="text/python">
+    </py-script>
+		<script type="text/python">
 			from browser import document, bind, html, alert, window
 			import lympha
 		</script>  
