@@ -19,8 +19,8 @@
 			
     </head>
 <body style="margin:3em;"  onload="brython()">
-<script type="text/python">
-      alert("test")	
+<script type="text/python" src="brython_stdlib.js">
+      from browser import document, bind, html, alert, window
 </script>
 <h1 style="font-style:bold;font-size:2em;font-style:serif;">COSMIC-LYMPHA<br>För uträkning av vidarehandläggning baserat på LYMPHA-skript och lab-svar från COSMIC</h1>
 <hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
@@ -198,11 +198,6 @@ Provsvar
             Element('assessment').element.input = (str(title))
 
     </py-script>
-    <script type="text/python" src="lympha.py"></script>
-		<script type="text/python">
-      from browser import document, bind, html, alert, window
-      alert("test")
-		</script>  
 
 
 			<div style="content">
