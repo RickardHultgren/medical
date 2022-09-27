@@ -165,7 +165,10 @@ Provsvar
 
             except:
               pass
-            toprint = toprint + title + " ; min: " + str(min) + " ; max: " + str(max) + " ; value: " + str(intnumber) + " ; " + evaluation + "\n"
+            try:
+              toprint = toprint + title + " ; min: " + str(min) + " ; max: " + str(max) + " ; value: " + str(intnumber) + " ; " + evaluation + "\n"
+            except:
+              pass
             #except:
             #pass
 
