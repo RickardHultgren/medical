@@ -154,6 +154,10 @@ Provsvar
 								
               else:
                 evaluation="normal"
+
+            except:
+              pass
+            try:
               start_element = document.createElement("input")
               start_element.textContent = title
               start_element.className = "theStarts"
