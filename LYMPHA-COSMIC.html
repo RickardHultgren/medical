@@ -151,14 +151,13 @@ Provsvar
                 evaluation="too low"
               elif intnumber > max :
                 evaluation="too high"
-                thestarts.appendChild(start_element)
 								
               else:
                 evaluation="normal"
               start_element = document.createElement("input")
               start_element.textContent = title
               start_element.className = "theStarts"
-            
+              thestarts.appendChild(start_element)            
 
             except:
               pass
