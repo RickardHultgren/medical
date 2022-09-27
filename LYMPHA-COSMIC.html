@@ -123,7 +123,7 @@ Provsvar
         Element('assessment').element.innerText = ("test 3.1")
         #Assessment:
         toprint = str()
-        thestarts = document.querySelector('thestarts')
+        thestarts = document.querySelector('#thestarts')
         Element('assessment').element.innerText = ("test 3.2")
         for i in range(len(rowspec)):
             #try:
@@ -161,7 +161,7 @@ Provsvar
               start_element = document.createElement("input")
               start_element.textContent = title
               start_element.className = "theStarts"
-              thestarts.appendChild(start_element)            
+              thestarts.appendChild( start_element )            
 
             except:
               pass
