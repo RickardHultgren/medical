@@ -196,7 +196,7 @@ def prevwfunc():
 
 	global exe_list 
 
-	global map_list 
+	global map_list
 	global series 
 	global substates 
 	#global nextstates 
@@ -206,7 +206,7 @@ def prevwfunc():
 	
 	global statement_flow 
 	global statement_value
-	###alert("x7")
+	####alert("x7")
 	global object_list 
 	global exe_objects 
 	
@@ -218,6 +218,7 @@ def prevwfunc():
 
 	temporary_starts =  list()
 	for start_item in document.select(".theStarts"):
+
 		starts.append(start_item.value)
 		temporary_starts.append(start_item.value)
 
@@ -317,14 +318,14 @@ def mapfunc():
 	for step in range(0, int(steps)):
 		#nextstates = list()
 		checked = 0 
-		#alert("zero")
+		##alert("zero")
 		for start in starts:
 			for key in range(0,len(object_list)):
 				endstring = str()
 				strr=str("%s" % object_list[key].name)
 				strr = re.sub("\s+", "", strr.strip())
 				
-				#alert("A1 name:%s  ; datatype:%s  ; flow:%s  ; statement_flow:%s" % (object_list[key].name, object_list[key].datatype, object_list[key].flow, object_list[key].statement_flow ))
+				##alert("A1 name:%s  ; datatype:%s  ; flow:%s  ; statement_flow:%s" % (object_list[key].name, object_list[key].datatype, object_list[key].flow, object_list[key].statement_flow ))
 
 				#if object_list[key].name[-1] == "?":
 				#	pre_statement_flow = 0
@@ -335,14 +336,14 @@ def mapfunc():
 				#		pre_statement_flow = 0
 
 				#	if str(start) == strr :
-				#alert("checkaaa1")
+				##alert("checkaaa1")
 				if str(start) == strr :
-					#alert("checkaaa1")
+					##alert("checkaaa1")
 					if object_list[key].flow == 0 or object_list[key].statement_flow == 0:
-						#alert("checkaaa2")
+						##alert("checkaaa2")
 						pre_statement_flow = 0
 					else:
-						#alert("checkaaa3")
+						##alert("checkaaa3")
 						if object_list[key].name[-1] != "?":
 							pre_statement_flow = 0
 
@@ -360,7 +361,7 @@ def mapfunc():
 				
 							#For binaries
 							if object_list[key].datatype == "bina":	
-									#alert("bina")
+									##alert("bina")
 									if object_list[key].statement_value == "1B" :
 										pre_statement_flow = 1
 										object_list[key].statement_flow = 1
@@ -370,10 +371,10 @@ def mapfunc():
 									checked = 1
 
 							#For binary evaluation
-							#alert("bina eval")
+							##alert("bina eval")
 							#if object_list[key].datatype == "bineval" :# and len(object_list[key].binary_list) >= 1:
 							if len(object_list[key].binary_list) >= 1:
-								#alert("bina eval")
+								##alert("bina eval")
 								pre_statement_flow = 0
 								subfactors = list()
 								#Convecrting variables into values
@@ -389,7 +390,7 @@ def mapfunc():
 											subfactors.append(int(int(object_list[item].value[:-1])))
 								sum1 = subfactors.count(1)
 								sum0 = subfactors.count(0)
-								#alert("%s %s %s" % (object_list[key].operator1, object_list[key].global_relative_variable1), int(sum1))
+								##alert("%s %s %s" % (object_list[key].operator1, object_list[key].global_relative_variable1), int(sum1))
 								if object_list[key].operator1 != None: # and object_list[key].statement_flow == None :
 									if object_list[key].operator1 == "equiv" and int(object_list[key].global_relative_variable1) == int(sum1):
 										pre_statement_flow = 1
@@ -417,7 +418,7 @@ def mapfunc():
 
 							#For binary equations:
 							#if object_list[key].datatype == "bineval" and len(object_list[key].binary_list) >= 1:
-							#	#alert("begin B2")
+							#	##alert("begin B2")
 								#pre_statement_flow = 0
 								#subfactors = list()
 								#Convecrting variables into values
@@ -435,7 +436,7 @@ def mapfunc():
 								#sum0 = subfactors.count(0)
 								#pre_statement_flow = 1
 
-								#alert("begin B3")
+								##alert("begin B3")
 								if object_list[key].operator1 != None: # and object_list[key].statement_flow == None :
 
 									if object_list[key].operator1 == "equiv" and int(object_list[key].global_relative_variable1) == int(sum1):
@@ -458,12 +459,12 @@ def mapfunc():
 										object_list[key].statement_value = ("score: %s\nthreshold: %s" % (sum1, object_list[key].global_relative_variable1))
 									else:
 										pre_statement_flow = 0
-								#alert("begin B4")
+								##alert("begin B4")
 								object_list[key].statement_flow = int(pre_statement_flow)   
 								object_list[key].flow = int(pre_statement_flow)        
 								checked = 1
 
-							#alert("begin C1")
+							##alert("begin C1")
 							#For equations
 							if object_list[key].datatype == "valu":
 							#if object_list[key].statement_value != "" and object_list[key].operator1 == "" :
@@ -579,7 +580,7 @@ def mapfunc():
 
 										object_list[key].statement_flow = int(pre_statement_flow)
    
-							#alert("begin D1")
+							##alert("begin D1")
 							#For nonbinar-evaluations
 							if object_list[key].datatype == "nonbineval" :
 							
@@ -655,10 +656,10 @@ def mapfunc():
 
 					object_list[key].statement_flow = int(pre_statement_flow)
 
-					#alert("begin E1")
+					##alert("begin E1")
 					#if object_list[key].statement_flow == 0 or object_list[key].flow == 0 :    
 					if object_list[key].flow != 1 :    
-						#alert("A8 IF 0 name:%s  ; datatype:%s  ; flow:%s  ; #statement_flow:%s" % (object_list[key].name, object_list[key].datatype, object_list[key].flow, object_list[key].statement_flow ))									
+						##alert("A8 IF 0 name:%s  ; datatype:%s  ; flow:%s  ; #statement_flow:%s" % (object_list[key].name, object_list[key].datatype, object_list[key].flow, object_list[key].statement_flow ))									
 
 						#object_list[key].flow = 0 
 						#object_list[key].statement_flow = 0 
@@ -689,7 +690,7 @@ def mapfunc():
 							graphstr += ('"%s" [label="step %s: %s\\n%s", fillcolor=white, style=filled] ; \n' % (start,step+1,start,str(graph_string)))
 	
 							#graphstr += ('"%s" [label="step %s: %s\\n%s"] \n' % (start,step+1,start,graph_string)) 
-					#alert("before draw")
+					##alert("before draw")
 					if object_list[key].statement_flow == 1:
 
 						graph_string=""
@@ -704,7 +705,7 @@ def mapfunc():
 
 						graphstr += ('"%s" [label="step %s: %s\\n%s", fillcolor=yellow, style=filled] ; \n' % (start,step+1,start,str(graph_string)))
 
-					#alert("before draw2")									
+					##alert("before draw2")									
 					try:	
 						for next_object in object_list[key].next_list :
 
@@ -714,7 +715,7 @@ def mapfunc():
 					except:
 						pass
 
-		#alert("before draw2.1")	
+		##alert("before draw2.1")	
 		for start in starts :
 			for k in range(0,len(object_list)):
 				if object_list[k].name==start:
@@ -722,7 +723,7 @@ def mapfunc():
 						for l in range(0,len(object_list)):  
 							if object_list[l].name == nexting :          
 								nextstates.append(nexting)									
-			#alert("before draw2.2")	
+			##alert("before draw2.2")	
 			if checked == 0:
 				for k in range(0,len(object_list)):
 					if object_list[k].name==start:
@@ -732,7 +733,7 @@ def mapfunc():
 									if object_list[k].flow  == 0 or object_list[k].statement_flow == 0 :
 										object_list[l].flow = 0
 										object_list[l].statement_flow = 0
-				#alert("before draw2.3")	
+				##alert("before draw2.3")	
 				for k in range(0,len(object_list)):
 					if object_list[k].name==start:
 						for nexting in object_list[k].next_list :
@@ -742,7 +743,7 @@ def mapfunc():
 									if object_list[k].flow  == 1 or object_list[k].statement_flow == 1 and object_list[l].flow != 0:
 										object_list[l].flow = 1
 										object_list[l].statement_flow = 1
-		#alert("before draw3")					
+		##alert("before draw3")					
 		checked = 0
 		del starts[:]
 		#starts = list()                           
@@ -847,7 +848,7 @@ def lexer():
 
 		pre_count = int(0)
 		count_objs = int()                 
-		#alert("60")
+		##alert("60")
 		for anobj in arrowobjs:
 			anobj = re.sub("\s*", "", anobj) 
 			#alert(anobj)
@@ -921,7 +922,7 @@ def lexer():
 					thename = object_list[key].name
 					if ("%s" % thename) == sides[0].replace(" ", "") :
 						try:
-							#alert("thename %s,  sides[0] %s" % (thename, sides[0]))
+							##alert("thename %s,  sides[0] %s" % (thename, sides[0]))
 							#For binary values
 							#if str("1B") in str(sides[1]) :           
 							#elif re.compile(".*1B.*").match(sides[1]) :
@@ -965,20 +966,20 @@ def lexer():
 									#preop = re.sub("\|{","", preop)
 									chopcompile = re.compile(r"(<=|>=|!=|==|<|>)")
 									operator_chop = re.split(chopcompile, preop)
-									#alert("operator_chop:[%s]" % operator_chop)
+									##alert("operator_chop:[%s]" % operator_chop)
 									#Tipping point
 									zerochop = operator_chop[0].replace(" ","")
 									object_list[key].global_relative_variable1 = zerochop 
 									# chopped into binary list                                
-									#alert("binvalue")
+									##alert("binvalue")
 									if bin_chopped == 1 :
-											#alert("check1")
+											##alert("check1")
 											binary_sums = list(operator_chop[2].split(','))
 											for binary in binary_sums:
-												#alert("check2")
+												##alert("check2")
 												binary = binary.replace(" ","")
 												if binary != "" :
-													#alert("check3")
+													##alert("check3")
 													binary = str(binary.replace(" ",""))
 													#object_list[key].binary_list += (str(binary)
 													object_list[key].binary_list.append(str(binary))
@@ -1002,6 +1003,7 @@ def lexer():
 			count += 1          
 
 def zcripts(ev):
+	##alert("test")
 	#Web version --- skip local files
 	#Web version
 	theturn = 1
@@ -1015,9 +1017,9 @@ def zcripts(ev):
 	global urls
 
 
-	for an_item in document.select(".theItems"):
-		addresses.append(an_item.value)
-	
+	#for an_item in document.select(".theItems"):
+	#	addresses.append(an_item.value)
+	addresses.append("https://raw.githubusercontent.com/RickardHultgren/LYMPHA-scripts/master/COSMIC-scripts/anemia.lympha")	
 	urls=list()
 	for an_address in addresses:
 		urls.append(urllib.request.urlopen(an_address).read())
@@ -1027,6 +1029,7 @@ def zcripts(ev):
 		filetext = stripComments(str(filetext))
 		filetext = filetext.replace('\n', ' ')
 		filetext = filetext.replace('  ', ' ')
+		#alert(filetext)
 		series.extend(filetext.split(';'))
 
 	#document <= html.BR()			
@@ -1052,25 +1055,31 @@ def zcripts(ev):
 				object_list[k].flow = 1
 				object_list[k].statement_flow = 1
 
+
 	for ztep in range(0, int(steps)) :
-		#alert("aaa0")
+
+
 		if theturn < 3:
+		
 			for start in temporary_starts :
-				
+
 				for k in range(0,len(object_list)):
-					#alert("aa4 [%s]" % object_list[k].name)
-					if object_list[k].name==start and (object_list[k].name[-1] == "?") :
+#Non lympha?
+					##alert("aa4 [%s]" % object_list[k].name)
+					#if object_list[k].name==start and (object_list[k].name[-1] == "?") :
+					if object_list[k].name==start :
+							alert("supertest10")
 							object_list[k].flow = 0 
-							#alert("a1")
+							##alert("a1")
 							object_list[k].statement_flow = 0 
-							#alert("a2")
-							#alert("a3")
+							##alert("a2")
+							##alert("a3")
 							object_list[k].statement_flow = 0
-							#alert("a4")									
+							##alert("a4")									
 							object_list[k].flow = 0
-							#alert("a5")									
+							##alert("a5")									
 							factorform <= str("%s = "% object_list[k].name)
-							#alert("a6")
+							##alert("a6")
 							factorform <= html.INPUT(Type="text", Id=(object_list[k].name),Class="factorItems")
 							factorform <= html.BR()
 							theturn = 2
@@ -1083,7 +1092,7 @@ def zcripts(ev):
 								if object_list[l].name == nexting :          
 									nextstates.append(nexting)
 
-
+		#alert("end1")
 		#Make new starts. Should be done after each starts-loop
 		del temporary_starts[:]
 		for nexting in nextstates: 
@@ -1099,12 +1108,12 @@ def zcripts(ev):
 def turn2func(ev) :
 #The goal is to implement the first step factors
 	global object_list
-	#alert("begin1 %s" % document.select(".factorItems"))         
+	##alert("begin1 %s" % document.select(".factorItems"))         
 	for an_obj in range(0,len(object_list)): 
-					##alert("begin2")
+					###alert("begin2")
 					for a_name in document.select(".factorItems"):
 						try:	
-							#alert("a_name.id:[%s] object_list[an_obj].name:[%s] a_name.value:[%s]" % (a_name.id, object_list[an_obj].name, a_name.value ))
+							##alert("a_name.id:[%s] object_list[an_obj].name:[%s] a_name.value:[%s]" % (a_name.id, object_list[an_obj].name, a_name.value ))
 							if a_name.id == object_list[an_obj].name and a_name.id != "" :
 								object_list[an_obj].statement_value  = a_name.value
 								if a_name.value == "1B" or  a_name.value == "0B" : 
@@ -1118,7 +1127,7 @@ def turn2func(ev) :
 						except:
 							pass
 # End results: name, statement_value, datatype:(bina, valu)
-	#alert("the end")
+	##alert("the end")
 	try:
 		del starts[:]          
 	except:
@@ -1337,6 +1346,7 @@ Provsvar
                 evaluation="too high"
             else:
                 evaluation="normal"
+
             Element('assessment').element.input = (str(title))
 
     </py-script>
@@ -1368,7 +1378,7 @@ Provsvar
 				</form-->	
 				<b>Start nodes:</b>
 				<form id="thestarts">
-				  <input type="text" class="theStarts"/><br>
+				  <!--input type="text" class="theStarts"/--><br>
 				</form>
 				<!--button id="addstart" >Add yet another start node</button--><br>
 				
@@ -1389,8 +1399,8 @@ Provsvar
 				
 				<hr style="width:50vw; right:25vw; z-index:1;position:relative; text-align:center;" />
 
-				<form id="factorlist">
-				  <input type="text" style="hidden" class="factorItems"></input>
+				<form id="factorlist" style="border-width:0.25em;">
+				  <!--input type="text" style="hidden" class="factorItems"></input-->
 				</form>
 				<button id="turn2">Implement variables into script</button><br>
 				<hr style="width:50vw; right:25vw; z-index:1;position:relative; text-align:center;" />
