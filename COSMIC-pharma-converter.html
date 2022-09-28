@@ -70,11 +70,11 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
             #rawitem = rawitem.replace('\d\,\d', '\d\.\d')
             while rawitem[0] == " " :
               try:
-               rawitem = rawitem[1:]
+                rawitem = rawitem[1:]
                 if rawitem[0] != " " :
                     break
               except:
-               pass
+                pass
         
             prerawlist = list()
             if "Tiden har" in rawitem :
