@@ -7,11 +7,11 @@
 		<link rel="stylesheet" href="styles.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Signika+Negative:300,400,600,700&amp;lang=en" />	
-    <script src="//d3js.org/d3.v5.min.js"></script>
+    <script src="//d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
-    <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.7/brython.min.js">
+    <script src="https://unpkg.com/browse/d3-graphviz@2.2.2/build/d3-graphviz.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.1.1/d3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.7/brython.min.js"></script>
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.7/brython_stdlib.min.js">
 </script>	
@@ -21,7 +21,7 @@
 <body style="margin:3em;"  onload="brython()">
 <script type="text/python">
 from browser import document, bind, html, alert, window
-#from javascript import this
+from javascript import this
 import urllib.request
       
 
@@ -1153,14 +1153,14 @@ def add_start(ev):
 	startaform <= html.BR()
 
 document["turn2"].bind("click", turn2func)
-document["addbttn"].bind("click", add_input)
-document["addstart"].bind("click", add_start)
+#document["addbttn"].bind("click", add_input)
+#document["addstart"].bind("click", add_start)
 document["zcriptbttn"].bind("click", zcripts)
-document["menubttn"].bind("click", changeMenu)
+#document["menubttn"].bind("click", changeMenu)
 
-document.getElementById( "index").style.backgroundColor='#EFAB00'
-document.getElementById( "indexsmall").style.backgroundColor='#EFAB00'
-document.getElementById( "index").style.color='#ffffff'
+#document.getElementById( "index").style.backgroundColor='#EFAB00'
+#document.getElementById( "indexsmall").style.backgroundColor='#EFAB00'
+#document.getElementById( "index").style.color='#ffffff'
 #document.getElementById( "index").className="index2active"
 
 </script>
