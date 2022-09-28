@@ -27,8 +27,7 @@ list-style: none;
     display: table;
 }   
 input{
-font-size:32pt; 	font-size:32pt;
-}
+font-size:32pt; 	font-size:32pt; border-width:0.5em;
 
 #FactorForm {
     display: table;
