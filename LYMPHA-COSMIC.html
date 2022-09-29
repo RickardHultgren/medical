@@ -1278,7 +1278,7 @@ Provsvar
         Element('assessment').element.innerText = ("test 3.1")
         #Assessment:
         toprint = str()
-        let startid = document.querySelector('#startid')
+        startid = document.querySelector('#startid')
         Element('assessment').element.innerText = ("test 3.2")
         for i in range(len(rowspec)):
             #try:
@@ -1328,11 +1328,9 @@ Provsvar
             except:
               pass
             start_element = document.createElement("input")
-            try:
-              start_element.value = bintitle
-              start_element.className = "theStarts"
-            except:
-              pass
+            start_element.value = bintitle 
+            start_element.className = "theStarts"
+ 
             #try:
               #start_element.borderColor = "#333"
               #start_element.borderWidth = "0.1125em"
