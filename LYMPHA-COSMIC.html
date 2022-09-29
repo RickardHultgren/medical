@@ -1040,7 +1040,10 @@ def zcripts(ev):
 	#document <= html.BR()				
 	modegraph = True
 	temporary_starts = list()
-	steps = int(document['stepNr'].value)
+	try:
+		steps = int(document['stepNr'].value)
+	except:
+		pass
 	for start_item in document.select(".theStarts"):
 		starts.append(start_item.value)
 		temporary_starts.append(start_item.value)
@@ -1061,16 +1064,16 @@ def zcripts(ev):
 
 	for ztep in range(0, int(steps)) :
 
-
+		alert("1")
 		if theturn < 3:
-			if len(temporary_starts) > 0 :
+			#if len(temporary_starts) >= 0 :
+				alert(steps)
 				for start in temporary_starts :
-
+					alert("3")
 					for k in range(0,len(object_list)):
-#Non lympha?
 						###alert("aa4 [%s]" % object_list[k].name)
-						#if object_list[k].name==start and (object_list[k].name[-1] == "?") :
-						if object_list[k].name==start :
+						if object_list[k].name==start and (object_list[k].name[-1] == "?") :
+						#if object_list[k].name==start :
 								#alert("supertest10")
 								object_list[k].flow = 0 
 								###alert("a1")
@@ -1091,13 +1094,13 @@ def zcripts(ev):
 			
 
 				#Loading the next starts from the current starts.
-					if object_list[k].name==start :
-						for nexting in object_list[k].next_list :
-							for l in range(0,len(object_list)):  
-								if object_list[l].name == nexting :          
-									nextstates.append(nexting)
-			else:
-				factorform <= str("No matching variables in the script.")
+						if object_list[k].name==start :
+							for nexting in object_list[k].next_list :
+								for l in range(0,len(object_list)):  
+									if object_list[l].name == nexting :          
+										nextstates.append(nexting)
+			#else:
+			#	factorform <= str("No matching variables in the script.")
 		##alert("end1")
 		#Make new starts. Should be done after each starts-loop
 		del temporary_starts[:]
@@ -1163,7 +1166,7 @@ def add_input(ev):
 
 
 def add_start(ev):
-	startform = document['thestarts']
+	startform = document['theStarts']
 	startform <= html.INPUT(type="text", Class="theStarts")
 	startaform <= html.BR()
 
@@ -1182,32 +1185,26 @@ document["zcriptbttn"].bind("click", zcripts)
 <h1 style="font-style:bold;font-size:2em;font-style:serif;">COSMIC-LYMPHA<br>För uträkning av vidarehandläggning baserat på LYMPHA-skript och lab-svar från COSMIC</h1>
 <hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
 Markera läkemdlentyperna av prov till vänster i lab-svars-modulen i COSMIC. Tryck Ctrl + C. Sätt markören i rutan "Provtyper" och trycka på Ctrl + V. Klicka sedan någonstans r tabellen med provsvar. Tryck sedan Ctrl + A och därefter Ctrl + C. Sätt markören i rutan "Provsvar" och trycka på Ctrl + V. Tryck sedan på knappen "Kalkylera".
-<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;margin-bottom:1.5em" >
+<div>
+<div style="display:inline-block;margin:1em;">Provtyper (test \t enhet \t ref.värde-ref.värde)
 <br>
-<br>
-Provtyper
-<br>
-<textarea cols="100" rows="10" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="heads"> </textarea>
-<br>
-<br>
+<textarea cols="50" rows="10" style="display:inline;margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="heads"> </textarea>
+</div>
+<div style="display:inline-block;margin:1em;">
 Provsvar
 <br>
 <textarea cols="100" rows="10" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="thedata"> </textarea>
-<br>
-
-	<button id="calcbttn" type="submit" pys-onClick="calculate">
+</div>
+</div>
+<div style="display:block; position:relative;">
+	<button id="calcbttn" type="submit" pys-onClick="calculate" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">
 		Kalkylera
 	</button>
+</div>
 
-<div id="assessment"></div>
-	
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" />
-				<form id="steps">
-				
-				  <b>Number of steps that should be taken:</b><br>
-				  
-				
-				</form>
+<div id="assessment" style="display:block;width:50em;margin:1em;"></div>
+</div>
     <py-env>
     #- re
     </py-env>
@@ -1281,17 +1278,17 @@ Provsvar
         Element('assessment').element.innerText = ("test 3.1")
         #Assessment:
         toprint = str()
-        thestarts = document.querySelector('#thestarts')
+        startid = document.querySelector('#startid')
         Element('assessment').element.innerText = ("test 3.2")
         for i in range(len(rowspec)):
             #try:
             Element('assessment').element.innerText = ("test 3.3")
-            j = int(int(i))
-            specific = rowspec[str(j)]
+            #j = int(int(i))
+            specific = rowspec[str(i)]
             #number = str(rowsdata[str(i)])
             #number = number.replace(" ", "")
             evaluation = str()
-            Element('assessment').element.innerText = ("test 3.4")
+            
             try:
               title = str(specific["title"])
               min = int(specific["norm_min"])
@@ -1303,7 +1300,6 @@ Provsvar
               intnumber = int(rowsdata[str(i)]) 
             except:
               pass
-            Element('assessment').element.innerText = ("test 3.6")
             try:
               if   intnumber < min :
                 evaluation="decreased"
@@ -1316,22 +1312,33 @@ Provsvar
                 specific["evaluation"] = "normal"
             except:
               pass
+            bintitle=str()
             try:
               #Transform into binary LYMPHA-datatypes
               bintitle = title.replace("-","_")
+            except:
+              pass
+            try:
               if specific["evaluation"] == "decreased":
                   bintitle = bintitle + "_decreased?"
               elif specific["evaluation"] == "increased":
                   bintitle = bintitle + "_increased?"
               elif specific["evaluation"] == "normal":
                   bintitle = bintitle + "_normal?"
-              start_element = document.createElement("input")
-              start_element.value = bintitle
-              start_element.className = "theStarts"
-              thestarts.appendChild( start_element )            
-
             except:
               pass
+            start_element = document.createElement("input")
+            try:
+              start_element.value = bintitle
+              start_element.className = "theStarts"
+            except:
+              pass
+            #try:
+              #start_element.borderColor = "#333"
+              #start_element.borderWidth = "0.1125em"
+            #except:
+              #pass
+            startid.appendChild( start_element )            
             try:
               toprint = toprint + title + " ; min: " + str(min) + " ; max: " + str(max) + " ; value: " + str(intnumber) + " ; " + evaluation + "\n"
             except:
@@ -1367,57 +1374,30 @@ Provsvar
     </py-script>
 
 
-			<div style="content">
-
-		<div style="content">
-			<p class="container" style="">		
+	<div style="display:block;" >
+				<b style="margin:0em;>Start nodes:</b>
+				<form id="startid" style="margin-bottom:1em;">
+				</form>
+	</div>
+	<div style="display:inline;" >
+		<div style="display:inline;">
+			<p class="container" style="display:inline;">		
 		
 
-				<!--img src="logo.png" style="width:25vw;">
-				<h1>LYMPHA-online</h1-->
-				<br>
-				<br>
-
-				
-				<br><br>
-
-				<!--form>
-					<input type="radio" name="arg" value="" />Let the value of variables decide paths to be shown.<br>
-					<input type="radio" name="arg" value="" />Let all the paths available be shown.<br>
-				</form-->
-				<!--br>
-				<br-->
-				<!--form>
-					<input type="radio" name="out" value="" />Graph output.<br>
-					<input type="radio" name="out" value="" />Step output.<br>
-				</form-->	
-				<b>Start nodes:</b>
-				<form id="thestarts">
-				  <!--input type="text" class="theStarts"/--><br>
-				</form>
-				<!--button id="addstart" >Add yet another start node</button--><br>
-				
-				<br>
-				<br>
-
-				<form id="steps">
+				<form id="steps" style="display:inline;">
 				
 				  <b>Number of steps that should be taken:</b><br>
-				  <input type="text" id="stepNr" class="stepNr"/><br>
+				  <input type="text" id="stepNr" class="stepNr" style="border-width:0.25em;border-color:#888;"/><br>
 				
 				</form>
 				
-				<br>
-				<br>
-
-				<button id="zcriptbttn">Check for variable factors</button><br>
+				<button id="zcriptbttn" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">Check for variable factors</button><br>
 				
-				<hr style="width:50vw; right:25vw; z-index:1;position:relative; text-align:center;" />
-
 				<form id="factorlist" style="border-width:0.25em;">
 				  <!--input type="text" style="hidden" class="factorItems"></input-->
 				</form>
-				<button id="turn2">Implement variables into script</button><br>
+				<button id="turn2" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">Implement variables into script</button><br>
+
 				<hr style="width:50vw; right:25vw; z-index:1;position:relative; text-align:center;" />
 				<span style="color:black;"><b>Result:</b><br></span>
 				<form id="resultlist">
