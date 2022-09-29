@@ -1080,7 +1080,10 @@ def zcripts(ev):
 							##alert("a5")									
 							factorform <= str("%s = "% object_list[k].name)
 							##alert("a6")
-							factorform <= html.INPUT(Type="text", Id=(object_list[k].name),Class="factorItems")
+							if object_list[k].name[-10:] == "_decreased" or object_list[k].name[-10:] == "_increased" or object_list[k].name[-7:] == "_normal":
+								factorform <= html.INPUT(Type="text", Id=(object_list[k].name),Class="factorItems",Value="1B")
+							else:
+								factorform <= html.INPUT(Type="text", Id=(object_list[k].name),Class="factorItems")
 							factorform <= html.BR()
 							theturn = 2
 			
@@ -1300,18 +1303,27 @@ Provsvar
             Element('assessment').element.innerText = ("test 3.6")
             try:
               if   intnumber < min :
-                evaluation="too low"
+                evaluation="decreased"
+                specific["evaluation"] = "decreased"
               elif intnumber > max :
-                evaluation="too high"
-								
+                evaluation="increased"
+                specific["evaluation"] = "increased"
               else:
                 evaluation="normal"
-
+                specific["evaluation"] = "normal"
             except:
               pass
             try:
+              #Transform into binary LYMPHA-datatypes
+              bintitle = title.replace("-","_")
+              if specific["evaluation"] == "decreased":
+                  bintitle = bintitle + "_decreased"
+              elif specific["evaluation"] == "increased":
+                  bintitle = bintitle + "_increased"
+              elif specific["evaluation"] == "normal":
+                  bintitle = bintitle + "_normal"
               start_element = document.createElement("input")
-              start_element.value = title
+              start_element.value = bintitle
               start_element.className = "theStarts"
               thestarts.appendChild( start_element )            
 
