@@ -1320,11 +1320,11 @@ Provsvar
               #Transform into binary LYMPHA-datatypes
               bintitle = title.replace("-","_")
               if specific["evaluation"] == "decreased":
-                  bintitle = bintitle + "_decreased"
+                  bintitle = bintitle + "_decreased?"
               elif specific["evaluation"] == "increased":
-                  bintitle = bintitle + "_increased"
+                  bintitle = bintitle + "_increased?"
               elif specific["evaluation"] == "normal":
-                  bintitle = bintitle + "_normal"
+                  bintitle = bintitle + "_normal?"
               start_element = document.createElement("input")
               start_element.value = bintitle
               start_element.className = "theStarts"
