@@ -1082,7 +1082,7 @@ def zcripts(ev):
 								object_list[k].flow = 0
 								###alert("a5")									
 								factorform <= str("%s = "% object_list[k].name)
-								if object_list[k].name[-10:] == "_decreased?" or object_list[k].name[-11:] == "_increased?" or object_list[k].name[-8:] == "_normal?":
+								if object_list[k].name[-11:] == "_decreased?" or object_list[k].name[-11:] == "_increased?" or object_list[k].name[-8:] == "_normal?":
 									factorform <= html.INPUT(Type="text", Id=(object_list[k].name),Class="factorItems",Value="1B")
 								else:
 									factorform <= html.INPUT(Type="text", Id=(object_list[k].name),Class="factorItems")
@@ -1183,19 +1183,18 @@ document["zcriptbttn"].bind("click", zcripts)
 <hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
 Markera läkemdlentyperna av prov till vänster i lab-svars-modulen i COSMIC. Tryck Ctrl + C. Sätt markören i rutan "Provtyper" och trycka på Ctrl + V. Klicka sedan någonstans r tabellen med provsvar. Tryck sedan Ctrl + A och därefter Ctrl + C. Sätt markören i rutan "Provsvar" och trycka på Ctrl + V. Tryck sedan på knappen "Kalkylera".
 <hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
+<div>
+<div style="display:inline-block;margin:1em;">Provtyper (test \t enhet \t ref.värde-ref.värde)
 <br>
-<br>
-Provtyper
-<br>
-<textarea cols="100" rows="10" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="heads"> </textarea>
-<br>
-<br>
+<textarea cols="50" rows="10" style="display:inline;margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="heads"> </textarea>
+</div>
+<div style="display:inline-block;margin:1em;">
 Provsvar
 <br>
 <textarea cols="100" rows="10" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="thedata"> </textarea>
-<br>
-
-	<button id="calcbttn" type="submit" pys-onClick="calculate">
+</div>
+</div>
+	<button id="calcbttn" type="submit" pys-onClick="calculate" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">
 		Kalkylera
 	</button>
 
@@ -1410,14 +1409,14 @@ Provsvar
 				<br>
 				<br>
 
-				<button id="zcriptbttn">Check for variable factors</button><br>
+				<button id="zcriptbttn" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">Check for variable factors</button><br>
 				
 				<hr style="width:50vw; right:25vw; z-index:1;position:relative; text-align:center;" />
 
 				<form id="factorlist" style="border-width:0.25em;">
 				  <!--input type="text" style="hidden" class="factorItems"></input-->
 				</form>
-				<button id="turn2">Implement variables into script</button><br>
+				<button id="turn2" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">Implement variables into script</button><br>
 				<hr style="width:50vw; right:25vw; z-index:1;position:relative; text-align:center;" />
 				<span style="color:black;"><b>Result:</b><br></span>
 				<form id="resultlist">
