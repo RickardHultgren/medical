@@ -1082,7 +1082,7 @@ def zcripts(ev):
 								object_list[k].flow = 0
 								###alert("a5")									
 								factorform <= str("%s = "% object_list[k].name)
-								if object_list[k].name[-10:] == "_decreased" or object_list[k].name[-10:] == "_increased" or object_list[k].name[-7:] == "_normal":
+								if object_list[k].name[-10:] == "_decreased?" or object_list[k].name[-11:] == "_increased?" or object_list[k].name[-8:] == "_normal?":
 									factorform <= html.INPUT(Type="text", Id=(object_list[k].name),Class="factorItems",Value="1B")
 								else:
 									factorform <= html.INPUT(Type="text", Id=(object_list[k].name),Class="factorItems")
@@ -1204,7 +1204,7 @@ Provsvar
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" />
 				<form id="steps">
 				
-				  <b>Number of steps that should be taken:</b><br>
+				  <b></b>
 				  
 				
 				</form>
