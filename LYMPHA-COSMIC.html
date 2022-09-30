@@ -1316,21 +1316,17 @@ Provsvar
                 specific["evaluation"] = "normal"
             except:
               pass
-            try:
-              #Transform into binary LYMPHA-datatypes
-              if specific["evaluation"] == "decreased":
-                  bintitle = str(bintitle + "_decreased?")
-              elif specific["evaluation"] == "increased":
-                  bintitle = str(bintitle + "_increased?")
-              elif specific["evaluation"] == "normal":
-                  bintitle = str(bintitle + "_normal?")
-              start_element = document.createElement("input")
-              start_element.value = bintitle
-              start_element.className = "theStarts"
-              thestarts.appendChild( start_element )            
-
-            except:
-              pass
+            #Transform into binary LYMPHA-datatypes
+            if specific["evaluation"] == "decreased":
+                bintitle = str(bintitle + "_decreased?")
+            elif specific["evaluation"] == "increased":
+                bintitle = str(bintitle + "_increased?")
+            elif specific["evaluation"] == "normal":
+                bintitle = str(bintitle + "_normal?")
+            start_element = document.createElement("input")
+            start_element.value = bintitle
+            start_element.className = "theStarts"
+            thestarts.appendChild( start_element )            
             try:
               toprint = toprint + title + " ; min: " + str(min) + " ; max: " + str(max) + " ; value: " + str(intnumber) + " ; " + evaluation + "\n"
             except:
