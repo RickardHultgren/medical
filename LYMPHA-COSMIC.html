@@ -187,7 +187,7 @@ object_list = Statement(object_list)
 
 #def prevwfunc(ev):
 def prevwfunc():
-	##alert("prevfun 1")
+	#alert("prevfun 1")
 	global d3
 	global argv_len 
 	global filename 
@@ -207,7 +207,7 @@ def prevwfunc():
 	
 	global statement_flow 
 	global statement_value
-	######alert("x7")
+	#####alert("x7")
 	global object_list 
 	global exe_objects 
 	
@@ -216,17 +216,17 @@ def prevwfunc():
 	global steps
 	graphstr = 'digraph lympha {\nnode [shape=record];'
 	#ADDED INT IN INT(STEPS)
-	##alert("prevfun 2")
+	#alert("prevfun 2")
 	temporary_starts =  list()
 	for start_item in document.select(".theStarts"):
-		##alert("prevfun 3")
+		#alert("prevfun 3")
 		starts.append(start_item.value)
 		temporary_starts.append(start_item.value)
 
 	temp_nextstates = list()
 
 	for step in range(0, int(steps)):
-		##alert("prevfun 4")
+		#alert("prevfun 4")
 		for start in temporary_starts:
 			for key in range(0,len(object_list)):
 				endstring = str()
@@ -270,7 +270,7 @@ def prevwfunc():
 				temporary_starts.append(nexting) 
 		del temp_nextstates[:]
 	graphstr += '}'
-	##alert("prevfun 10")
+	#alert("prevfun 10")
 	try:
 						#graphstr += "}"
 						#d3 = window.d3
@@ -320,14 +320,14 @@ def mapfunc():
 	for step in range(0, int(steps)):
 		#nextstates = list()
 		checked = 0 
-		####alert("zero")
+		###alert("zero")
 		for start in starts:
 			for key in range(0,len(object_list)):
 				endstring = str()
 				strr=str("%s" % object_list[key].name)
 				strr = re.sub("\s+", "", strr.strip())
 				
-				####alert("A1 name:%s  ; datatype:%s  ; flow:%s  ; statement_flow:%s" % (object_list[key].name, object_list[key].datatype, object_list[key].flow, object_list[key].statement_flow ))
+				###alert("A1 name:%s  ; datatype:%s  ; flow:%s  ; statement_flow:%s" % (object_list[key].name, object_list[key].datatype, object_list[key].flow, object_list[key].statement_flow ))
 
 				#if object_list[key].name[-1] == "?":
 				#	pre_statement_flow = 0
@@ -338,14 +338,14 @@ def mapfunc():
 				#		pre_statement_flow = 0
 
 				#	if str(start) == strr :
-				##alert("checkaaa1")
+				#alert("checkaaa1")
 				if str(start) == strr :
-					##alert("checkaaa1")
+					#alert("checkaaa1")
 					if object_list[key].flow == 0 or object_list[key].statement_flow == 0:
-						##alert("checkaaa2")
+						#alert("checkaaa2")
 						pre_statement_flow = 0
 					else:
-						##alert("checkaaa3")
+						#alert("checkaaa3")
 						if object_list[key].name[-1] != "?":
 							pre_statement_flow = 0
 
@@ -363,7 +363,7 @@ def mapfunc():
 				
 							#For binaries
 							if object_list[key].datatype == "bina":	
-									##alert("bina")
+									#alert("bina")
 									if object_list[key].statement_value == "1B" :
 										pre_statement_flow = 1
 										object_list[key].statement_flow = 1
@@ -373,10 +373,10 @@ def mapfunc():
 									checked = 1
 
 							#For binary evaluation
-							####alert("bina eval")
+							###alert("bina eval")
 							#if object_list[key].datatype == "bineval" :# and len(object_list[key].binary_list) >= 1:
 							if len(object_list[key].binary_list) >= 1:
-								####alert("bina eval")
+								###alert("bina eval")
 								pre_statement_flow = 0
 								subfactors = list()
 								#Convecrting variables into values
@@ -392,7 +392,7 @@ def mapfunc():
 											subfactors.append(int(int(object_list[item].value[:-1])))
 								sum1 = subfactors.count(1)
 								sum0 = subfactors.count(0)
-								####alert("%s %s %s" % (object_list[key].operator1, object_list[key].global_relative_variable1), int(sum1))
+								###alert("%s %s %s" % (object_list[key].operator1, object_list[key].global_relative_variable1), int(sum1))
 								if object_list[key].operator1 != None: # and object_list[key].statement_flow == None :
 									if object_list[key].operator1 == "equiv" and int(object_list[key].global_relative_variable1) == int(sum1):
 										pre_statement_flow = 1
@@ -420,7 +420,7 @@ def mapfunc():
 
 							#For binary equations:
 							#if object_list[key].datatype == "bineval" and len(object_list[key].binary_list) >= 1:
-							#	####alert("begin B2")
+							#	###alert("begin B2")
 								#pre_statement_flow = 0
 								#subfactors = list()
 								#Convecrting variables into values
@@ -438,7 +438,7 @@ def mapfunc():
 								#sum0 = subfactors.count(0)
 								#pre_statement_flow = 1
 
-								####alert("begin B3")
+								###alert("begin B3")
 								if object_list[key].operator1 != None: # and object_list[key].statement_flow == None :
 
 									if object_list[key].operator1 == "equiv" and int(object_list[key].global_relative_variable1) == int(sum1):
@@ -461,12 +461,12 @@ def mapfunc():
 										object_list[key].statement_value = ("score: %s\nthreshold: %s" % (sum1, object_list[key].global_relative_variable1))
 									else:
 										pre_statement_flow = 0
-								####alert("begin B4")
+								###alert("begin B4")
 								object_list[key].statement_flow = int(pre_statement_flow)   
 								object_list[key].flow = int(pre_statement_flow)        
 								checked = 1
 
-							####alert("begin C1")
+							###alert("begin C1")
 							#For equations
 							if object_list[key].datatype == "valu":
 							#if object_list[key].statement_value != "" and object_list[key].operator1 == "" :
@@ -582,7 +582,7 @@ def mapfunc():
 
 										object_list[key].statement_flow = int(pre_statement_flow)
    
-							####alert("begin D1")
+							###alert("begin D1")
 							#For nonbinar-evaluations
 							if object_list[key].datatype == "nonbineval" :
 							
@@ -658,10 +658,10 @@ def mapfunc():
 
 					object_list[key].statement_flow = int(pre_statement_flow)
 
-					##alert("begin E1")
+					#alert("begin E1")
 					#if object_list[key].statement_flow == 0 or object_list[key].flow == 0 :    
 					if object_list[key].flow != 1 :    
-						####alert("A8 IF 0 name:%s  ; datatype:%s  ; flow:%s  ; #statement_flow:%s" % (object_list[key].name, object_list[key].datatype, object_list[key].flow, object_list[key].statement_flow ))									
+						###alert("A8 IF 0 name:%s  ; datatype:%s  ; flow:%s  ; #statement_flow:%s" % (object_list[key].name, object_list[key].datatype, object_list[key].flow, object_list[key].statement_flow ))									
 
 						#object_list[key].flow = 0 
 						#object_list[key].statement_flow = 0 
@@ -692,7 +692,7 @@ def mapfunc():
 							graphstr += ('"%s" [label="step %s: %s\\n%s", fillcolor=white, style=filled] ; \n' % (start,step+1,start,str(graph_string)))
 	
 							#graphstr += ('"%s" [label="step %s: %s\\n%s"] \n' % (start,step+1,start,graph_string)) 
-					####alert("before draw")
+					###alert("before draw")
 					if object_list[key].statement_flow == 1:
 
 						graph_string=""
@@ -707,7 +707,7 @@ def mapfunc():
 
 						graphstr += ('"%s" [label="step %s: %s\\n%s", fillcolor=yellow, style=filled] ; \n' % (start,step+1,start,str(graph_string)))
 
-					####alert("before draw2")									
+					###alert("before draw2")									
 					try:	
 						for next_object in object_list[key].next_list :
 
@@ -717,7 +717,7 @@ def mapfunc():
 					except:
 						pass
 
-		##alert("before draw2.1")	
+		#alert("before draw2.1")	
 		for start in starts :
 			for k in range(0,len(object_list)):
 				if object_list[k].name==start:
@@ -725,7 +725,7 @@ def mapfunc():
 						for l in range(0,len(object_list)):  
 							if object_list[l].name == nexting :          
 								nextstates.append(nexting)									
-			####alert("before draw2.2")	
+			###alert("before draw2.2")	
 			if checked == 0:
 				for k in range(0,len(object_list)):
 					if object_list[k].name==start:
@@ -735,7 +735,7 @@ def mapfunc():
 									if object_list[k].flow  == 0 or object_list[k].statement_flow == 0 :
 										object_list[l].flow = 0
 										object_list[l].statement_flow = 0
-				####alert("before draw2.3")	
+				###alert("before draw2.3")	
 				for k in range(0,len(object_list)):
 					if object_list[k].name==start:
 						for nexting in object_list[k].next_list :
@@ -745,7 +745,7 @@ def mapfunc():
 									if object_list[k].flow  == 1 or object_list[k].statement_flow == 1 and object_list[l].flow != 0:
 										object_list[l].flow = 1
 										object_list[l].statement_flow = 1
-		##alert("before draw3")					
+		#alert("before draw3")					
 		checked = 0
 		del starts[:]
 		#starts = list()                           
@@ -851,10 +851,10 @@ def lexer():
 
 		pre_count = int(0)
 		count_objs = int()                 
-		####alert("60")
+		###alert("60")
 		for anobj in arrowobjs:
 			anobj = re.sub("\s*", "", anobj) 
-			###alert(anobj)
+			##alert(anobj)
 			eqobjs = re.compile(r"((<=)|(>=)|(!=)|(==)(<)|(>))").split(anobj)
 			taken = 0
 			#Check if the object already exists
@@ -925,7 +925,7 @@ def lexer():
 					thename = object_list[key].name
 					if ("%s" % thename) == sides[0].replace(" ", "") :
 						try:
-							####alert("thename %s,  sides[0] %s" % (thename, sides[0]))
+							###alert("thename %s,  sides[0] %s" % (thename, sides[0]))
 							#For binary values
 							#if str("1B") in str(sides[1]) :           
 							#elif re.compile(".*1B.*").match(sides[1]) :
@@ -969,20 +969,20 @@ def lexer():
 									#preop = re.sub("\|{","", preop)
 									chopcompile = re.compile(r"(<=|>=|!=|==|<|>)")
 									operator_chop = re.split(chopcompile, preop)
-									####alert("operator_chop:[%s]" % operator_chop)
+									###alert("operator_chop:[%s]" % operator_chop)
 									#Tipping point
 									zerochop = operator_chop[0].replace(" ","")
 									object_list[key].global_relative_variable1 = zerochop 
 									# chopped into binary list                                
-									####alert("binvalue")
+									###alert("binvalue")
 									if bin_chopped == 1 :
-											####alert("check1")
+											###alert("check1")
 											binary_sums = list(operator_chop[2].split(','))
 											for binary in binary_sums:
-												####alert("check2")
+												###alert("check2")
 												binary = binary.replace(" ","")
 												if binary != "" :
-													####alert("check3")
+													###alert("check3")
 													binary = str(binary.replace(" ",""))
 													#object_list[key].binary_list += (str(binary)
 													object_list[key].binary_list.append(str(binary))
@@ -1006,7 +1006,7 @@ def lexer():
 			count += 1          
 
 def zcripts(ev):
-	##alert("test")
+	#alert("test")
 	#Web version --- skip local files
 	#Web version
 	theturn = 1
@@ -1032,7 +1032,7 @@ def zcripts(ev):
 		filetext = stripComments(str(filetext))
 		filetext = filetext.replace('\n', ' ')
 		filetext = filetext.replace('  ', ' ')
-		###alert(filetext)
+		##alert(filetext)
 		series.extend(filetext.split(';'))
 
 	#document <= html.BR()			
@@ -1040,14 +1040,11 @@ def zcripts(ev):
 	#document <= html.BR()				
 	modegraph = True
 	temporary_starts = list()
-	try:
-		steps = int(document['stepNr'].value)
-	except:
-		pass
+	steps = int(document['stepNr'].value)
 	for start_item in document.select(".theStarts"):
 		starts.append(start_item.value)
 		temporary_starts.append(start_item.value)
-	###alert(temporary_starts)
+	##alert(temporary_starts)
 	lexer()
 	#Preview
 	prevwfunc()				        
@@ -1064,28 +1061,28 @@ def zcripts(ev):
 
 	for ztep in range(0, int(steps)) :
 
-		#alert("1")
+
 		if theturn < 3:
-			#if len(temporary_starts) >= 0 :
-				#alert(steps)
+			if len(temporary_starts) > 0 :
 				for start in temporary_starts :
-					#alert("3")
+
 					for k in range(0,len(object_list)):
-						####alert("aa4 [%s]" % object_list[k].name)
-						if object_list[k].name==start and (object_list[k].name[-1] == "?") :
-						#if object_list[k].name==start :
-								##alert("supertest10")
+#Non lympha?
+						###alert("aa4 [%s]" % object_list[k].name)
+						#if object_list[k].name==start and (object_list[k].name[-1] == "?") :
+						if object_list[k].name==start :
+								#alert("supertest10")
 								object_list[k].flow = 0 
-								####alert("a1")
+								###alert("a1")
 								object_list[k].statement_flow = 0 
-								####alert("a2")
-								####alert("a3")
+								###alert("a2")
+								###alert("a3")
 								object_list[k].statement_flow = 0
-								####alert("a4")									
+								###alert("a4")									
 								object_list[k].flow = 0
-								####alert("a5")									
+								###alert("a5")									
 								factorform <= str("%s = "% object_list[k].name)
-								if object_list[k].name[-11:] == "_decreased?" or object_list[k].name[-11:] == "_increased?" or object_list[k].name[-8:] == "_normal?":
+								if object_list[k].name[-10:] == "_decreased" or object_list[k].name[-10:] == "_increased" or object_list[k].name[-7:] == "_normal":
 									factorform <= html.INPUT(Type="text", Id=(object_list[k].name),Class="factorItems",Value="1B")
 								else:
 									factorform <= html.INPUT(Type="text", Id=(object_list[k].name),Class="factorItems")
@@ -1094,14 +1091,14 @@ def zcripts(ev):
 			
 
 				#Loading the next starts from the current starts.
-						if object_list[k].name==start :
-							for nexting in object_list[k].next_list :
-								for l in range(0,len(object_list)):  
-									if object_list[l].name == nexting :          
-										nextstates.append(nexting)
-			#else:
-			#	factorform <= str("No matching variables in the script.")
-		###alert("end1")
+					if object_list[k].name==start :
+						for nexting in object_list[k].next_list :
+							for l in range(0,len(object_list)):  
+								if object_list[l].name == nexting :          
+									nextstates.append(nexting)
+			else:
+				factorform <= str("No matching variables in the script.")
+		##alert("end1")
 		#Make new starts. Should be done after each starts-loop
 		del temporary_starts[:]
 		for nexting in nextstates: 
@@ -1117,12 +1114,12 @@ def zcripts(ev):
 def turn2func(ev) :
 #The goal is to implement the first step factors
 	global object_list
-	####alert("begin1 %s" % document.select(".factorItems"))         
+	###alert("begin1 %s" % document.select(".factorItems"))         
 	for an_obj in range(0,len(object_list)): 
-					#####alert("begin2")
+					####alert("begin2")
 					for a_name in document.select(".factorItems"):
 						try:	
-							####alert("a_name.id:[%s] object_list[an_obj].name:[%s] a_name.value:[%s]" % (a_name.id, object_list[an_obj].name, a_name.value ))
+							###alert("a_name.id:[%s] object_list[an_obj].name:[%s] a_name.value:[%s]" % (a_name.id, object_list[an_obj].name, a_name.value ))
 							if a_name.id == object_list[an_obj].name and a_name.id != "" :
 								object_list[an_obj].statement_value  = a_name.value
 								if a_name.value == "1B" or  a_name.value == "0B" : 
@@ -1136,7 +1133,7 @@ def turn2func(ev) :
 						except:
 							pass
 # End results: name, statement_value, datatype:(bina, valu)
-	####alert("the end")
+	###alert("the end")
 	try:
 		del starts[:]          
 	except:
@@ -1145,7 +1142,7 @@ def turn2func(ev) :
 		for start_item in document.select(".theStarts"):
 			starts.append(start_item.value)
 			temporary_starts.append(start_item.value)
-		###alert(starts)
+		##alert(starts)
 	except:
 		pass
          
@@ -1166,7 +1163,7 @@ def add_input(ev):
 
 
 def add_start(ev):
-	startform = document['theStarts']
+	startform = document['thestarts']
 	startform <= html.INPUT(type="text", Class="theStarts")
 	startaform <= html.BR()
 
@@ -1185,32 +1182,37 @@ document["zcriptbttn"].bind("click", zcripts)
 <h1 style="font-style:bold;font-size:2em;font-style:serif;">COSMIC-LYMPHA<br>För uträkning av vidarehandläggning baserat på LYMPHA-skript och lab-svar från COSMIC</h1>
 <hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
 Markera läkemdlentyperna av prov till vänster i lab-svars-modulen i COSMIC. Tryck Ctrl + C. Sätt markören i rutan "Provtyper" och trycka på Ctrl + V. Klicka sedan någonstans r tabellen med provsvar. Tryck sedan Ctrl + A och därefter Ctrl + C. Sätt markören i rutan "Provsvar" och trycka på Ctrl + V. Tryck sedan på knappen "Kalkylera".
-<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;margin-bottom:1.5em" >
-<div>
-<div style="display:inline-block;margin:1em;">Provtyper (test \t enhet \t ref.värde-ref.värde)
+<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
 <br>
-<textarea cols="50" rows="10" style="display:inline;margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="heads"> </textarea>
-</div>
-<div style="display:inline-block;margin:1em;">
+<br>
+Provtyper
+<br>
+<textarea cols="100" rows="10" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="heads"> </textarea>
+<br>
+<br>
 Provsvar
 <br>
 <textarea cols="100" rows="10" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="thedata"> </textarea>
-</div>
-</div>
-<div style="display:block; position:relative;">
-	<button id="calcbttn" type="submit" pys-onClick="calculate" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">
+<br>
+
+	<button id="calcbttn" type="submit" pys-onClick="calculate">
 		Kalkylera
 	</button>
-</div>
 
-<div id="assessment" style="display:block;width:50em;margin:1em;"></div>
-</div>
+<div id="assessment"></div>
+	
+<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" />
+				<form id="steps">
+				
+				  <b>Number of steps that should be taken:</b><br>
+				  
+				
+				</form>
     <py-env>
     #- re
     </py-env>
     <py-script>
     from js import console
-    from js import document
     def calculate(*args, **kwargs): 
         Element('assessment').element.innerText = ("test 1")
         headrows = list() 
@@ -1228,6 +1230,7 @@ Provsvar
         for rowidx, row in enumerate(headrows):
             title = str()
             intervall = str()
+            Element('assessment').element.innerText = ("test 2")
             try:
               while row[0] == " " :
                 row = row[1:]
@@ -1235,12 +1238,12 @@ Provsvar
                     break
             except:
               pass
+            Element('assessment').element.innerText = ("test 2.1")
             rowlist = row.split("\t")
             specific = dict()
             for idx, subitem in enumerate(rowlist):
-              
                 if idx == 0 :
-                    title = str(subitem)
+                    title = subitem
                     specific["title"] = title
                 if idx == 2 :
                   try:
@@ -1250,10 +1253,12 @@ Provsvar
                     specific["norm_max"] = int(ilist[1])  
                   except:
                     pass
-
             rowspec[str(rowidx)] = specific                
+            Element('assessment').element.innerText = ("test 2.2")
         #For table data:
+        Element('assessment').element.innerText = ("test 2.3")
         for rowidx, row in enumerate(datarows):
+            Element('assessment').element.innerText = ("test 3")
             try:
               while row[0] == " " :
                 row = row[1:]
@@ -1276,27 +1281,31 @@ Provsvar
         Element('assessment').element.innerText = ("test 3.1")
         #Assessment:
         toprint = str()
-        #startid = document.querySelector("#startid")
-        startid = document.getElementById("startid")
+        thestarts = document.querySelector('#thestarts')
         Element('assessment').element.innerText = ("test 3.2")
         for i in range(len(rowspec)):
-            j = int(i)
+            #try:
+            Element('assessment').element.innerText = ("test 3.3")
+            j = int(int(i))
             specific = rowspec[str(j)]
+            #number = str(rowsdata[str(i)])
+            #number = number.replace(" ", "")
             evaluation = str()
+            Element('assessment').element.innerText = ("test 3.4")
             try:
-              #specific = rowspec[str(j+1)]      
               title = str(specific["title"])
-            except:
-              title = "::title::"
-              pass
-            try:
               min = int(specific["norm_min"])
               max = int(specific["norm_max"])
             except:
               pass
+            Element('assessment').element.innerText = ("test 3.5")
             try:
-              intnumber = int(rowsdata[str(j)]) 
-              if intnumber < min :
+              intnumber = int(rowsdata[str(i)]) 
+            except:
+              pass
+            Element('assessment').element.innerText = ("test 3.6")
+            try:
+              if   intnumber < min :
                 evaluation="decreased"
                 specific["evaluation"] = "decreased"
               elif intnumber > max :
@@ -1307,34 +1316,29 @@ Provsvar
                 specific["evaluation"] = "normal"
             except:
               pass
-            bintitle=str("")
-            Element('assessment').element.innerText = ("test 3.6")
             try:
               #Transform into binary LYMPHA-datatypes
-              bintitle = str(title.replace("-","_"))
-            except:
-              pass
-            try:
+              bintitle = title.replace("-","_")
               if specific["evaluation"] == "decreased":
-                  bintitle = str(bintitle + "_decreased\?")
+                  bintitle = bintitle + "_decreased"
               elif specific["evaluation"] == "increased":
-                  bintitle = str(bintitle + "_increased\?")
+                  bintitle = bintitle + "_increased"
               elif specific["evaluation"] == "normal":
-                  bintitle = str(bintitle + "_normal\?")
+                  bintitle = bintitle + "_normal"
+              start_element = document.createElement("input")
+              start_element.value = bintitle
+              start_element.className = "theStarts"
+              thestarts.appendChild( start_element )            
+
             except:
               pass
-            start_el = document.createElement("input")
-            start_el.type = "text"
-            start_el.value = bintitle 
-            start_el.className = "theStarts"
-
             try:
               toprint = toprint + title + " ; min: " + str(min) + " ; max: " + str(max) + " ; value: " + str(intnumber) + " ; " + evaluation + "\n"
             except:
               pass
             #except:
             #pass
-            startid.appendChild(start_el)            
+
 
             Element('assessment').element.innerText = ("test 4")
 							
@@ -1363,30 +1367,57 @@ Provsvar
     </py-script>
 
 
-	<div style="display:block;" >
-				<b style="margin:0em;>Start nodes:</b>
-				<form id="startid" style="margin-bottom:1em;">
-				</form>
-	</div>
-	<div style="display:inline;" >
-		<div style="display:inline;">
-			<p class="container" style="display:inline;">		
+			<div style="content">
+
+		<div style="content">
+			<p class="container" style="">		
 		
 
-				<form id="steps" style="display:inline;">
+				<!--img src="logo.png" style="width:25vw;">
+				<h1>LYMPHA-online</h1-->
+				<br>
+				<br>
+
+				
+				<br><br>
+
+				<!--form>
+					<input type="radio" name="arg" value="" />Let the value of variables decide paths to be shown.<br>
+					<input type="radio" name="arg" value="" />Let all the paths available be shown.<br>
+				</form-->
+				<!--br>
+				<br-->
+				<!--form>
+					<input type="radio" name="out" value="" />Graph output.<br>
+					<input type="radio" name="out" value="" />Step output.<br>
+				</form-->	
+				<b>Start nodes:</b>
+				<form id="thestarts">
+				  <!--input type="text" class="theStarts"/--><br>
+				</form>
+				<!--button id="addstart" >Add yet another start node</button--><br>
+				
+				<br>
+				<br>
+
+				<form id="steps">
 				
 				  <b>Number of steps that should be taken:</b><br>
-				  <input type="text" id="stepNr" class="stepNr" style="border-width:0.25em;border-color:#888;"/><br>
+				  <input type="text" id="stepNr" class="stepNr"/><br>
 				
 				</form>
 				
-				<button id="zcriptbttn" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">Check for variable factors</button><br>
+				<br>
+				<br>
+
+				<button id="zcriptbttn">Check for variable factors</button><br>
 				
+				<hr style="width:50vw; right:25vw; z-index:1;position:relative; text-align:center;" />
+
 				<form id="factorlist" style="border-width:0.25em;">
 				  <!--input type="text" style="hidden" class="factorItems"></input-->
 				</form>
-				<button id="turn2" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">Implement variables into script</button><br>
-
+				<button id="turn2">Implement variables into script</button><br>
 				<hr style="width:50vw; right:25vw; z-index:1;position:relative; text-align:center;" />
 				<span style="color:black;"><b>Result:</b><br></span>
 				<form id="resultlist">
