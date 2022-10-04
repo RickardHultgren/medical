@@ -115,7 +115,7 @@
             Element('epikris').element.innerText = ("Ansvarig läkare:\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nHöftledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 14 dagar. Telefonkontakt med operatör om 3 månader. Remiss till sjukgymnast skickas.\n\nLäkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, ICD))
         if ICD == "NGB49" :
             pharma_pat = ("Medicin från avdelningen:\nEtoricoxib 120mg 1 tablett 1 gånger dagligen i 5 dagar. Mot smärta.\n\nMedicin från apoteket:\nOmeprazol 20mg 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\nCilaxoral 7,5mg/ml 10 droppar i 1 vecka. Förebygger förstoppning.\nEliquis 2,5mg 1 tablett 2 gånger dagligen i 10 dagar. Förebygger blodpropp.\nOxynorm 5mg 1 vid behov, max 4 dagligen, i 2 veckor. Korttidsverkande mot smärta.\nParacetamol 500mg 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande\nSolvezink 45mg 1x2 i 3 veckor. För sårläkning.")
-            if "båda sidor" = Element('side-input').element.value
+            if "båda sidor" == Element('side-input').element.value:
                 pharma_pat = pharma_pat + "\nOxycontin 5mg 1x2 i 2 veckor. Långtidsverkande mot smärta. (bilaterala knän)"
             pharma = "Enligt medicinlistan"
             #Element('type-input').element.value = "primär totalprotes i knäled med cement"
@@ -127,7 +127,7 @@
             Element('epikris').element.innerText = ("Ansvarig läkare:\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nKnäledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med farmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 2-3 veckor. Telefonkontakt med operatör om 3 månader.\n Remiss till sjukgymnast.\n\nLäkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, ICD))
         if ICD == "ABC99" :
             pharma_pat = ("Medicin från avdelningen:\nEtoricoxib 120mg 1 tablett 1 gånger dagligen i 5 dagar. Mot smärta.\n\nMedicin från apoteket:\nOmeprazol 20mg 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\nCilaxoral 7,5mg/ml 10 droppar i 1 vecka. Förebygger förstoppning.\nEliquis 2,5mg 1 tablett 2 gånger dagligen i 10 dagar. Förebygger blodpropp.\nOxynorm 5mg 1 vid behov, max 4 dagligen, i 2 veckor. Korttidsverkande mot smärta.\nParacetamol 500mg 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande\nSolvezink 45mg 1x2 i 3 veckor. För sårläkning.")
-            if "båda sidor" = Element('side-input').element.value
+            if "båda sidor" == Element('side-input').element.value:
                 pharma_pat = pharma_pat + "\nOxycontin 5mg 1x2 i 2 veckor. Långtidsverkande mot smärta. (bilaterala knän)"
             pharma = "Enligt medicinlistan"
             Element('type-input').element.value = "dekompression av ryggmärgen och nervrötter"
