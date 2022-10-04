@@ -98,8 +98,9 @@ Markera läkemdlen i COSMICs läkemdelsmodul. Tryck Ctrl + C. Sätt markören i 
                         subitem = subitem.replace('tablett engångsdos' , "engångsdos")
                         subitem = subitem.replace('kapslar engångsdos' , "engångsdos")
                         subitem = subitem.replace('kapsel engångsdos' , "engångsdos")
-                        subitem = subitem.replace('kl' , "klockan ")			
+                        subitem = subitem.replace('kl' , "klockan ")
                     else:
+                        subitem = subitem.replace("1 gånger dagligen", "x 1")        			
                         subitem = subitem.replace('Depottablett ', 'x ')
                         subitem = subitem.replace('applicering ', 'applicering x ')
                         subitem = subitem.replace('tabletter ', 'x ')
