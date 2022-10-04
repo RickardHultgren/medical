@@ -80,7 +80,7 @@
     yesterday = today - timedelta(days = 1)
 
     def select_function(*args, **kwargs):
-
+        side = Element('side-input').element.value
         console.log(f'args: {args}')
         console.log(f'kwargs: {kwargs}')
         global ICD
@@ -140,6 +140,7 @@
         Element('indate-input').element.value = (str(yesterday))
         Element('opdate-input').element.value = (str(yesterday))
     def submit_function(*args, **kwargs):
+        side = Element('side-input').element.value
         global ICD 
         global indate 
         global outdate 
