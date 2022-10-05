@@ -8,6 +8,7 @@
     Select ICD:
     <select id="ICD" name="ICD" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;">
         <option value="NFB29">NFB29 Primär total höftledsplastik utan cement</option>
+        <option value="NFB39">NFB39 Primär total höftledsplastik med hybridteknik</option>
         <option value="NFB49">NFB49 Primär total höftledsplastik med cement</option>
         <option value="NGB49">NGB49 Primär totalprotes i knäled med cement</option>
         <option value="ABC99">ABC99 Dekompressiva operationer på ryggmärgen och nervrötter</option>
@@ -103,6 +104,17 @@
             Element('pharma-list').element.innerText = pharma_pat
             Element('plan').element.innerText = ("Sårkontroll om 14 dagar.\nTelefonkontakt med operatören om 4 månader.\n\nVid frågor, sårläckage, feber eller andra symptom hör av dig till avdelning 78.")
             Element('epikris').element.innerText = ("Ansvarig läkare:\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nHöftledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 14 dagar. Telefonkontakt med operatör om 4 månader.\n\nLäkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, ICD))
+        if ICD == "NFB39" :
+            pharma_pat = ("Medicin från avdelningen:\nEtoricoxib 120mg 1 tablett 1 gånger dagligen i 5 dagar. Mot smärta.\n\nMedicin från apoteket:\nOmeprazol 20mg 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\nCilaxoral 7,5mg/ml 10 droppar i 1 vecka. Förebygger förstoppning.\nEliquis 2,5mg 1 tablett 2 gånger dagligen i 30 dagar. Förebygger blodpropp.\nOxynorm 5mg 1 vid behov, max 4 dagligen, i 2 veckor. Korttidsverkande mot smärta.\nParacetamol 500mg 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande\nSolvezink 45mg 1 tablett 2 gånger dagligen i 3 veckor. För sårläkning.")
+            #pharma = ("Cilaxoral 7,5mg/ml 10 droppar i 1 vecka.\nEliquis 2,5mg 1x2 i 30 dagar.\nOmeprazol 20mg 1x1 i 2 veckor. \nOxynorm 5mg 1vb, max 4 per dag.\nParacetamol 500mg 2x3 i 4 veckor.\n")
+            pharma = "Enligt medicinlistan"
+            #Element('type-input').element.value = "primär total höftledsplastik med hybridteknik"
+            Element('type-input').element.value = "höftprotes med hybridteknik"
+            Element('ward-input').element.value = "78"
+            Element('pharma-list').element.innerText = pharma_pat
+            Element('plan').element.innerText = ("Sårkontroll om 14 dagar.\nTelefonkontakt med operatören om 4 månader.\n\nVid frågor, sårläckage, feber eller andra symptom hör av dig till avdelning 78.")
+            Element('epikris').element.innerText = ("Ansvarig läkare:\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nHöftledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 14 dagar. Telefonkontakt med operatör om 4 månader.\n\nLäkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, ICD))
+
         if ICD == "NFB49" :
             pharma_pat = ("Medicin från avdelningen:\nEtoricoxib 120mg 1 tablett 1 gånger dagligen i 5 dagar. Mot smärta.\n\nMedicin från apoteket:\nOmeprazol 20mg 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\nCilaxoral 7,5mg/ml 10 droppar i 1 vecka. Förebygger förstoppning.\nEliquis 2,5mg 1 tablett 2 gånger dagligen i 30 dagar. Förebygger blodpropp.\nOxynorm 5mg 1 vid behov, max 4 dagligen, i 2 veckor. Korttidsverkande mot smärta.\nParacetamol 500mg 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande\nSolvezink 45mg 1 tablett 2 gånger dagligen i 3 veckor. För sårläkning.")
             pharma = "Enligt medicinlistan"
