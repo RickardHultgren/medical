@@ -23,6 +23,22 @@ function showfunc2() {
     x.style.display = "none";
   }
 }		
+function showfunc3() {
+  var x = document.getElementById("meds");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}		
+function showfunc4() {
+  var x = document.getElementById("epi");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}				
 </script>
 <h1 style="font-size:2em;font-style:bold;">EPIKRIS PÅ ORTOPEDEN</h1>
 	<h1 style="font-size:1.5em;font-style:bold;">Process</h1>
@@ -90,21 +106,23 @@ function showfunc2() {
 		</div>
 		
 		</li>
-		<li>Ta bort följande läkemedel frånoperationen:<ol style="list-style-type:disc;margin-left:7em;">
+		<li>Ta bort följande läkemedel frånoperationen:<button onclick="showfunc()3">&#x25BC;</button><div id="meds" style="display:none;border-color:#888;border-width:0em 0em 0em 2px;margin-left:2em;"><br/><div id="outmeds"><ol style="list-style-type:disc;margin-left:7em;">
 			<li>Cloxacillin Stragen 2g</li>
 			<li>Statraxen 100 mg/ml</li>
 			<li>Morfin Kalceks 1 mg/ml</li>
 			<li>Ringer-acetat Fresenius Kabi</li>
 			<li>Fragmin 5000 IE</li>			
 		</ol></li>
+		</div>
 		<li>Skriv recept på läkemdel enligt utskrivningmeddelandet.</li>
 		<li>Ge patienten röntgenbild, läkemedelslista, utskrivningsmeddelande.</li>
-		<li>Diktera epikris.</li>
-	</ul>
-	<br>
-
+		<li>Diktera epikris.<button onclick="showfunc()">&#x25BC;</button><div id="epi" style="display:none;border-color:#888;border-width:0em 0em 0em 2px;margin-left:2em;">
 <b>Epikris</b>
 <div id="epikris"></div>
+	</div>
+	</li>
+	</ul>
+	<br>
     <py-env>
     </py-env>
     <py-script>
