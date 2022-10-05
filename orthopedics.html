@@ -81,7 +81,6 @@
     yesterday = today - timedelta(days = 1)
 
     def select_function(*args, **kwargs):
-        side = Element('side-input').element.value
         console.log(f'args: {args}')
         console.log(f'kwargs: {kwargs}')
         global ICD
@@ -92,6 +91,7 @@
         global side 
         global ward     
 
+        side = Element('side-input').element.value
 
         ICD = Element('ICD').element.value        
         if ICD == "NFB29" :
