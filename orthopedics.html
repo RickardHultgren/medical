@@ -15,6 +15,14 @@ function showfunc() {
     x.style.display = "none";
   }
 }
+function showfunc2() {
+  var x = document.getElementById("mess");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}		
 </script>
 <h1 style="font-size:2em;font-style:bold;">EPIKRIS PÅ ORTOPEDEN</h1>
 	<h1 style="font-size:1.5em;font-style:bold;">Process</h1>
@@ -55,20 +63,14 @@ function showfunc() {
 
     <button id="submit-button" type="submit" pys-onClick="submit_function" style="border-color:#000;border-width:1px;">OK</button>
     <hr style="border:1em;">
-    <div id="output"></div></div></li>
-		<li>Skriv utskrivningmeddelande.</li>
-		<li>Ta bort följande läkemedel frånoperationen:<ol style="list-style-type:disc;margin-left:7em;">
-			<li>Cloxacillin Stragen 2g</li>
-			<li>Statraxen 100 mg/ml</li>
-			<li>Morfin Kalceks 1 mg/ml</li>
-			<li>Ringer-acetat Fresenius Kabi</li>
-			<li>Fragmin 5000 IE</li>			
-		</ol></li>
-		<li>Skriv recept på läkemdel enligt utskrivningmeddelandet.</li>
-		<li>Ge patienten röntgenbild, läkemedelslista, utskrivningsmeddelande.</li>
-		<li>Diktera epikris.</li>
-	</ul>
-	<br>
+    
+			
+
+
+			
+		</div></li>
+		<li>Skriv utskrivningmeddelande. Tryck på triangel och fyll i uppgifter i fälten. <button onclick="showfunc2()">&#x25BC;</button><div id="mess" style="display:none;border-color:#888;border-width:12px 0em 0em 0em;margin-left:2em;"><br/><div>		
+			<div id="output"></div>
 
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
@@ -84,6 +86,23 @@ function showfunc() {
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+
+		</div>
+		
+		</li>
+		<li>Ta bort följande läkemedel frånoperationen:<ol style="list-style-type:disc;margin-left:7em;">
+			<li>Cloxacillin Stragen 2g</li>
+			<li>Statraxen 100 mg/ml</li>
+			<li>Morfin Kalceks 1 mg/ml</li>
+			<li>Ringer-acetat Fresenius Kabi</li>
+			<li>Fragmin 5000 IE</li>			
+		</ol></li>
+		<li>Skriv recept på läkemdel enligt utskrivningmeddelandet.</li>
+		<li>Ge patienten röntgenbild, läkemedelslista, utskrivningsmeddelande.</li>
+		<li>Diktera epikris.</li>
+	</ul>
+	<br>
+
 <b>Epikris</b>
 <div id="epikris"></div>
     <py-env>
