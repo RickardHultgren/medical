@@ -5,7 +5,7 @@
 			<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
         <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     </head>
-<body style="margin:3em;">
+<body style="margin:3em;font-family:'Signika Negative', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif, Helvetica, Arial;">
 	<script>
 function showfunc() {
   var x = document.getElementById("opinfo");
@@ -19,7 +19,7 @@ function showfunc() {
 <h1 style="font-size:2em;font-style:bold;">EPIKRIS PÅ ORTOPEDEN</h1>
 	<h1 style="font-size:1.5em;font-style:bold;">Process</h1>
 	<ul style="list-style-type:circle;margin-left:4em;">
-		<li>Skriv ut röntgenbild. Tryck på triangel och fyll i uppgifter i fälten. <button onclick="showfunc()">&#x25BC;</button><div id="opinfo" style="display:none;border-left:2px;">    Välj åtgärdsdiagnos ICD:
+		<li>Skriv ut röntgenbild. Tryck på triangel och fyll i uppgifter i fälten. <button onclick="showfunc()">&#x25BC;</button><div id="opinfo" style="display:none;border-left:2px;"><br/><div>Välj åtgärdsdiagnos ICD:
     <select id="ICD" name="ICD" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;">
         <option value="NFB29">NFB29 Primär total höftledsplastik utan cement</option>
         <option value="NFB39">NFB39 Primär total höftledsplastik med hybridteknik</option>
@@ -28,6 +28,7 @@ function showfunc() {
         <option value="ABC99">ABC99 Dekompressiva operationer på ryggmärgen och nervrötter</option>
     </select>
     <button id="select-button" type="submit" pys-onClick="select_function" style="border-color:#000;border-width:1px;"/>OK</button>
+</div>
 <div>
     <div style="display:inline">Inskrivningsdatum
     <input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="indate-input" /></div>
