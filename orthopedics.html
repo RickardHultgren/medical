@@ -152,7 +152,6 @@
         Element('indate-input').element.value = (str(yesterday))
         Element('opdate-input').element.value = (str(yesterday))
     def submit_function(*args, **kwargs):
-        side = Element('side-input').element.value
         global ICD 
         global indate 
         global outdate 
@@ -160,7 +159,7 @@
         global type 
         global side 
         global ward 
-
+        side = Element('side-input').element.value
         #print('args:', args)
         #print('kwargs:', kwargs)
 
