@@ -19,7 +19,7 @@ function showfunc() {
 <h1 style="font-size:2em;font-style:bold;">EPIKRIS PÅ ORTOPEDEN</h1>
 	<h1 style="font-size:1.5em;font-style:bold;">Process</h1>
 	<ul style="list-style-type:circle;margin-left:4em;">
-		<li>Skriv ut röntgenbild. Tryck på triangel och fyll i uppgifter i fälten. <button onclick="showfunc()">&#x25BC;</button><div id="opinfo" style="display:none;">    Välj åtgärdsdiagnos ICD:
+		<li>Skriv ut röntgenbild. Tryck på triangel och fyll i uppgifter i fälten. <button onclick="showfunc()">&#x25BC;</button><div id="opinfo" style="display:none;border-left:2px;">    Välj åtgärdsdiagnos ICD:
     <select id="ICD" name="ICD" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;">
         <option value="NFB29">NFB29 Primär total höftledsplastik utan cement</option>
         <option value="NFB39">NFB39 Primär total höftledsplastik med hybridteknik</option>
@@ -28,13 +28,8 @@ function showfunc() {
         <option value="ABC99">ABC99 Dekompressiva operationer på ryggmärgen och nervrötter</option>
     </select>
     <button id="select-button" type="submit" pys-onClick="select_function" style="border-color:#000;border-width:1px;"/>OK</button>
-
-
-			
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-
-
-    <div>Inskrivningsdatum
+<div>
+    <div style="display:inline">Inskrivningsdatum
     <input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="indate-input" /></div>
 
     <div style="display:inline">Operationsdatum
@@ -42,8 +37,9 @@ function showfunc() {
 			
 			<div style="display:inline">Utdatum
     <input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="outdate-input" style="border-color:#000;border-width:1px;"/></div>
-
-    <div>Operationstyp
+</div>
+<div>
+			<div>Operationstyp
     <input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="type-input" style="border-color:#000;border-width:1px;"/></div>
 
     <div style="display:inline">Sida
@@ -52,7 +48,7 @@ function showfunc() {
         <option value="vänster sida">vänster sida</option>
         <option value="båda sidor">båda sidor</option>
     </select></div>
-
+</div>div>
     <div>Avdelning</div>
     <input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="ward-input" style="border-color:#000;border-width:1px;"/>
 
