@@ -1,6 +1,6 @@
 <html>
     <head>
-			<style type="text/css" media="screen">@https://fonts.googleapis.com/css?family=Signika+Negative'); </style>
+			<style type="text/css" media="screen">@import url('@https://fonts.googleapis.com/css?family=Signika+Negative'); </style>
         <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
         <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     </head>
@@ -8,21 +8,7 @@
 <h1 style="font-size:2em;font-style:bold;">EPIKRIS PÅ ORTOPEDEN</h1>
 	<h1 style="font-size:1.5em;font-style:bold;">Process</h1>
 	<ul style="list-style-type:circle;margin-left:4em;">
-		<li>Skriv ut röntgenbild.</li>
-		<li>Skriv utskrivningmeddelande.</li>
-		<li>Ta bort följande läkemedel frånoperationen:<ol style="list-style-type:disc;margin-left:7em;">
-			<li>Cloxacillin Stragen 2g</li>
-			<li>Statraxen 100 mg/ml</li>
-			<li>Morfin Kalceks 1 mg/ml</li>
-			<li>Ringer-acetat Fresenius Kabi</li>
-			<li>Fragmin 5000 IE</li>			
-		</ol></li>
-		<li>Skriv recept på läkemdel enligt utskrivningmeddelandet.</li>
-		<li>Ge patienten röntgenbild, läkemedelslista, utskrivningsmeddelande.</li>
-		<li>Diktera epikris.</li>
-	</ul>
-	<br>
-    Välj åtgärdsdiagnos ICD:
+		<li>Skriv ut röntgenbild. <button ononclick="showfunc()">&#x25BC;</button><div id="opinfo">    Välj åtgärdsdiagnos ICD:
     <select id="ICD" name="ICD" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;">
         <option value="NFB29">NFB29 Primär total höftledsplastik utan cement</option>
         <option value="NFB39">NFB39 Primär total höftledsplastik med hybridteknik</option>
@@ -32,6 +18,17 @@
     </select>
     <button id="select-button" type="submit" pys-onClick="select_function" style="border-color:#000;border-width:1px;"/>OK</button>
 
+<script>
+function showfunc() {
+  var x = document.getElementById("opinfo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+			
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 
 
@@ -59,7 +56,21 @@
 
     <button id="submit-button" type="submit" pys-onClick="submit_function" style="border-color:#000;border-width:1px;">OK</button>
     <hr style="border:1em;">
-    <div id="output"></div>
+    <div id="output"></div></div></li>
+		<li>Skriv utskrivningmeddelande.</li>
+		<li>Ta bort följande läkemedel frånoperationen:<ol style="list-style-type:disc;margin-left:7em;">
+			<li>Cloxacillin Stragen 2g</li>
+			<li>Statraxen 100 mg/ml</li>
+			<li>Morfin Kalceks 1 mg/ml</li>
+			<li>Ringer-acetat Fresenius Kabi</li>
+			<li>Fragmin 5000 IE</li>			
+		</ol></li>
+		<li>Skriv recept på läkemdel enligt utskrivningmeddelandet.</li>
+		<li>Ge patienten röntgenbild, läkemedelslista, utskrivningsmeddelande.</li>
+		<li>Diktera epikris.</li>
+	</ul>
+	<br>
+
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
