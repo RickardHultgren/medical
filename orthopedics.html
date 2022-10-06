@@ -43,8 +43,8 @@ function showfunc4() {
 <h1 style="font-size:2em;font-style:bold;">EPIKRIS PÅ ORTOPEDEN</h1>
 	<h1 style="font-size:1.5em;font-style:bold;">Process</h1>
 	<ul style="list-style-type:circle;margin-left:4em;">
-		<li>Skriv ut röntgenbild. Tryck på triangel och fyll i uppgifter i fälten. <button onclick="showfunc()">&#x25BC;</button><div id="opinfo" style="display:none;border-color:#888;border-width:0em 0em 0em 2px;margin-left:2em;padding-left:1em;"><br/><div>Välj åtgärdsdiagnos ICD:
-    <select id="ICD" name="ICD" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;">
+		<li>Skriv ut röntgenbild. Tryck på triangel och fyll i uppgifter i fälten. <button onclick="showfunc()">&#x25BC;</button><div id="opinfo" style="display:none;border-color:#888;border-width:0em 0em 2px 0em ;margin-left:2em;padding-left:1em;"><br/><div>Välj åtgärdsdiagnos ICD:
+    <select id="ICD" name="ICD" style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;">
         <option value="NFB29">NFB29 Primär total höftledsplastik utan cement</option>
         <option value="NFB39">NFB39 Primär total höftledsplastik med hybridteknik</option>
         <option value="NFB49">NFB49 Primär total höftledsplastik med cement</option>
@@ -55,27 +55,27 @@ function showfunc4() {
 </div>
 <div>
     <div style="display:inline;margin-right:2em;">Inskrivningsdatum
-    <input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="indate-input" /></div>
+    <input style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="indate-input" /></div>
 
     <div style="display:inline;margin-right:2em;">Operationsdatum
-    <input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="opdate-input" style="border-color:#000;border-width:1px;"/></div>
+    <input style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="opdate-input" style="border-color:#000;border-width:1px;"/></div>
 			
 			<div style="display:inline;margin-right:2em;">Utdatum
-    <input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="outdate-input" style="border-color:#000;border-width:1px;"/></div>
+    <input style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="outdate-input" style="border-color:#000;border-width:1px;"/></div>
 </div>
 <div>
 			<div style="display:inline;margin-right:2em;">Operationstyp
-    <input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="type-input" style="border-color:#000;border-width:1px;"/></div>
+    <input style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="type-input" style="border-color:#000;border-width:1px;"/></div>
 
     <div style="display:inline;margin-right:2em;">Sida
-    <select style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" id="side-input">
+    <select style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" id="side-input">
         <option value="höger sida">höger sida</option>
         <option value="vänster sida">vänster sida</option>
         <option value="båda sidor">båda sidor</option>
     </select></div>
 </div>
     <div>Avdelning</div>
-    <input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="ward-input" style="border-color:#000;border-width:1px;"/>
+    <input style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="ward-input" style="border-color:#000;border-width:1px;"/>
 
     <button id="submit-button" type="submit" pys-onClick="submit_function" style="border-color:#000;border-width:1px;">OK</button>
     <hr style="border:1em;">
@@ -88,20 +88,20 @@ function showfunc4() {
 		<li>Skriv utskrivningmeddelande. Tryck på triangel och fyll i uppgifter i fälten. <button onclick="showfunc2()">&#x25BC;</button><div id="mess" style="display:none;border-color:#888;border-width:0em 0em 0em 2px;margin-left:2em;padding-left:1em;"><br/><div>		
 			<div id="output"></div>
 
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 <b>Läkemdel</b><br>
 <div id="pharma-list">
 </div>
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 <b>Plan</b>
 <div id="plan"></div>
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+<hr style="margin:0em 0em 1.5em 0em;padding:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
 
 		</div>
 		
