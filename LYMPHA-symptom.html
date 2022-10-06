@@ -1179,11 +1179,16 @@ document["zcriptbttn"].bind("click", zcripts)
 #document.getElementById( "index").className="index2active"
 
 </script>
-<h1 style="font-style:bold;font-size:2em;font-style:serif;">COSMIC-LYMPHA<br>För uträkning av vidarehandläggning baserat på LYMPHA-skript och lab-svar från COSMIC</h1>
+<h1 style="font-style:bold;font-size:2em;font-style:serif;">LYMPHA-symptom<br>Algoritm-läsare för olika symptom</h1>
 <hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
-Markera läkemdlentyperna av prov till vänster i lab-svars-modulen i COSMIC. Tryck Ctrl + C. Sätt markören i rutan "Provtyper" och trycka på Ctrl + V. Klicka sedan någonstans r tabellen med provsvar. Tryck sedan Ctrl + A och därefter Ctrl + C. Sätt markören i rutan "Provsvar" och trycka på Ctrl + V. Tryck sedan på knappen "Kalkylera".
-<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
-<div>
+Välj symptom ur listan och klicka "OK".<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
+		    <select style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" id="side-input">
+        <option value="34">Skada höft/lårben/bäcken</option>
+        <option value="33">Skada axel/nyckelben</option>
+        <option value="15">smärta i extremitet</option>
+    		</select>
+	
+	<div>
 <div style="display:inline-block;margin:1em;">Provtyper (test \t enhet \t ref.värde-ref.värde)
 <br>
 <textarea cols="50" rows="10" style="display:inline;margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="heads"> </textarea>

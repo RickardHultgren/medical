@@ -44,7 +44,7 @@ function showfunc4() {
 <h1 style="font-size:1.5em;font-style:bold;">Process</h1>
 <ul style="list-style-type:circle;margin-left:4em;">
 <li>Skriv ut röntgenbild. Tryck på triangel och fyll i uppgifter i fälten.<button onclick="showfunc()">&#x25BC;</button>			<div id="opinfo" style="display:none;border-color:#888;border-width:0em 0em 0em 2px;margin-left:2em;padding-left:1em 1em 0.25em 1em ;"><br/>
-<div style="margin-left:2em;">Välj åtgärdsdiagnos ICD:
+<div style="margin-left:1em;">Välj åtgärdsdiagnos ICD:
     			<select id="ICD" name="ICD" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;">
 	        <option value="NFB29">NFB29 Primär total höftledsplastik utan cement</option>
 	        <option value="NFB39">NFB39 Primär total höftledsplastik med hybridteknik</option>
@@ -54,23 +54,23 @@ function showfunc4() {
 			    </select>
     			<button id="select-button" type="submit" pys-onClick="select_function" style="border-color:#000;border-width:1px;padding-left:0.25em 1em 0.25em 1em ;"/>OK</button>
 </div>
-<div style="margin-left:2em;">
+<div style="margin-left:1em;">
     			<div style="display:inline;margin-right:2em;">Inskrivningsdatum
     				<input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="indate-input" />
 					</div>
 
-<div sty	le="display:inline;margin-right:2em;">Operationsdatum
+<div sty	le="display:inline;margin-right:1em;">Operationsdatum
     		<input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="opdate-input" style="border-color:#000;border-width:1px;"/>
 </div>
 			
-<div style="display:inline;margin-right:2em;">Utdatum
+<div style="display:inline;margin-right:1em;">Utdatum
 				<input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="outdate-input" style="border-color:#000;border-width:1px;"/></div>
 </div>
 <div>
-				<div style="margin-right:2em;">Operationstyp</div>
+				<div style="margin-right:1em;">Operationstyp</div>
     		<input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="type-input" style="border-color:#000;border-width:1px;"/><input>
 </div>
-<div style="display:inline;margin-right:2em;">Sida
+<div style="display:inline;margin-left:1em;">Sida
 		    <select style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" id="side-input">
         <option value="höger sida">höger sida</option>
         <option value="vänster sida">vänster sida</option>
@@ -78,7 +78,7 @@ function showfunc4() {
     		</select>
 </div>
 <div>
-	<div style="display:inline;margin-right:2em;">Avdelning</div>
+	<div style="display:inline;margin-left:1em;">Avdelning</div>
     		<input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="ward-input" style="border-color:#000;border-width:1px;"/>
 
     		<button id="submit-button" type="submit" pys-onClick="submit_function" style="border-color:#000;border-width:1px;padding-left:0.25em 1em 0.25em 1em ;">OK</button>
