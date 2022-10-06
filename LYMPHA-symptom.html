@@ -1182,7 +1182,7 @@ document["zcriptbttn"].bind("click", zcripts)
 <h1 style="font-style:bold;font-size:2em;font-style:serif;">LYMPHA-symptom<br>Algoritm-läsare för olika symptom</h1>
 <hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
 Välj symptom ur listan och klicka "OK".<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
-		    <select style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" id="side-input">
+		    <select style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" id="patinput">
         <option value="34">Skada höft/lårben/bäcken</option>
         <option value="33">Skada axel/nyckelben</option>
         <option value="15">Smärta i extremitet</option>
@@ -1195,21 +1195,7 @@ Välj symptom ur listan och klicka "OK".<hr style="margin:0em 0em 1.5em 0em;bord
         <option value="15">smärta i extremitet</option>
     		</select>
 	<button id="calcbttn" type="submit" pys-onClick="chosen" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">OK</button>
-	<div>
-<div style="display:inline-block;margin:1em;">Provtyper (test \t enhet \t ref.värde-ref.värde)
-<br>
-<textarea cols="50" rows="10" style="display:inline;margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="heads"> </textarea>
-</div>
-<div style="display:inline-block;margin:1em;">
-Provsvar
-<br>
-<textarea cols="100" rows="10" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="thedata"> </textarea>
-</div>
-</div>
-	<button id="calcbttn" type="submit" pys-onClick="calculate" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">
-		Kalkylera
-	</button>
-
+	
 <div id="assessment"></div>
 	
 <hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" />
@@ -1225,155 +1211,9 @@ Provsvar
     <py-script>
     from js import console
     def calculate(*args, **kwargs): 
-        Element('assessment').element.innerText = ("test 1")
-        headrows = list() 
-        datarows = list()
-        heads = str(Element('heads').element.value)
-        headrows = heads.split("\n")
-        thedata = str(Element('thedata').element.value)
-        datarows = thedata.split("\n")
-        rowspec = dict()
-        rowsdata = dict()
-        title = str()
-        max = 0 
-        min = 0
-        #For data specifications:
-        for rowidx, row in enumerate(headrows):
-            title = str()
-            intervall = str()
-            Element('assessment').element.innerText = ("test 2")
-            try:
-              while row[0] == " " :
-                row = row[1:]
-                if row[0] != " " :
-                    break
-            except:
-              pass
-            Element('assessment').element.innerText = ("test 2.1")
-            rowlist = row.split("\t")
-            specific = dict()
-            for idx, subitem in enumerate(rowlist):
-                if idx == 0 :
-                    title = subitem
-                    specific["title"] = title
-                if idx == 2 :
-                  try:
-                    intervall = subitem 
-                    ilist = intervall.split("-")
-                    specific["norm_min"] = int(ilist[0])
-                    specific["norm_max"] = int(ilist[1])  
-                  except:
-                    pass
-            rowspec[str(rowidx)] = specific                
-            Element('assessment').element.innerText = ("test 2.2")
-        #For table data:
-        Element('assessment').element.innerText = ("test 2.3")
-        for rowidx, row in enumerate(datarows):
-            Element('assessment').element.innerText = ("test 3")
-            try:
-              while row[0] == " " :
-                row = row[1:]
-                if row[0] != " " :
-                    break
-            except:
-              pass
-            rowlist = row.split("\t")		
-
-            for subitem in rowlist:
-                done = 0
-                if subitem == "" :
-                    if done == 1 :
-                        break
-                    else:
-                        pass
-                else:
-                    rowsdata[str(rowidx)]  = subitem            
-                    done = 1
-        Element('assessment').element.innerText = ("test 3.1")
-        #Assessment:
-        toprint = str()
-        thestarts = document.querySelector('#thestarts')
-        Element('assessment').element.innerText = ("test 3.2")
-        for i in range(len(rowspec)):
-            #try:
-            Element('assessment').element.innerText = ("test 3.3")
-            j = int(int(i))
-            specific = rowspec[str(j)]
-            #number = str(rowsdata[str(i)])
-            #number = number.replace(" ", "")
-            evaluation = str()
-            Element('assessment').element.innerText = ("test 3.4")
-            try:
-              title = str(specific["title"])
-              min = int(specific["norm_min"])
-              max = int(specific["norm_max"])
-            except:
-              pass
-            Element('assessment').element.innerText = ("test 3.5")
-            try:
-              intnumber = int(rowsdata[str(i)]) 
-            except:
-              pass
-            Element('assessment').element.innerText = ("test 3.6")
-            try:
-              if   intnumber < min :
-                evaluation="decreased"
-                specific["evaluation"] = "decreased"
-              elif intnumber > max :
-                evaluation="increased"
-                specific["evaluation"] = "increased"
-              else:
-                evaluation="normal"
-                specific["evaluation"] = "normal"
-            except:
-              pass
-            try:
-              #Transform into binary LYMPHA-datatypes
-              bintitle = title.replace("-","_")
-              if specific["evaluation"] == "decreased":
-                  bintitle = bintitle + "_decreased?"
-              elif specific["evaluation"] == "increased":
-                  bintitle = bintitle + "_increased?"
-              elif specific["evaluation"] == "normal":
-                  bintitle = bintitle + "_normal?"
-              start_element = document.createElement("input")
-              start_element.value = bintitle
-              start_element.className = "theStarts"
-              thestarts.appendChild( start_element )            
-
-            except:
-              pass
-            try:
-              toprint = toprint + title + " ; min: " + str(min) + " ; max: " + str(max) + " ; value: " + str(intnumber) + " ; " + evaluation + "\n"
-            except:
-              pass
-            #except:
-            #pass
-
-
-            Element('assessment').element.innerText = ("test 4")
-							
-        Element('assessment').element.innerText = (str(toprint))
-
-        for i in range(len(rowspec)):
-            #try:
-            j = int(int(i))
-            specific = rowspec[str(j)]
-            #number = str(rowsdata[str(i)])
-            #number = number.replace(" ", "")
-            evaluation = str()
-            title = str(specific["title"])
-            min = int(specific["norm_min"])
-            max = int(specific["norm_max"])
-            intnumber = int(rowsdata[str(i)]) 
-            if   intnumber < min :
-                evaluation="too low"
-            elif intnumber > max :
-                evaluation="too high"
-            else:
-                evaluation="normal"
-
-            Element('assessment').element.input = (str(title))
+        patinput = str(Element('patinput').element.value)
+        if patinput == "31" :
+            Element('assessment').element.input = (str("abv")
 
     </py-script>
 
@@ -1414,7 +1254,7 @@ Provsvar
 				<form id="steps">
 				
 				  <b>Number of steps that should be taken:</b><br>
-				  <input type="text" id="stepNr" class="stepNr"/><br>
+				  <input type="text" id="stepNr" class="stepNr" value="10"/><br>
 				
 				</form>
 				
