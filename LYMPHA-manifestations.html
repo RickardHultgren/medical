@@ -1022,7 +1022,7 @@ def zcripts(ev):
 
 	#for an_item in document.select(".theItems"):
 	#	addresses.append(an_item.value)
-	addresses.append("https://raw.githubusercontent.com/RickardHultgren/LYMPHA-scripts/master/COSMIC-scripts/anemia.lympha")	
+	addresses.append("https://raw.githubusercontent.com/RickardHultgren/LYMPHA-scripts/master/manifestations-scripts/anemia.lympha")	
 	urls=list()
 	for an_address in addresses:
 		urls.append(urllib.request.urlopen(an_address).read())
@@ -1213,7 +1213,7 @@ Välj symptom ur listan och klicka "OK".<hr style="margin:0em 0em 1.5em 0em;bord
     def calculate(*args, **kwargs): 
         patinput = str(Element('patinput').element.value)
         if patinput == "31" :
-            Element('assessment').element.input = (str("abv")
+            Element('assessment').element.input = str("abv")
 
     </py-script>
 
