@@ -1183,16 +1183,12 @@ document["zcriptbttn"].bind("click", zcripts)
 <hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
 Välj symptom ur listan och klicka "OK".<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
 		    <select style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" id="patinput">
-        <option value="34">Skada höft/lårben/bäcken</option>
-        <option value="33">Skada axel/nyckelben</option>
         <option value="15">Smärta i extremitet</option>
         <option value="131">Skada thorax/rygg</option>
         <option value="34">Skada nedre extremitet</option>
         <option value="33">Skada övre extremitet</option>
         <option value="134">Skada fot</option>
-        <option value="15">smärta i extremitet</option>
-        <option value="15">smärta i extremitet</option>
-        <option value="15">smärta i extremitet</option>
+
     		</select>
 	<!--button id="calcbttn" type="submit" pys-onClick="chosen" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">OK</button-->
 <br />
@@ -1219,7 +1215,7 @@ Välj vilket besök det är i ärndet.
     </py-env>
     <py-script>
     from js import console
-    def calculate(*args, **kwargs): 
+    def chosen(*args, **kwargs): 
         patinput = str(Element('patinput').element.value)
         if patinput == "34" :
             Element('assessment').element.input = str("injury_in_lower_extremity?")
