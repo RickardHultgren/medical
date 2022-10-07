@@ -1220,8 +1220,7 @@ Välj vilket besök det är i ärndet.
         bintitle = str()
         patinput = str(Element('patinput').element.value)
         start_element = document.createElement("input")
-        start_element.value = bintitle
-        start_element.className = "theStarts"
+
         if patinput == "34" :
             bintitle =str("injury_in_lower_extremity?")
         if patinput == "33" :
@@ -1232,6 +1231,8 @@ Välj vilket besök det är i ärndet.
             bintitle =str("imjury_thorax_spine?")
         if patinput == "134" :
             bintitle =str("injury_foot?")
+        start_element.value = bintitle
+        start_element.className = "theStarts"
         thestarts.appendChild( start_element )        
 			
     </py-script>
