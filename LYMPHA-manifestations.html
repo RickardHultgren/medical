@@ -1216,18 +1216,23 @@ Välj vilket besök det är i ärndet.
     <py-script>
     from js import console
     def chosen(*args, **kwargs): 
+        thestarts = document.querySelector('#thestarts')
+        bintitle = str()
         patinput = str(Element('patinput').element.value)
+        start_element = document.createElement("input")
+        start_element.value = bintitle
+        start_element.className = "theStarts"
         if patinput == "34" :
-            Element('assessment').element.input = str("injury_in_lower_extremity?")
+            bintitle =str("injury_in_lower_extremity?")
         if patinput == "33" :
-            Element('assessment').element.input = str("injury_in_upper_extremity?")
+            bintitle =str("injury_in_upper_extremity?")
         if patinput == "15" :
-            Element('assessment').element.input = str("pain_in_an_extremity?")
+            bintitle =str("pain_in_an_extremity?")
         if patinput == "131" :
-            Element('assessment').element.input = str("imjury_thorax_spine?")
+            bintitle =str("imjury_thorax_spine?")
         if patinput == "134" :
-            Element('assessment').element.input = str("injury_foot?")
-
+            bintitle =str("injury_foot?")
+        thestarts.appendChild( start_element )        
 			
     </py-script>
 
