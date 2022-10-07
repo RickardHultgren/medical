@@ -1194,7 +1194,16 @@ Välj symptom ur listan och klicka "OK".<hr style="margin:0em 0em 1.5em 0em;bord
         <option value="15">smärta i extremitet</option>
         <option value="15">smärta i extremitet</option>
     		</select>
+	<!--button id="calcbttn" type="submit" pys-onClick="chosen" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">OK</button-->
+<br />
+Välj vilket besök det är i ärndet.
+		    <select style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" id="contactNr">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    		</select>
 	<button id="calcbttn" type="submit" pys-onClick="chosen" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">OK</button>
+
 	
 <div id="assessment"></div>
 	
@@ -1212,9 +1221,18 @@ Välj symptom ur listan och klicka "OK".<hr style="margin:0em 0em 1.5em 0em;bord
     from js import console
     def calculate(*args, **kwargs): 
         patinput = str(Element('patinput').element.value)
-        if patinput == "31" :
-            Element('assessment').element.input = str("abv")
+        if patinput == "34" :
+            Element('assessment').element.input = str("injury_in_lower_extremity?")
+        if patinput == "33" :
+            Element('assessment').element.input = str("injury_in_upper_extremity?")
+        if patinput == "15" :
+            Element('assessment').element.input = str("pain_in_an_extremity?")
+        if patinput == "131" :
+            Element('assessment').element.input = str("imjury_thorax_spine?")
+        if patinput == "134" :
+            Element('assessment').element.input = str("injury_foot?")
 
+			
     </py-script>
 
 
