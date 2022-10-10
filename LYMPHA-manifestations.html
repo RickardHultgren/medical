@@ -1180,7 +1180,7 @@ document["zcriptbttn"].bind("click", zcripts)
 
 </script>
 <h1 style="font-style:bold;font-size:2em;font-style:serif;">LYMPHA-symptom<br>Algoritm-läsare för olika symptom</h1>
-<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
+<div><hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
 Välj symptom ur listan och klicka "OK".<hr style="margin:0em 0em 1.5em 0em;border-color:#888;border-width:1px;background-color:#eeeeee;" >
 		    <select style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" id="patinput">
         <option value="15">Smärta i extremitet</option>
@@ -1191,19 +1191,21 @@ Välj symptom ur listan och klicka "OK".<hr style="margin:0em 0em 1.5em 0em;bord
 
     		</select>
 	<!--button id="calcbttn" type="submit" pys-onClick="chosen" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">OK</button-->
-<br />
+</div>
+<div>
 Välj vilket besök det är i ärndet.
 		    <select style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" id="contactNr">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
     		</select>
-	<button id="calcbttn" type="submit" pys-onClick="chosen" style="border-width:0.25em; border-color:#aaa; margin:0.5em; margin:1.5em; background-color:#eee;">OK</button>
+</div>	
+	<button id="calcbttn" type="submit" pys-onClick="chosen" style="border-width:0.25em; border-color:#aaa; margin:1.5em 0.5em 1.5em 0.5em; background-color:#eee;">OK</button>
 
+<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" />
 	
 <div id="assessment"></div>
-	
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" />
+
 				<form id="steps">
 				
 				  <b></b>
@@ -1247,10 +1249,6 @@ Välj vilket besök det är i ärndet.
 				<!--img src="logo.png" style="width:25vw;">
 				<h1>LYMPHA-online</h1-->
 				<br>
-				<br>
-
-				
-				<br><br>
 
 				<!--form>
 					<input type="radio" name="arg" value="" />Let the value of variables decide paths to be shown.<br>
@@ -1274,7 +1272,7 @@ Välj vilket besök det är i ärndet.
 				<form id="steps">
 				
 				  <b>Number of steps that should be taken:</b><br>
-				  <input type="text" id="stepNr" class="stepNr" value="10"/><br>
+				  <input type="text" id="stepNr" class="stepNr" value="10" style="border-width:2px; font-size:1em;"/><br>
 				
 				</form>
 				
