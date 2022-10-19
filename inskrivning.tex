@@ -35,6 +35,7 @@
 \usepackage{enumitem,amssymb}
 \newlist{todolist}{itemize}{2}
 \setlist[todolist]{label=$\square$}
+
 \newcommand{\mypicture}[1][]{% 1 optional parameter for options for the tikz picture
 \begin{tikzpicture}[#1]
 \node[regular polygon, regular polygon sides=8,draw=red, double, double distance=0.5mm, ultra thick,fill=red, font=\tiny\bfseries, text=white,inner sep=0mm]{STOP}
@@ -49,21 +50,26 @@
 \ \\
 Inskrivning ortopeden\hrule
 \ \\
-\begin{tabular}{ l l }
- \begin{minipage}{12cm} \begin{itemize}
+\ \\
+\begin{tabular}{p{27.25em} p{1.5cm} l}
+\begin{minipage}{10cm}Möte\end{minipage} & \ & \begin{minipage}{5cm} Diktering\end{minipage}\\
+\begin{minipage}{10cm}\begin{itemize}
   \item Tryck \textit{Ctrl + B} för att få \textit{Besöklistan}. Välj sedan följande:
 \begin{itemize}
   \item Vårdande enhet: \textbf{Inskrivningscentrum ortopedi Arvika}
   \item Vårdpersonal: \textbf{Alla}
   \item Tryck \textbf{uppdatera}
-\end{itemize}\end{itemize} \end{minipage} &  \begin{minipage}{12cm}\end{minipage} \\ 
+\end{itemize}\end{itemize} \end{minipage} &  \begin{minipage}{12cm}\hrule\end{minipage} \\ 
 \end{tabular}\\
-\begin{tabular}{ l l }
-  \begin{minipage}{12cm}\begin{itemize}
-
+\begin{tabular}[t]{ |p{27.25em} | p{1.5cm} l }
+%\hline
+ %¤\hspace{-0.3cm}
+\hspace{-.75em}  \begin{minipage}{10cm}\begin{itemize}
+ \hrule
+%\hline
   \item Fyll i följande uppgifter från \textit{Besökslistan}:
 \begin{itemize}
-\item Namn: \\\ \\\ ...............................................................................................................
+\item Namn: \\ \vspace{0cm}\hspace{1cm} .................................................
   \item Område
     \begin{todolist}  
         \item Rygg
@@ -76,14 +82,36 @@ Inskrivning ortopeden\hrule
         \item Vänster
         \item Bilateralt
         \end{todolist}
+        \item Operations-datum: \\ \vspace{0cm}\hspace{3cm} .............................
     \end{itemize}
+
 \end{itemize}
-\end{minipage} &  \begin{minipage}{12cm}\end{minipage} \\ 
-\end{tabular}\\
-\begin{tabular}{ l l }
-  \begin{minipage}{12cm}    
+\hrule
+\end{minipage} &  \hspace{-.355cm}\begin{minipage}{1.8cm}\ 
+\vspace{-6.5cm}\hrule
+\end{minipage} & \begin{minipage}[t]{5cm}\vspace{-3.5cm}Kontaktorsak: Inskrivning för planerad...\\
+\\\ 
+Social situation:
+    \begin{todolist}  
+        \item Ensamboende
+        \item Hemhjälp
+        \item Trappor
+    \end{todolist}
+Levnadsvanor:
+6veckor???
+    \begin{todolist}  
+        \item Rökning
+        \item Alkohol
+
+    \end{todolist}
+\end{minipage} 
+%\hline
+\end{tabular}\vspace{0.5em}\\
+\begin{tabular}{ p{27.25em}  p{1.5cm} l}
+  \begin{minipage}{10cm}    
     \begin{itemize}  
-  \item [\mypicture] {\sc Kontraindicerande;} Tryck \textit{Ctrl + \sc{7}} för att få \textit{Patientöversikt}. Undersök följande:
+  %\item[\mypicture] {\sc Kontraindicerande;} Tryck \textit{Ctrl + \sc{7}} för att få  \textit{Patient-\\översikt}. Undersök följande:
+  \item {\sc Kontraindicerande;} Tryck \textit{Ctrl + }{\sc 7} för att få  \textit{Patient-\\översikt}. Undersök följande:
     \begin{todolist}  
         \item {\sc Bmi} $>$ {\sc 35}?
         \item Patologier som kontraindicerar operation?
@@ -95,9 +123,16 @@ Inskrivning ortopeden\hrule
             \item Möjliga åtgärder?        
         \end{todolist}
     \end{todolist}
-    \item Blodtryck: \\\ \\\  \\\ ..................................../.................................... mmHg
-    \item Puls \\\  \\\ \\\ ....................................{\sc bpm}
-    \item S-Zink\\\ \\\ \\\ .................................... $\leq$ 9 $\rightarrow$ Solvezink 
+    \end{itemize}  
+   
+\end{minipage} & \ & \ 
+\end{tabular}\\
+\begin{tabular}{ |p{27.25em}|  p{1.5cm} l}
+  \begin{minipage}{10cm}        
+  \hrule
+    \begin{itemize}
+    \item Blodtryck: \\ \vspace{0cm}\hspace{1.5cm} .............................../.......................... mmHg
+    \item Puls: \\ \vspace{0cm}\hspace{1.5cm} ....................................{\sc bpm}
     \item[$\square$] {\sc Ekg} sinusrytm.
     \item[$\square$] {\sc Ekg} Patologier:
         \begin{todolist} 
@@ -107,10 +142,36 @@ Inskrivning ortopeden\hrule
                     \item Vänstersidig              
             \end{todolist}         
             \item
-            \item Annat \\\  \\\ \\\ ................................................................................................................................................ 
+            \item Annat \\ \vspace{0cm}\hspace{1.5cm} ......................................
+            
         \end{todolist}         
+    \item S-Zink \\ \vspace{0cm}\hspace{1.5cm} ............................... $<$ 11 $\rightarrow$ Solvezink 
+\\\ \hrule
     \item Skriv ut läkemedelslista.
-\end{itemize}\end{minipage} &  \begin{minipage}{12cm}\end{minipage}  
+\end{itemize}\end{minipage} & \ & \begin{minipage}{5cm}\vspace{-1.25cm}
+Uppmärksamhetssignal -- allergier:
+    \begin{todolist}  
+        \item Antibiotika
+        \item Lokalbedövning
+        \item Nickel
+        \item {\sc Nsaid}
+    \end{todolist}
+Läkemedelslista: aktuell lista
+Aktuellt:
+    \begin{todolist}  
+        \item Smärta belastning
+        \item Smärta vila
+        \item Smärta nattetid
+        \item Hjälpmedel
+        \item Tidigare kortison-injektion
+    \end{todolist}
+Status:
+    \begin{todolist}  
+        \item Allmäntillstånd
+        \item Hjärta
+        \item Lungor
+    \end{todolist}
+\end{minipage} \\
   %\begin{minipage}{12cm}\end{minipage} &  \begin{minipage}{12cm}\end{minipage}    
 \end{tabular}
 %\subsection*{Rubrik}
