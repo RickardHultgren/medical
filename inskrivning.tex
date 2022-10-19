@@ -1,0 +1,113 @@
+\documentclass[13pt,a4paper,oneside]{article}
+\usepackage[a4paper,portrait,left=2.1cm,right=2.1cm,top=1.8cm,bottom=1.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage[swedish]{babel}
+%\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+%\pretocmd{\scshape}{\fontfamily{pplx}\selectfont}{}{}
+\usepackage{mathpazo}
+%\usepackage[latin1]{inputenc}
+%\usepackage{iwona}
+%\usepackage[math]{iwona}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\renewcommand{\oldstylenums}[1]{{\fontfamily{pplj}\selectfont #1}}
+\newcommand\sho[1]{{\tiny\tt\char92#1}}
+\renewcommand{\oldstylenums}[1]{{\fontfamily{pplj}\selectfont #1}}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+%\usepackage{\sectsty}
+%\allsectionsfont{\sffamily}
+\usepackage{enumitem}
+\setlist{leftmargin=2cm}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\usepackage{hyperref}
+\usepackage{url}
+\setlength{\columnsep}{1.5cm}
+\setlength{\columnseprule}{0.2pt}
+\usepackage{titlesec}
+\usepackage{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage[math]{iwona}
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\newcommand{\mypicture}[1][]{% 1 optional parameter for options for the tikz picture
+\begin{tikzpicture}[#1]
+\node[regular polygon, regular polygon sides=8,draw=red, double, double distance=0.5mm, ultra thick,fill=red, font=\tiny\bfseries, text=white,inner sep=0mm]{STOP}
+\end{tikzpicture}
+} 
+
+%\titleformat*{\section{\bfseries}}
+\titleformat*{\subsection}{\bf\sffamily\large}
+%\newcommand\sho[1]{{\tiny\tt\char92#1}}
+\pagestyle{empty}\begin{document}%\centering
+{
+\ \\
+Inskrivning ortopeden\hrule
+\ \\
+\begin{tabular}{ l l }
+ \begin{minipage}{12cm} \begin{itemize}
+  \item Tryck \textit{Ctrl + B} för att få \textit{Besöklistan}. Välj sedan följande:
+\begin{itemize}
+  \item Vårdande enhet: \textbf{Inskrivningscentrum ortopedi Arvika}
+  \item Vårdpersonal: \textbf{Alla}
+  \item Tryck \textbf{uppdatera}
+\end{itemize}\end{itemize} \end{minipage} &  \begin{minipage}{12cm}\end{minipage} \\ 
+  \begin{minipage}{12cm}\begin{itemize}
+
+  \item Fyll i följande uppgifter från \textit{Besökslistan}:
+\begin{itemize}
+\item Namn: \\\ \\\ ...............................................................................................................
+  \item Område
+    \begin{todolist}  
+        \item Rygg
+        \item Knä
+        \item Höft
+    \end{todolist}
+    \item Sida:
+    \begin{todolist}  
+        \item Höger
+        \item Vänster
+        \item Bilateralt
+        \end{todolist}
+    \end{itemize}
+  \item [\mypicture] {\sc Kontraindicerande;} Tryck \textit{Ctrl + \sc{7}} för att få \textit{Patientöversikt}. Undersök följande:
+    \begin{todolist}  
+        \item {\sc Bmi} $>$ {\sc 35}?
+        \item Patologier som kontraindicerar operation?
+        \begin{todolist}  
+            \item Möjliga åtgärder?
+        \end{todolist}
+        \item Mediciner som kontraindicerar operation?
+        \begin{todolist}  
+            \item Möjliga åtgärder?        
+        \end{todolist}
+    \end{todolist}
+    \item Blodtryck: \\\ \\\  \\\ ..................................../.................................... mmHg
+    \item Puls \\\  \\\ \\\ ....................................{\sc bpm}
+    \item S-Zink\\\ \\\ \\\ .................................... $\leq$ 9 $\rightarrow$ Solvezink 
+    \item[$\square$] {\sc Ekg} sinusrytm.
+    \item[$\square$] {\sc Ekg} Patologier:
+        \begin{todolist} 
+            \item Skänkelblock
+                \begin{todolist} 
+                    \item Högersidigt
+                    \item Vänstersidig              
+            \end{todolist}         
+            \item
+            \item Annat \\\  \\\ \\\ ................................................................................................................................................ 
+        \end{todolist}         
+    \item Skriv ut läkemedelslista.
+\end{itemize}\end{minipage} &  \begin{minipage}{12cm}\end{minipage}  
+  %\begin{minipage}{12cm}\end{minipage} &  \begin{minipage}{12cm}\end{minipage}    
+\end{tabular}
+%\subsection*{Rubrik}
+
+\newpage
+
+\\
+\end{document}
