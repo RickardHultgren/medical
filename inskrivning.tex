@@ -15,6 +15,7 @@
 \newcommand\sho[1]{{\tiny\tt\char92#1}}
 \renewcommand{\oldstylenums}[1]{{\fontfamily{pplj}\selectfont #1}}
 \usepackage{multicol}
+\usepackage{tabularx}
 \usepackage[T1]{fontenc}
 \usepackage{titlesec}
 %\usepackage{\sectsty}
@@ -32,9 +33,18 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes}
 \usepackage[math]{iwona}
+\newsavebox{\X}
+\sbox{\X}{\textbf{\colorbox{yellow}{}}}
+\usebox{\X}
+\def\comment{\colorbox{yellow}}{}
 \usepackage{enumitem,amssymb}
+
 \newlist{todolist}{itemize}{2}
 \setlist[todolist]{label=$\square$}
+
+\newlist{htodolist}{itemize*}{2}
+\setlist[htodolist]{label=\ $\ \square$}
+
 
 \newcommand{\mypicture}[1][]{% 1 optional parameter for options for the tikz picture
 \begin{tikzpicture}[#1]
@@ -51,132 +61,114 @@
 Inskrivning ortopeden\hrule
 \ \\
 \ \\
-\begin{tabular}{p{27.25em} p{1.5cm} l}
-\begin{minipage}{10cm}Möte\end{minipage} & \ & \begin{minipage}{5cm} Diktering\end{minipage}\\
-\begin{minipage}{10cm}\begin{itemize}
-  \item Tryck \textit{Ctrl + B} för att få \textit{Besöklistan}. Välj sedan följande:
-\begin{itemize}
+\begin{tabularx}{\textwidth}{p{15em} p{1.5cm}|X}
+\hline \begin{minipage}{5cm}Tryck \textit{Ctrl + B} för att få \textit{Besöklistan}. Välj sedan följande:
+\begin{itemize}[leftmargin=1.5em]
+  \setlength\itemsep{.25em}
   \item Vårdande enhet: \textbf{Inskrivningscentrum ortopedi Arvika}
   \item Vårdpersonal: \textbf{Alla}
   \item Tryck \textbf{uppdatera}
-\end{itemize}\end{itemize} \end{minipage} &  \begin{minipage}{12cm}\hrule\end{minipage} \\ 
-\end{tabular}\\
-\begin{tabular}[t]{ |p{27.25em} | p{1.5cm} l }
-%\hline
- %¤\hspace{-0.3cm}
-\hspace{-.75em}  \begin{minipage}{10cm}\begin{itemize}
- \hrule
-%\hline
-  \item Fyll i följande uppgifter från \textit{Besökslistan}:
+\end{itemize} \end{minipage} & \ & \ \\
+\hline\multicolumn{3}{c}{\begin{minipage}{30cm}
+\comment{{\bf Kontaktorsak:} Inskrivningssamtal inför planerad ...}\\
+Fyll i följande uppgifter från \textit{Besökslistan}:
 \begin{itemize}
-\item Namn: \\ \vspace{0cm}\hspace{1cm} .................................................
-  \item Område
-    \begin{todolist}  
-        \item Rygg
-        \item Knä
-        \item Höft
-    \end{todolist}
+\item Namn: \\ \vspace{0cm}\hspace{1cm} ...................................................................................................................................................
+  \item Område:
+    \begin{htodolist}  
+        \item Rygg 
+        \item Knä 
+        \item Höft 
+    \end{htodolist}
     \item Sida:
-    \begin{todolist}  
+    \begin{htodolist}  
         \item Höger
         \item Vänster
         \item Bilateralt
-        \end{todolist}
-        \item Operations-datum: \\ \vspace{0cm}\hspace{3cm} .............................
-    \end{itemize}
-
+        \end{htodolist}
 \end{itemize}
-\hrule
-\end{minipage} &  \hspace{-.355cm}\begin{minipage}{1.8cm}\ 
-\vspace{-6.5cm}\hrule
-\end{minipage} & \begin{minipage}[t]{5cm}\vspace{-3.5cm}Kontaktorsak: Inskrivning för planerad...\\
-\\\ 
-Social situation:
-    \begin{todolist}  
+Kolla Provisio:
+\begin{itemize}
+        \item Operations-datum: \\ \vspace{3em}\hspace{3cm} ...............................................................................................................................\vspace{-2em}
+\end{itemize}\end{minipage}}\\
+\hline & \ & \begin{minipage}{10cm} \comment{{\bf Social situation:}     \begin{htodolist}  
         \item Ensamboende
         \item Hemhjälp
         \item Trappor
-    \end{todolist}
-Levnadsvanor:
-6veckor???
-    \begin{todolist}  
-        \item Rökning
-        \item Alkohol
-
-    \end{todolist}
-\end{minipage} 
-%\hline
-\end{tabular}\vspace{0.5em}\\
-\begin{tabular}{ p{27.25em}  p{1.5cm} l}
-  \begin{minipage}{10cm}    
-    \begin{itemize}  
-  %\item[\mypicture] {\sc Kontraindicerande;} Tryck \textit{Ctrl + \sc{7}} för att få  \textit{Patient-\\översikt}. Undersök följande:
-  \item {\sc Kontraindicerande;} Tryck \textit{Ctrl + }{\sc 7} för att få  \textit{Patient-\\översikt}. Undersök följande:
-    \begin{todolist}  
-        \item {\sc Bmi} $>$ {\sc 35}?
-        \item Patologier som kontraindicerar operation?
-        \begin{todolist}  
-            \item Möjliga åtgärder?
-        \end{todolist}
-        \item Mediciner som kontraindicerar operation?
-        \begin{todolist}  
-            \item Möjliga åtgärder?        
-        \end{todolist}
-    \end{todolist}
-    \end{itemize}  
-   
-\end{minipage} & \ & \ 
-\end{tabular}\\
-\begin{tabular}{ |p{27.25em}|  p{1.5cm} l}
-  \begin{minipage}{10cm}        
-  \hrule
-    \begin{itemize}
-    \item Blodtryck: \\ \vspace{0cm}\hspace{1.5cm} .............................../.......................... mmHg
-    \item Puls: \\ \vspace{0cm}\hspace{1.5cm} ....................................{\sc bpm}
-    \item[$\square$] {\sc Ekg} sinusrytm.
-    \item[$\square$] {\sc Ekg} Patologier:
-        \begin{todolist} 
-            \item Skänkelblock
-                \begin{todolist} 
-                    \item Högersidigt
-                    \item Vänstersidig              
-            \end{todolist}         
-            \item
-            \item Annat \\ \vspace{0cm}\hspace{1.5cm} ......................................
-            
-        \end{todolist}         
-    \item S-Zink \\ \vspace{0cm}\hspace{1.5cm} ............................... $<$ 11 $\rightarrow$ Solvezink 
-\\\ \hrule
-    \item Skriv ut läkemedelslista.
-\end{itemize}\end{minipage} & \ & \begin{minipage}{5cm}\vspace{-1.25cm}
-Uppmärksamhetssignal -- allergier:
-    \begin{todolist}  
+    \end{htodolist}}\end{minipage}\\\
+ \ & \ & \begin{minipage}{10cm}\comment{{\bf Levnadsvanor:} Ej rökning / alkohol 6 v innan -› 6 v efter}\end{minipage}\\
+ \hline\multicolumn{3}{l}{\comment{\bf Tid. och nuv. sjd:}\vspace{3em}}\\
+ \hline \ & \ & \begin{minipage}{10cm}\comment{{\bf Uppmärksamhetssignal:}}\\\ 
+ \comment{
+ \begin{htodolist}  
         \item Antibiotika
         \item Lokalbedövning
         \item Nickel
         \item {\sc Nsaid}
-    \end{todolist}
-Läkemedelslista: aktuell lista
-Aktuellt:
-    \begin{todolist}  
+    \end{htodolist}}\end{minipage}\\
+\hline\multicolumn{3}{l}{\comment{{\bf Läkemedelslista:} Aktuell lista}\vspace{3em}}\\
+ \hline\ & \ & \begin{minipage}{10cm}\comment{{\bf Aktuellt:}
+ \begin{htodolist}  
         \item Smärta belastning
         \item Smärta vila
         \item Smärta nattetid
+\end{htodolist}}
+ \comment{\begin{htodolist}
         \item Hjälpmedel
         \item Tidigare kortison-injektion
-    \end{todolist}
-Status:
-    \begin{todolist}  
-        \item Allmäntillstånd
-        \item Hjärta
-        \item Lungor
-    \end{todolist}
-\end{minipage} \\
-  %\begin{minipage}{12cm}\end{minipage} &  \begin{minipage}{12cm}\end{minipage}    
-\end{tabular}
-%\subsection*{Rubrik}
+    \end{htodolist}}
+    \end{minipage}\\
+\hline\multicolumn{3}{c}{\begin{minipage}{30cm}
+ Tid. kortisoninj?\\
+\begin{minipage}{10cm}  Blodtryck: \\ \vspace{0cm}\hspace{1.5cm} .............................../.......................... mmHg
+    \end{minipage}
+\begin{minipage}{10cm} 
+\item Puls: \\ \vspace{0cm}\hspace{1.5cm} ....................................{\sc bpm}
+    \end{minipage}
+    \begin{itemize}
+    \item[$\square$] \comment{Allmäntillstånd}
+    \item[$\square$] \comment{Hjärta. Normalfrekvent, regelbunden puls. Inga bi- eller blåsljud}
+    \item[$\square$] \comment{Lungor. Normalfrekvent andning. Vescikulära andningljud bilateralt.}    
+    \item[$\square$] \comment{Hud}    
+    \item[$\square$] \comment{\sc Ekg} Sinusrytm
+    \item[$\square$] \comment{\sc Ekg} Patologier:
+        \begin{todolist} 
+            \item Skänkelblock
+                \begin{htodolist} 
+                    \item Högersidigt
+                    \item Vänstersidig              
+            \end{htodolist}         
+            \item Annat \\ \vspace{0cm}\hspace{1.5cm} ......................................
+            
+        \end{todolist}         
+    \item[$\square$] S-Zink \\ \vspace{0cm}\hspace{1.5cm} ............................... $<$ 11 $\rightarrow$ Solvezink tabl 1x2 i3v från op (ej tidssatt)
+    \item[$\square$] Högt CRP omkontroll
+    \item[$\square$] Kalium kontroll op-dag om avvikande
+\end{itemize}\end{minipage} }
+\end{tabularx}\newpage\\
+\begin{tabularx}{\textwidth}{p{15em} p{1.5cm}|X}
+\ & \ & \begin{minipage}{10cm}\comment{Bedömning: I samråd med narkosen bedöms pat som kandidat för operation}\end{minipage}\\
+ \ & \ & \begin{minipage}{10cm}{comment{}Läkemedelsförändring: Enligt mall för höft/knäplast}\end{minipage}\\
+ \ & \ & \begin{minipage}{10cm}Premedicinering med ... ... på op-dage\end{minipage}\\
+ \ & \ & \begin{minipage}{10cm}
+Kryssa läkemedel på op-dagen 
+- beta-bl och inhalationer kryssas i regel inte
+- Trombyl kryssas endast op-dag
+- Clopidogrel ut 7 dagar innan op och in när Eliquis utsättes 
+- ej NSAID 1 v innan
 
-\newpage
+Paket: Ej tidssitt!
+Arcoxia om ej kontraindicerat (magsår, allergi ... ?)
+Gabapentin fel dos - ändra Eliquis förstahandsval
+(Fragmin ev om GFR<30)
+Remiss till AK-mottagningen (medicinmott Arvika ...) om pat har NOAK el Waran (välj inget i paketet)
+\end{minipage}\\
+ \ & \ & \begin{minipage}{10cm}Diagnoskod:
+M161 höft 
+M171 knä
+\end{minipage}
+
+\end{tabularx}
 
 
 \end{document}
