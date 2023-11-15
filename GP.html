@@ -83,13 +83,12 @@
 			<div id='game' />
 			<script src='build/ficdown.min.js'></script>
 			<script>
-				///var player = new Ficdown({
-				///	id: 'game',
-				///	source: document.getElementById('source').value,
-				///	scroll: true,
-				///});
-				
-				var player = new Ficdown(playerOptions);
+				var player = new Ficdown({
+					id: 'game',
+					source: document.getElementById('source').value,
+					scroll: true,
+					startText: "hello"
+				});
 				player.play();
 			</script>
 		</body>
