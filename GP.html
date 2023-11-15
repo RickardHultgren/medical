@@ -1,255 +1,93 @@
-<html>
+	<!DOCTYPE html>
+	<html lang='en'>
 		<head>
-			<style type="text/css" media="screen">@import url(@https://fonts.googleapis.com/css?family=Signika+Negative); </style>
-			<link type="text/css" media="screen" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Signika+Negative"/>
-		<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-		<script defer src="https://pyscript.net/latest/pyscript.js"></script>
-
-			<link
-					rel="stylesheet"
-					href="https://pyscript.net/releases/2023.11.1/core.css"
-			/>
-			<script
-					type="module"
-					src="https://pyscript.net/releases/2023.11.1/core.js"
-			></script>
-
-			
+			<meta charset='utf-8'>
+			<title>Ficdown.js Test</title>
+			<style>
+				a.disabled {
+					color: #999;
+				}
+				a.disabled.chosen {
+					color: #000;
+				}
+				a.disabled:hover {
+					cursor: not-allowed;
+				}
+			</style>
 		</head>
-<body style="margin:3em;font-family:'Signika Negative', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif, Helvetica, Arial;">
-	<py-script>
-function showfunc() {
-	var x = document.getElementById("opinfo");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
-}
-function showfunc2() {
-	var x = document.getElementById("mess");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
-}		
-function showfunc3() {
-	var x = document.getElementById("meds");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
-}		
-function showfunc4() {
-	var x = document.getElementById("epi");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
-}				
-</py-script>
-<h1 style="font-size:2em;font-style:bold;">EPIKRIS PÅ ORTOPEDEN</h1>
-<h1 style="font-size:1.5em;font-style:bold;">Process</h1>
-<ul style="list-style-type:circle;margin-left:4em;">
-<li>Skriv ut röntgenbild. Tryck på triangel och fyll i uppgifter i fälten.<button onclick="showfunc()">&#x25BC;</button>			<div id="opinfo" style="display:none;border-color:#888;border-width:0em 0em 0em 2px;margin-left:2em;padding-left:1em 1em 0.25em 1em ;"><br/>
-<div style="margin-left:1em;">Välj åtgärdsdiagnos ICD:
-					<select id="ICD" name="ICD" style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;">
-					<option value="NFB29">NFB29 Primär total höftledsplastik utan cement</option>
-					<option value="NFB39">NFB39 Primär total höftledsplastik med hybridteknik</option>
-					<option value="NFB49">NFB49 Primär total höftledsplastik med cement</option>
-					<option value="NGB49">NGB49 Primär totalprotes i knäled med cement</option>
-					<option value="ABC99">ABC99 Dekompressiva operationer på ryggmärgen och nervrötter</option>
-					</select>
-					<button id="select-button" type="submit" pys-onClick="select_function" style="border-color:#000;border-width:1px;padding-left:0.25em 1em 0.25em 1em ;"/>OK</button>
-</div>
-<div style="margin-left:1em;">
-					<div style="display:inline;margin-right:2em;">Inskrivningsdatum
-						<input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="indate-input" />
-					</div>
+		<body>
+			<textarea id='source' style='display: none;'>
+	# [Cloak of Darkness](/foyer)
 
-<div sty	le="display:inline;margin-right:1em;">Operationsdatum
-				<input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="opdate-input" style="border-color:#000;border-width:1px;"/>
-</div>
+	A basic IF demonstration.
 
-<div style="display:inline;margin-right:1em;">Utdatum
-				<input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="outdate-input" style="border-color:#000;border-width:1px;"/></div>
-</div>
-<div>
-				<div style="display:inline;margin-left:1em;">Operationstyp</div>
-				<input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="type-input" style="border-color:#000;border-width:1px;"/><input>
-</div>
-<div style="display:inline;margin-left:1em;">Sida
-				<select style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" id="side-input">
-				<option value="höger sida">höger sida</option>
-				<option value="vänster sida">vänster sida</option>
-				<option value="båda sidor">båda sidor</option>
-				</select>
-</div>
-<div>
-	<div style="display:inline;margin-left:1em;">Avdelning</div>
-				<input style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" type="text" id="ward-input" style="border-color:#000;border-width:1px;"/>
+	Hurrying through the rainswept November night, you're glad to see the bright lights of the Opera House. It's surprising that there aren't more people about but, hey, what do you expect in a cheap demo game...?
 
-				<button id="submit-button" type="submit" pys-onClick="submit_function" style="border-color:#000;border-width:1px;padding-left:0.25em 1em 0.25em 1em ;">OK</button>
-</div></li>
-		<li>Skriv utskrivningmeddelande. Tryck på triangel och fyll i uppgifter i fälten. <button onclick="showfunc2()">&#x25BC;</button><div id="mess" style="display:none;border-color:#888;border-width:0em 0em 0em 2px;margin-left:2em;padding-left:1em;"><br/><div>		
-			<div id="output"></div>
+	## [Foyer]("Foyer of the Opera House")
 
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<b>Läkemdel</b><br>
-<div id="pharma-list">
-</div>
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
-<b>Plan</b>
-<div id="plan"></div>
-<hr style="margin:0em 0em 1.5em 0em;border-color:#000;border-width:1px;background-color:#eeeeee;" >
+	[You](#examined-self) are standing in a spacious hall, splendidly decorated in red and gold, with glittering chandeliers overhead. The entrance from the street is to the [north](#tried-to-leave), and there are doorways [south](/bar) and [west](/cloakroom).
 
-		</div>
+	### Tried to Leave
 
-		</li>
-		<li>Ta bort följande läkemedel frånoperationen:<button onclick="showfunc3()">&#x25BC;</button><div id="meds" style="display:none;border-color:#888;border-width:0em 0em 0em 2px;margin-left:2em;padding-left:1em;"><div id="outmeds"><ol style="list-style-type:disc;margin-left:1em;">
-			<li>Cloxacillin Stragen 2g</li>
-			<li>Statraxen 100 mg/ml</li>
-			<li>Morfin Kalceks 1 mg/ml</li>
-			<li>Ringer-acetat Fresenius Kabi</li>
-			<li>Fragmin 5000 IE</li>			
-		</ol></li>
-		</div>
-		<li>Skriv recept på läkemdel enligt utskrivningmeddelandet.</li>
-		<li>Ge patienten röntgenbild, läkemedelslista, utskrivningsmeddelande.</li>
-		<li>Diktera epikris.<button onclick="showfunc4()">&#x25BC;</button><div id="epi" style="display:none;border-color:#888;border-width:0em 0em 0em 2px;margin-left:2em;padding-left:1em;">
-<b>Epikris</b>
-<div id="epikris"></div>
-	</div>
-	</li>
-	</ul>
-	<br>
-		<py-env>
-		</py-env>
-		<py-script>
-		from js import console
-		from datetime import date
-		from datetime import timedelta
+	[You've](#examined-self) only just arrived, and besides, the weather outside seems to be getting worse.
 
-		ICd = str("")
-		indate = str("")
-		outdate = str("")
-		opdate = str("")
-		type = str("")
-		side = str("")
-		ward = str("")
-		pharma = str("")
+	### Examined Self
 
-		today = date.today()
-		yesterday = today - timedelta(days = 1)
+	[You aren't carrying anything.|You are wearing a handsome cloak, of velvet trimmed with satin, and slightly splattered with raindrops. Its blackness is so deep that it almost seems to suck light from the room.](?lost-cloak)
 
-		def select_function(*args, **kwargs):
-				console.log(f'args: {args}')
-				console.log(f'kwargs: {kwargs}')
-				global ICD
-				global indate 
-				global outdate 
-				global opdate 
-				global type 
-				global side 
-				global ward     
+	## Cloakroom
 
-				side = Element('side-input').element.value
+	The walls of this small room were clearly once lined with hooks, though now only one remains. The exit is a door to the [east](/foyer).
 
-				ICD = Element('ICD').element.value        
-				if ICD == "NFB29" :
-						pharma_pat = ("Medicin från avdelningen:\nEtoricoxib 120mg, 1 tablett 1 gånger dagligen i 5 dagar. Mot smärta.\nNaproxen får inte tas under dessa 5 dagar.\n\\Medicin från apoteket:\n   - Omeprazol 20mg, 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\n   - Cilaxoral 7,5mg/ml, 10 droppar i 1 vecka. Förebygger förstoppning.\n   - Eliquis 2,5mg, 1 tablett 2 gånger dagligen i 30 dagar. Förebygger blodpropp.\n   - Oxynorm 5mg, 1 vid behov, max 4 dagligen, i 2 veckor. Korttidsverkande mot smärta.\n   - Paracetamol 500mg, 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande\n   - Solvezink 45mg, 1 tablett 2 gånger dagligen i 3 veckor. För sårläkning.\n   - Laktulos 20 ml 1 gång dagligen tills vidare. Förebygger förstoppning.")
-						#pharma = ("Cilaxoral 7,5mg/ml 10 droppar i 1 vecka.\nEliquis 2,5mg 1x2 i 30 dagar.\n   - Omeprazol 20mg 1x1 i 2 veckor. \n   - Oxynorm 5mg 1vb, max 4 per dag.\nParacetamol 500mg 2x3 i 4 veckor.\n")
-						pharma = "Enligt medicinlistan"
-						#Element('type-input').element.value = "primär total höftledsplastik utan cement"
-						Element('type-input').element.value = "höftprotes utan cement"
-						Element('ward-input').element.value = "78"
-						Element('pharma-list').element.innerText = pharma_pat
-						Element('plan').element.innerText = ("Sårkontroll om 2-3 veckor.\nTelefonkontakt med operatören om 2-3 månader.\nRemiss till sjukgymnast skickas\n\nVid frågor, sårläckage, feber eller andra symptom hör av dig till avdelning 78.")
-						Element('epikris').element.innerText = ("\nAnsvarig läkare:\n\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nHöftledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 2-3 veckor. Telefonkontakt med operatör om 2-3 månader.\nRemiss till sjukgymnast skickas.\n\nLäkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, ICD))
-				if ICD == "NFB39" :
-						pharma_pat = ("Medicin från avdelningen:\nEtoricoxib 120mg, 1 tablett 1 gånger dagligen i 5 dagar. Mot smärta.\nNaproxen får inte tas under dessa 5 dagar.\n\\Medicin från apoteket:\n   - Omeprazol 20mg, 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\n   - Cilaxoral 7,5mg/ml, 10 droppar i 1 vecka. Förebygger förstoppning.\n   - Eliquis 2,5mg, 1 tablett 2 gånger dagligen i 30 dagar. Förebygger blodpropp.\n   - Oxynorm 5mg, 1 vid behov, max 4 dagligen, i 2 veckor. Korttidsverkande mot smärta.\n   - Paracetamol 500mg, 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande\n   - Solvezink 45mg, 1 tablett 2 gånger dagligen i 3 veckor. För sårläkning.\n   - Laktulos 20 ml 1 gång dagligen tills vidare. Förebygger förstoppning.")
-						#pharma = ("Cilaxoral 7,5mg/ml 10 droppar i 1 vecka.\nEliquis 2,5mg 1x2 i 30 dagar.\n   - Omeprazol 20mg 1x1 i 2 veckor. \n   - Oxynorm 5mg 1vb, max 4 per dag.\nParacetamol 500mg 2x3 i 4 veckor.\n")
-						pharma = "Enligt medicinlistan"
-						#Element('type-input').element.value = "primär total höftledsplastik med hybridteknik"
-						Element('type-input').element.value = "höftprotes med hybridteknik"
-						Element('ward-input').element.value = "78"
-						Element('pharma-list').element.innerText = pharma_pat
-						Element('plan').element.innerText = ("Sårkontroll om 2-3 veckor.\nTelefonkontakt med operatören om 2-3 månader. Remiss till sjukgymnast skickas.\n\nVid frågor, sårläckage, feber eller andra symptom hör av dig till avdelning 78.")
-						Element('epikris').element.innerText = ("\nAnsvarig läkare:\n\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nHöftledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 2-3 veckor. Telefonkontakt med operatör om 2-3 månader.\nRemiss till sjukgymnast skickas.\n\nLäkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, ICD))
+	[Your cloak is on the floor here.](?dropped-cloak)
+	[Your cloak is hanging on the hook.](?hung-cloak)
 
-				if ICD == "NFB49" :
-						pharma_pat = ("Medicin från avdelningen:\nEtoricoxib 120mg, 1 tablett 1 gånger dagligen i 5 dagar. Mot smärta.\nNaproxen får inte tas under dessa 5 dagar.\n\\Medicin från apoteket:\n   - Omeprazol 20mg, 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\n   - Cilaxoral 7,5mg/ml, 10 droppar i 1 vecka. Förebygger förstoppning.\n   - Eliquis 2,5mg, 1 tablett 2 gånger dagligen i 30 dagar. Förebygger blodpropp.\n   - Oxynorm 5mg, 1 vid behov, max 4 dagligen, i 2 veckor. Korttidsverkande mot smärta.\n   - Paracetamol 500mg, 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande\n   - Solvezink 45mg, 1 tablett 2 gånger dagligen i 3 veckor. För sårläkning.\n   - Laktulos 20 ml 1 gång dagligen tills vidare. Förebygger förstoppning.")
-						pharma = "Enligt medicinlistan"
-						Element('type-input').element.value = "höftprotes med cement"
-						#Element('type-input').element.value = "primär total höftledsplastik med cement"
-						Element('ward-input').element.value = "78"
-						Element('pharma-list').element.innerText = pharma_pat 
-						Element('plan').element.innerText = ("Sårkontroll om 2-3 veckor.\nTelefonkontakt med operatören om 3 månader.\nRemiss till sjukgymnast skickas.\n\nVid frågor, sårläckage, feber eller andra symptom hör av dig till avdelning 78.")
+	- [Examine the hook.](#examined-hook)
+	- [Hang your cloak on the hook.](?examined-self&!lost-cloak#lost-cloak+hung-cloak)
+	- [Drop your cloak on the floor.](?examined-self&!lost-cloak#lost-cloak+dropped-cloak)
 
-						Element('epikris').element.innerText = ("\nAnsvarig läkare:\n\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nHöftledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 14 dagar. Telefonkontakt med operatör om 3 månader. Remiss till sjukgymnast skickas.\n\nLäkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, ICD))
-				if ICD == "NGB49" :
-						pharma_pat = ("Medicin från avdelningen:\nEtoricoxib 120mg, 1 tablett 1 gånger dagligen i 5 dagar. Mot smärta.\nNaproxen får inte tas under dessa 5 dagar.\n\\Medicin från apoteket:\n   - Omeprazol 20mg, 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\n   - Cilaxoral 7,5mg/ml, 10 droppar i 1 vecka. Förebygger förstoppning.\n   - Eliquis 2,5mg, 1 tablett 2 gånger dagligen i 10 dagar. Förebygger blodpropp.\n   - Oxynorm 5mg, 1 vid behov, max 4 dagligen, i 2 veckor. Korttidsverkande mot smärta.\n   - Paracetamol 500mg, 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande\n   - Solvezink 45mg, 1 tablett 2 gånger dagligen i 3 veckor. För sårläkning.\n   - Laktulos 20 ml 1 gång dagligen tills vidare. Förebygger förstoppning.")
-						if "båda sidor" == Element('side-input').element.value:
-								pharma_pat = pharma_pat + "\nOxycontin 5mg 1x2 i 2 veckor. Långtidsverkande mot smärta. (bilaterala knän)"
-						pharma = "Enligt medicinlistan"
-						#Element('type-input').element.value = "primär totalprotes i knäled med cement"
-						Element('type-input').element.value = "protes i knäled med cement"
-						Element('ward-input').element.value = "78"
-						Element('pharma-list').element.innerText = pharma_pat
-						Element('plan').element.innerText = ("Sårkontroll om 2-3 veckor.\nTelefonkontakt med operatören om 3 månader.\nRemiss till sjukgymnast.\n\nVid frågor, sårläckage, feber eller andra symptom hör av dig till avdelning 78.")
+	### Examined Hook
 
-						Element('epikris').element.innerText = ("\nAnsvarig läkare:\n\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nKnäledsplastik %s och mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med farmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 2-3 veckor. Telefonkontakt med operatör om 3 månader.\n Remiss till sjukgymnast.\n\nLäkemedel\n%s\n\nICD\nM161\n%s\n\n" %(indate, outdate, side, pharma, ICD))
-				if ICD == "ABC99" :
-						pharma_pat = ("Medicin från avdelningen:\nEtoricoxib 120mg, 1 tablett 1 gånger dagligen i 5 dagar. Mot smärta.\nNaproxen får inte tas under dessa 5 dagar.\n\\Medicin från apoteket:\n   - Omeprazol 20mg, 1 tablett 1 gång dagligen i 2 veckor. Magskyddande.\n   - Cilaxoral 7,5mg/ml, 10 droppar i 1 vecka. Förebygger förstoppning.\n   - Eliquis 2,5mg, 1 tablett 2 gånger dagligen i 10 dagar. Förebygger blodpropp.\n   - Oxynorm 5mg, 1 vid behov, max 4 dagligen, i 2 veckor. Korttidsverkande mot smärta.\n   - Paracetamol 500mg, 2 tabletter 3 gånger dagligen i 4 veckor. Smärtlindrande\n   - Solvezink 45mg, 1 tablett 2 gånger dagligen i 3 veckor. För sårläkning.\n   - Laktulos 20 ml 1 gång dagligen tills vidare. Förebygger förstoppning.")
-						if "båda sidor" == Element('side-input').element.value:
-								pharma_pat = pharma_pat + "\nOxycontin 5mg 1x2 i 2 veckor. Långtidsverkande mot smärta. (bilaterala knän)"
-						pharma = "Enligt medicinlistan"
-						Element('type-input').element.value = "dekompression av ryggmärgen och nervrötter"
-						Element('ward-input').element.value = "78"
-						Element('pharma-list').element.innerText = pharma_pat
-						Element('plan').element.innerText = ("Sårkontroll om 2 veckor. Sjukgymnast 2 månader. Telefonsamtal med operator 2 månader.\nRemiss till sjukgymnast.\n\nVid frågor, sårläckage, feber eller andra symtpom hör av dig till avdelning 78.")
-						side = ""
-						Element('epikris').element.innerText = ("\nAnsvarig läkare:\n\nInskrivningsdatum:\n%s\n\nUtskrivningsdatum:\n%s\n\nVårdsammanfattning:\nDekompression av nervrötter och ryggmärg samt mobilisering utförd.\n\nUppmärksamhetssignal:\nKontrollerad\n\nBedömning:\nPatienten skrivs ut med pharmakologisk behandling. Bedöms kunna återgå till habitualtillstånd inom 4 månader. \n\nPlanering:\nSårkontroll om 14 dagar. Remiss skickas till sjukgymnast. Telefonkontakt med operatör om 2 månader.\n\nLäkemedel\n%s\n\nICD\nMM488K\n%s\n\n" %(indate, outdate, side, pharma, ICD))
-				Element('indate-input').element.value = (str(yesterday))
-				Element('indate-input').element.value = (str(yesterday))
-				Element('opdate-input').element.value = (str(yesterday))
-		def submit_function(*args, **kwargs):
-				global ICD 
-				global indate 
-				global outdate 
-				global opdate 
-				global type 
-				global side 
-				global ward 
-				side = Element('side-input').element.value
-				#print('args:', args)
-				#print('kwargs:', kwargs)
+	It's just a small brass hook, [with your cloak hanging on it|screwed to the wall](?hung-cloak).
 
-				console.log(f'args: {args}')
-				console.log(f'kwargs: {kwargs}')
+	## [Bar]("Foyer Bar")
 
-				indate = Element('indate-input').element.value
-				outdate = Element('outdate-input').element.value
-				opdate = Element('opdate-input').element.value
-				type = Element('type-input').element.value
-				if ICD == "ABC99" :
-						side=""
-				else:
-						side = Element('side-input').element.value
-				ward = Element('ward-input').element.value
-				#print('indate:', indate)
-				console.log(f'indate: {indate}')
-				console.log(f'outdate: {outdate}')
-				console.log(f'opdate: {opdate}')
-				console.log(f'type: {type}')
-				console.log(f'side: {side}')
-				console.log(f'ward: {ward}')
-				Element('output').element.innerText = ("Du inkom %s till ortopeden Arvika sjukhus för %s %s som opererades %s. Operationen var komplikationsfri och efter operationen har du mått väsentligen bra. Du är adekvat smärtlindrad och har kunnat mobiliseras bra med sjukgymnast på avdelningen. Du anses vara utskrivningsklar från avdelning %s." % (indate, type, side, opdate, ward))
+	You walk to the bar, but it's so dark here you can't really make anything out. The foyer is back to the [north](/foyer).
 
-		#print("Du inkom %s till ortopeden Arvika sjukhus för %s %s sida som opererades in den %s. Operationen var komplikationsfri och efter operationen har du mått väsentligen bra. Du är adekvat smärtlindrad och har kunnat mobiliseras bra med sjukgymnast på avdelningen. Du anses tillsammans med oss vara utskrivningsklar från avdelning %s." % (indate, type, side, opdate, ward))
+	- [Feel around for a light switch.](?!scuffled1#scuffled1+not-in-the-dark)
+	- [Sit on a bar stool.](?!scuffled2#scuffled2+not-in-the-dark)
 
-		</py-script>
-</body>
+	### Not in the Dark
+
+	In the dark? You could easily disturb something.
+
+	## [Bar](?lost-cloak "Foyer Bar")
+
+	The bar, much rougher than you'd have guessed after the opulence of the foyer to the north, is completely empty. There seems to be some sort of message scrawled in the sawdust on the floor. The foyer is back to the [north](/foyer).
+
+	[Examine the message.](/message)
+
+	## [Message]("Foyer Bar")
+
+	The message, neatly marked in the sawdust, reads...
+
+	**You have won!**
+
+	## [Message](?scuffled1&scuffled2 "Foyer Bar")
+
+	The message has been carelessly trampled, making it difficult to read. You can just distinguish the words...
+
+	**You have lost.**
+			</textarea>
+			<div id='game' />
+			<script src='build/ficdown.min.js'></script>
+			<script>
+				var player = new Ficdown({
+					id: 'game',
+					source: document.getElementById('source').value,
+					scroll: true,
+				});
+				player.play();
+			</script>
+		</body>
+	</html>
