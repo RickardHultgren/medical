@@ -1,4 +1,4 @@
-#*comment Copyright 2023 by Rickard Hultgren.
+*comment Copyright 2023 by Rickard Hultgren.
 *comment 
 
 *title Patientflöde
