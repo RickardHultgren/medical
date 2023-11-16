@@ -10,13 +10,10 @@
   gosub
   ending
   death
-
 *create leadership 50
 *create strength 50
 
 Välj typ av besök:
-
-
 
 Dan Fabulich licenses this file to you under the
 ChoiceScript License, Version 1.0 (the "License"); you may
