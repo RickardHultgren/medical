@@ -15,7 +15,6 @@
 *create hypert 0
 
 Välj typ av besök:
-
 *choice
   #Hypertonikontroll
 		*set hypert 1
