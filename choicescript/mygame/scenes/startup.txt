@@ -13,12 +13,11 @@
 *create leadership 50
 *create strength 50
 *create hypert 0
-
 Välj typ av besök:
 *choice
   #Hypertonikontroll
-		*set hypert 1
-  	*finish
+    *set hypert 1
+    *finish
 *page_break
 *if (hypert = 1)
 	#Hypertoni kontroll ska göras
