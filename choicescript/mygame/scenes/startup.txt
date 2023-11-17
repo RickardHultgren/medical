@@ -19,6 +19,7 @@ Välj typ av besök:
     *set hypert 1
     *finish
 *page_break
+
 *if (hypert = 1)
 	#Hypertoni kontroll ska göras
 *if (hypert = 0)
