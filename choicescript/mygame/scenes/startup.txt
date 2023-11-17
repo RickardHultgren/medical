@@ -16,9 +16,11 @@
 Välj typ av besök:
 *choice
   #Inte hypertonikontroll
+		*set hypert 0
 		*finish
 	#Hypertonikontroll
     *set hypert 1
+		hypert 1
 		*goto Next
     *finish
 
