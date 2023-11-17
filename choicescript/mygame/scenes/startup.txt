@@ -5,11 +5,8 @@
 *author Rickard Hultgren
 *scene_list
   startup
-  animal
-  variables
-  gosub
-  ending
-  death
+  hypertoni
+  osteoporos
 *create leadership 50
 *create strength 50
 *create hypert 0
@@ -17,6 +14,7 @@ Välj typ av besök:
 *choice
   #Inte hypertonikontroll
     *set hypert 0
+    *goto Next
     *finish
   #Hypertonikontroll
     *set hypert 1
