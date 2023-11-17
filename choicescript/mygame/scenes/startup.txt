@@ -19,7 +19,7 @@ Välj typ av besök:
   #Hypertonikontroll
     *set hypert 1
     hypert 1
-    *goto Next
+    *goto_scene hypertoni start
     *finish
 
 *label Next
