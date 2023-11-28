@@ -20,6 +20,7 @@ Välj typ av besök:
   #Öron
     *goto_scene ears start
     *finish
+
 *choice
   #Inte hypertonikontroll
     *set hypert 0
