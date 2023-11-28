@@ -1,20 +1,46 @@
+*create earpain 0
+*create fever 0
+*create fluids 0
+*create lid 0
+*create scream 0
+*create unactive 0
+
 *label start
   Symptom
   *choice
     #Värk eller smärta från örat
+      *set earpain 0
+      *goto Next
+      *finish
     # - 
   *choice
     #Ofta feber
+      *set fever 0
+      *goto Next
+      *finish
     # - 
   *choice
     #Ibland sekretion från örat
+      *set fluids 0
+      *goto Next
+      *finish
     # - 
   *choice
     #Lockkänsla
+      *set lid 0
+      *goto Next
+      *finish
     # - 
   *choice
     #Skrikighet eller irritabilitet hos barn, framförallt på natten
+      *set scream 0
+      *goto Next
+      *finish
     # - 
   *choice
     #Försämrad aktivitet, aptit och sömn
+      *set unactive 0
+      *goto Next
+      *finish
     # - 
+		
