@@ -13,8 +13,6 @@ Symptom
   *goto Next
   *finish
  # - 
-  *finish
-
 *choice
  #Ofta feber
   *set fever 0
