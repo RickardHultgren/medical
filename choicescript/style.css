@@ -553,8 +553,11 @@ dialog:not([open]) {
 
 
 
+input, textarea, select { 
+	margin-top: 10px; display: block; width:40%
+}
 
+input[type=radio] {
+	display: inline;
+}
 
-
-
-input.radio { display: inline; width: 40%}
