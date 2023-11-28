@@ -549,3 +549,11 @@ dialog:not([open]) {
     display: none;
   }
 }
+
+
+
+
+
+
+
+input.radio { display: inline; width: 40%}

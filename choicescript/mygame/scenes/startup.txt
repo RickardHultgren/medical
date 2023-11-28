@@ -5,12 +5,19 @@
 *author Rickard Hultgren
 *scene_list
   startup
+	eyes
   hypertoni
   osteoporos
 *create leadership 50
 *create strength 50
 *create hypert 0
 Välj typ av besök:
+*choice
+  #Ögon
+    *goto_scene eyes start
+  #Öron
+	  *goto_scene ears start
+	
 *choice
   #Inte hypertonikontroll
     *set hypert 0
