@@ -16,7 +16,7 @@ Välj typ av besök:
   #Ögon
     *goto_scene eyes start
   #Öron
-	  *goto_scene ears start
+    *goto_scene ears start
 	
 *choice
   #Inte hypertonikontroll
