@@ -37,6 +37,23 @@
 	*finish
 
 
+
+
+Säker akut mediaotit vid minst ett av följande fynd:
+
+Varig sekretion i hörselgången
+Perforerad eller chagrinerad trumhinna
+Buktande, ogenomskinlig, färgförändrad, orörlig trumhinna
+Osäker akut mediaotit vid minst ett av följande fynd:
+
+Ogenomskinlig, färgförändrad, orörlig, ej buktande trumhinna
+Obedömbar trumhinna
+Ingen akut mediaotit vid minst ett av följande:
+
+Färgförändrad rörlig trumhinna
+Genomskinlig, indragen trumhinna
+Normalställd, orörlig trumhinna
+
 *label nextear1
 Är något av följande symptom aktuella?
 *choice

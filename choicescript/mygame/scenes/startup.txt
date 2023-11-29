@@ -22,28 +22,28 @@
 *label start
 Välj typ av besök:
 *choice
-  #Ögon
-    *goto_scene eyes start
-    *finish
-  #Öron
-    *goto_scene ears startear
-    *finish
+ #Ögon
+  *goto_scene eyes start
+  *finish
+ #Öron
+  *goto_scene ears startear
+  *finish
 
 *choice
-  #Inte hypertonikontroll
-    *set hypert 0
-    *goto Next
-    *finish
-  #Hypertonikontroll
-    *set hypert 1
-    hypert 1
-    *goto_scene hypertoni start
-    *finish
+ #Inte hypertonikontroll
+  *set hypert 0
+  *goto Next
+  *finish
+ #Hypertonikontroll
+  *set hypert 1
+  hypert 1
+  *goto_scene hypertoni start
+  *finish
 
 *label Next
 *if (hypert = 1)
-  Hypertoni kontroll ska göras
-  *finish
+ Hypertoni kontroll ska göras
+ *finish
 *if (hypert = 0)
-  Hypertoni kontroll ska inte göras
-  *finish
+ Hypertoni kontroll ska inte göras
+ *finish
