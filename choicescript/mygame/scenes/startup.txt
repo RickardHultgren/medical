@@ -12,6 +12,12 @@
 *create leadership 50
 *create strength 50
 *create hypert 0
+*create earpain 0
+*create fever 0
+*create fluids 0
+*create lid 0
+*create scream 0
+*create unactive 0
 Välj typ av besök:
 *choice
   #Ögon
