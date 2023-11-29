@@ -11,45 +11,37 @@ Symptom
  #Värk eller smärta från örat
   *set earpain 0
   *goto Next
-  *finish
  # - 
+  *goto Next
 *choice
  #Ofta feber
   *set fever 0
   *goto Next
-  *finish
  # - 
-  *finish
-
+  *goto Next
 *choice
  #Ibland sekretion från örat
   *set fluids 0
   *goto Next
-  *finish
  # - 
-  *finish
-
+  *goto Next
 *choice
  #Lockkänsla
   *set lid 0
   *goto Next
-  *finish
  # - 
-	*finish
-
+	*goto Next
 *choice
  #Skrikighet eller irritabilitet hos barn, framförallt på natten
   *set scream 0
   *goto Next
-  *finish
  # - 
-	*finish
-
+	*goto Next
 *choice
  #Försämrad aktivitet, aptit och sömn
   *set unactive 0
   *goto Next
-  *finish
  # - 
-	*finish
-		
+  *goto Next
+
+* label Next
