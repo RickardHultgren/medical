@@ -24,7 +24,7 @@ Välj typ av besök:
     *goto_scene eyes start
     *finish
   #Öron
-    *goto_scene ears start
+    *goto_scene ears startear
     *finish
 
 *choice
