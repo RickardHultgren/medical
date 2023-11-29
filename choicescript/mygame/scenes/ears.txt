@@ -41,7 +41,15 @@
 
 
 *choice
- #Säker akut mediaotit vid minst ett av följande fynd:*line_break Varig sekretion i hörselgången*line_break Perforerad eller chagrinerad trumhinna*line_break Buktande, ogenomskinlig, färgförändrad, orörlig trumhinna*line_break Något av ovanstående
+ #Säker akut mediaotit vid minst ett av följande fynd:
+ *line_break
+ Varig sekretion i hörselgången
+ *line_break
+ Perforerad eller chagrinerad trumhinna
+ *line_break
+ Buktande, ogenomskinlig, färgförändrad, orörlig trumhinna
+ *line_break
+ Något av ovanstående
   *set sureAOM 1
   *goto nextear2
   *finish
