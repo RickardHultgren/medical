@@ -44,4 +44,4 @@ Symptom
  # - 
   *goto nextear1
 
-* label nextear1
+*label nextear1
