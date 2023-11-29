@@ -37,15 +37,15 @@
   *finish
 
 
+*label nextear1
 
 
-Säker akut mediaotit vid minst ett av följande fynd:
+*choice
+ #Säker akut mediaotit vid minst ett av följande fynd:\n Varig sekretion i hörselgången\n Perforerad eller chagrinerad trumhinna\n Buktande, ogenomskinlig, färgförändrad, orörlig trumhinna\n Något av ovanstående
+ *set sureAOM 1
+ *goto nextear2
 
-Varig sekretion i hörselgången
-Perforerad eller chagrinerad trumhinna
-Buktande, ogenomskinlig, färgförändrad, orörlig trumhinna
 Osäker akut mediaotit vid minst ett av följande fynd:
-
 Ogenomskinlig, färgförändrad, orörlig, ej buktande trumhinna
 Obedömbar trumhinna
 Ingen akut mediaotit vid minst ett av följande:
@@ -54,33 +54,37 @@ Färgförändrad rörlig trumhinna
 Genomskinlig, indragen trumhinna
 Normalställd, orörlig trumhinna
 
-*label nextear1
+
 Är något av följande symptom aktuella?
 *choice
  #Värk eller smärta från örat
-	*set earpain 0
-	*goto nextear1
-	*finish
+  *set earpain 0
+  *goto nextear1
+  *finish
  #Ofta feber
-	*set fever 0
-	*goto nextear1
-	*finish
+  *set fever 0
+  *goto nextear1
+  *finish
  #Ibland sekretion från örat
-	*set fluids 0
-	*goto nextear1
-	*finish
+  *set fluids 0
+  *goto nextear1
+  *finish
  #Lockkänsla
-	*set lid 0
-	*goto nextear1
-	*finish
+  *set lid 0
+  *goto nextear1
+  *finish
  #Skrikighet eller irritabilitet hos barn, framförallt på natten
-	*set scream 0
-	*goto nextear1
-	*finish
+  *set scream 0
+  *goto nextear1
+  *finish
  #Försämrad aktivitet, aptit och sömn
-	*set unactive 0
-	*goto nextear1
-	*finish
+  *set unactive 0
+  *goto nextear1
+  *finish
  #...annars backa:
-	*goto_scene startup start
-	*finish
+  *goto_scene startup start
+  *finish
+
+
+
+ *label nextear2
