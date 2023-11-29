@@ -5,43 +5,43 @@
 *create scream 0
 *create unactive 0
 
-*label start
+*label startear
 Symptom
 *choice
  #Värk eller smärta från örat
   *set earpain 0
-  *goto Next
+  *goto nextear1
  # - 
-  *goto Next
+  *goto nextear1
 *choice
  #Ofta feber
   *set fever 0
-  *goto Next
+  *goto nextear1
  # - 
-  *goto Next
+  *goto nextear1
 *choice
  #Ibland sekretion från örat
   *set fluids 0
-  *goto Next
+  *goto nextear1
  # - 
-  *goto Next
+  *goto nextear1
 *choice
  #Lockkänsla
   *set lid 0
-  *goto Next
+  *goto nextear1
  # - 
-	*goto Next
+	*goto nextear1
 *choice
  #Skrikighet eller irritabilitet hos barn, framförallt på natten
   *set scream 0
-  *goto Next
+  *goto nextear1
  # - 
-	*goto Next
+	*goto nextear1
 *choice
  #Försämrad aktivitet, aptit och sömn
   *set unactive 0
-  *goto Next
+  *goto nextear1
  # - 
-  *goto Next
+  *goto nextear1
 
-* label Next
+* label nextear1
