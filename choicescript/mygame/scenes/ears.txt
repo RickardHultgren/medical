@@ -34,7 +34,7 @@
   *finish
  #...annars backa:
   *goto_scene startup start
-	*finish
+  *finish
 
 
 
