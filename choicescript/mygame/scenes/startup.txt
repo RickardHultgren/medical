@@ -18,6 +18,8 @@
 *create lid 0
 *create scream 0
 *create unactive 0
+
+*label start
 Välj typ av besök:
 *choice
   #Ögon
