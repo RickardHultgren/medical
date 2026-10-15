@@ -1,0 +1,505 @@
+\documentclass[10pt,a4paper]{article}
+
+% Conservative package set for older pdfLaTeX / TeX Live installations.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage[a4paper,left=10.5mm,right=10.5mm,top=7mm,bottom=8mm,includeheadfoot,headheight=11pt,headsep=1.5mm,footskip=4mm]{geometry}
+\usepackage{lmodern}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+\hypersetup{colorlinks=true,urlcolor=black,linkcolor=black}
+\definecolor{lightgray}{gray}{0.94}
+\definecolor{midgray}{gray}{0.70}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.0pt}
+\renewcommand{\arraystretch}{1.04}
+\setlength{\columnsep}{5mm}
+\setlength{\fboxsep}{1.4mm}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\scriptsize Arbetsstöd: våld i nära relationer}
+\rhead{\scriptsize Version 2026-10-15}
+\cfoot{\scriptsize Copyright 2026 Rickard Verner Hultgren -- CC BY 4.0 \hfill Sida \thepage}
+\setlength{\headheight}{11pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newcommand{\cb}{\(\square\)}
+\newcommand{\blankline}{\rule{\linewidth}{0.32pt}}
+\newcommand{\smallblank}{\rule{0.66\linewidth}{0.32pt}}
+
+% Box environments implemented without tcolorbox, for compatibility with
+% older TeX Live/pdfLaTeX installations.
+\newsavebox{\legacybox}
+
+\newenvironment{alertbox}[1]{%
+  \def\boxtitle{#1}%
+  \begin{lrbox}{\legacybox}%
+  \begin{minipage}{0.955\linewidth}%
+  \ifx\boxtitle\empty\else\textbf{#1}\par\smallskip\fi
+}{%
+  \end{minipage}%
+  \end{lrbox}%
+  \par\smallskip\noindent
+  \fcolorbox{black}{lightgray}{\usebox{\legacybox}}%
+  \par\smallskip
+}
+
+\newenvironment{thinbox}[1]{%
+  \def\boxtitle{#1}%
+  \begin{lrbox}{\legacybox}%
+  \begin{minipage}{0.955\linewidth}%
+  \ifx\boxtitle\empty\else\textbf{#1}\par\smallskip\fi
+}{%
+  \end{minipage}%
+  \end{lrbox}%
+  \par\smallskip\noindent
+  \fcolorbox{midgray}{white}{\usebox{\legacybox}}%
+  \par\smallskip
+}
+
+\newenvironment{flowbox}[1]{%
+  \def\boxtitle{#1}%
+  \begin{lrbox}{\legacybox}%
+  \begin{minipage}{0.82\linewidth}%
+  \textbf{#1}\par\smallskip
+}{%
+  \end{minipage}%
+  \end{lrbox}%
+  \par\smallskip\noindent
+  \fcolorbox{black}{white}{\usebox{\legacybox}}%
+  \par\smallskip
+}
+
+\newcommand{\sectionbar}[1]{%
+  \par\smallskip\noindent
+  \colorbox{lightgray}{\parbox{0.965\linewidth}{\bfseries #1}}%
+  \par\smallskip
+}
+
+\begin{document}
+\footnotesize
+
+{\Large\bfseries Våld i nära relationer -- initial bedömning, säkerhet och poliskontakt}
+
+\begin{alertbox}{}
+\textbf{Arbetsstöd -- måste anpassas till aktuell regional rutin och juridiskt/verksamhetsmässigt fastställas före klinisk implementering.}
+Detta är ett arbetsutkast, inte en nationell riktlinje eller ett fristående juridiskt beslutsstöd.\par\smallskip
+\textbf{Primärt avsett för offentligt bedriven hälso- och sjukvård.} Enskild/privat vårdverksamhet kräver särskild juridisk anpassning innan användning.
+\end{alertbox}
+
+\textbf{Patient:} \smallblank \hfill
+\textbf{Person-ID:} \rule{32mm}{0.32pt}
+
+\textbf{Datum/tid:} \rule{35mm}{0.32pt} \hfill
+\textbf{Bedömare/enhet:} \rule{52mm}{0.32pt}
+
+\begin{alertbox}{AKUT SÄKERHET}
+\begin{multicols}{2}
+\cb\ Pågående/omedelbart förestående våld\\
+\cb\ Patienten bedömer att hen kan dödas/allvarligt skadas\\
+\cb\ Misstänkt gärningsperson finns i/nära vården\\
+\cb\ Barn befinner sig i akut fara
+\columnbreak
+\cb\ Akut suicid-/homicidrisk\\
+\cb\ Vapen finns tillgängliga\\
+\cb\ Patienten kan inte återvända hem säkert\\
+\cb\ Annan akut säkerhetsrisk
+\end{multicols}
+\textbf{Vid pågående eller nära förestående allvarligt våld: överväg omedelbar kontakt med 112 och följ lokal säkerhetsrutin.}
+\end{alertbox}
+
+\sectionbar{1. Fråga om våld och kontroll}
+
+\textbf{Fråga helst i enrum och på ett tryggt, direkt sätt. Exempel:}
+\begin{itemize}
+\item Har någon närstående gjort dig illa, hotat dig eller skrämt dig?
+\item Finns det någon som kontrollerar vad du får göra, vem du träffar eller vart du går?
+\item Är du rädd för någon närstående just nu?
+\end{itemize}
+
+\begin{multicols}{3}
+\cb\ Fysiskt våld\\
+\cb\ Strypning/andningshinder\\
+\cb\ Sexuellt våld\\
+\cb\ Hot/dödshot\\
+\cb\ Psykiskt våld
+\columnbreak
+\cb\ Kontrollerande beteende\\
+\cb\ Stalkning/förföljelse\\
+\cb\ Ekonomiskt våld\\
+\cb\ Isolering\\
+\cb\ Digital kontroll
+\columnbreak
+\cb\ Våld mot barn\\
+\cb\ Barn har sett/hört/upplevt våld\\
+\cb\ Våld mot djur\\
+\cb\ Annat: \rule{24mm}{0.32pt}
+\end{multicols}
+
+\begin{thinbox}{Kort notering}
+\textbf{Patientens egna ord:}\quad \rule{0.72\linewidth}{0.32pt}\\[1.8mm]
+\textbf{Viktigaste observation/statusfynd:}\quad \rule{0.61\linewidth}{0.32pt}
+\end{thinbox}
+
+\sectionbar{2. Initial riskbedömning för allvarligt/dödligt våld}
+
+\textbf{A. Särskilt starka varningssignaler enligt aktuell VKV/VGR-vägledning}\\
+\begin{multicols}{2}
+\cb\ Strypvåld/andningshinder (även under sex)\\
+\cb\ Eskalerande våld
+\columnbreak
+\cb\ Sexuellt våld\\
+\cb\ Suicidalitet; hot/önskan/tankar om att våldsutövaren, patienten eller annan ska dö
+\end{multicols}
+
+\textbf{B. Riskfaktorer som enligt samma vägledning får särskild betydelse tillsammans med psykisk ohälsa eller riskbruk hos våldsutövaren}\\
+\begin{multicols}{2}
+\cb\ Svartsjuka, kontroll eller stalkning\\
+\cb\ Separation planerad/pågående/genomförd\\
+\cb\ Vårdnadstvist\\
+\cb\ Tillgång till skjutvapen
+\columnbreak
+\cb\ Social utsatthet\\
+\cb\ Hedersnormer\\
+\cb\ Stark rädsla hos den utsatta\\
+\cb\ Psykisk ohälsa och/eller riskbruk
+\end{multicols}
+
+\textbf{Övrigt relevant för hotbilden:} tidigare allvarligt våld, överträdelse av kontaktförbud, annan vapentillgång, hot mot barn/närstående, kriminellt våldskapital eller andra omständigheter.
+
+\begin{thinbox}{}
+\textbf{Tror patienten själv att hen riskerar allvarligt eller dödligt våld?}
+\quad \cb\ Nej \quad \cb\ Osäker \quad \cb\ Ja\\
+\textbf{Patientens egna ord:}\quad \rule{0.69\linewidth}{0.32pt}
+\end{thinbox}
+
+\begin{alertbox}{RISKFAKTORER ÄR INTE SAMMA SAK SOM SEKRETESSBRYTANDE REKVISIT}
+Riskfaktorerna stödjer den kliniska hotbildsbedömningen men innebär \textbf{inte i sig} att sekretessen får brytas. Det finns ingen poänggräns av typen ``tre kryss = ring polisen''. Den juridiska prövningen måste göras separat.
+\end{alertbox}
+
+\begin{thinbox}{Nästa steg}
+\begin{tabularx}{\linewidth}{>{\bfseries}p{58mm}X}
+AKUT FARA & Överväg 112 och följ lokal säkerhetsrutin.\\
+\hline
+ALLVARLIG FRAMTIDA RISK & Gå vidare till den juridiska prövningen på sida 2.\\
+\hline
+INGEN OMEDELBAR POLISKONTAKT ENLIGT DETTA SPÅR & Fortsätt med säkerhetsplanering, socialtjänst/stödinsatser och klinisk uppföljning.\\
+\end{tabularx}
+\end{thinbox}
+
+\textbf{Checklistan ersätter inte strukturerad professionell riskbedömning.} Vårdpersonal gör en initial bedömning av hotbild och säkerhet. Följ regional organisation för fortsatt riskbedömning.
+
+\newpage
+
+{\Large\bfseries Juridiskt stöd -- när får sekretessen brytas?}
+
+\begin{alertbox}{10 kap. 18 c \S\ OSL -- förebyggande uppgiftslämnande}
+I \textbf{offentligt bedriven} hälso- och sjukvård kan uppgift lämnas till Polismyndigheten trots sekretess enligt 25 kap. 1 \S\ OSL om \textbf{båda} följande rekvisit är uppfyllda:
+
+\cb\ \textbf{1.} Det finns \textbf{på grund av konkreta omständigheter} risk för att den enskilde mot en närstående kommer att begå ett brott enligt 3, 4 eller 6 kap. BrB där det lägsta straffet enligt straffskalan är \textbf{fängelse i ett år eller mer}.
+
+\cb\ \textbf{2.} Det är, med hänsyn till planerade/pågående insatser för den enskilde eller den närstående, eller av andra särskilda skäl, \textbf{inte olämpligt} att uppgiften lämnas ut.
+
+Bestämmelsen är en \textbf{möjlighet}, inte en generell skyldighet att polisanmäla. Misstanke om ett \textbf{redan begånget} brott bedöms enligt andra bestämmelser i OSL.
+\end{alertbox}
+
+\begin{thinbox}{Vårdgivarform}
+10 kap. 18 c \S\ OSL avser sekretess i offentlig verksamhet. I enskilt/privat bedriven vård regleras tystnadsplikten bl.a. av 6 kap. 12--16 \S\S\ patientsäkerhetslagen. \textbf{Privat verksamhet måste juridiskt anpassa stödet innan användning.}
+\end{thinbox}
+
+\sectionbar{3. Fyra frågor innan sekretessen bryts enligt 10 kap. 18 c \S\ OSL}
+
+\begin{tabularx}{\linewidth}{>{\bfseries}p{7mm}X p{54mm}}
+1. & Finns konkreta omständigheter som talar för ett \textbf{framtida} brott mot en närstående? & \textbf{Nej:} använd inte 10 kap. 18 c \S\ OSL.\\
+\hline
+2. & Är risken, vid en samlad bedömning, mer än \textbf{obetydlig eller avlägsen}? & \textbf{Nej:} använd inte 10 kap. 18 c \S\ OSL.\\
+\hline
+3. & Kan den befarade gärningen rimligen motsvara ett brott enligt 3, 4 eller 6 kap. BrB med \textbf{minimistraff minst ett års fängelse}? & \textbf{Nej:} använd inte 10 kap. 18 c \S\ som sekretessbrytande grund.\\
+\hline
+4. & Är utlämnandet \textbf{inte olämpligt} med hänsyn till planerade/pågående insatser eller andra särskilda skäl? & \textbf{Nej:} använd inte 10 kap. 18 c \S\ OSL.\\
+\end{tabularx}
+
+\begin{thinbox}{När når den befarade gärningen ettårströskeln?}
+10 kap. 18 c \S\ OSL gäller inte allt våld, alla hot eller alla brott i nära relationer. Det räcker \textbf{inte} att fängelse finns någonstans i straffskalan. Det är det \textbf{lagstadgade minimistraffet} för den brottstyp som den befarade gärningen kan motsvara som ska vara minst ett års fängelse.
+
+Vårdpersonal behöver inte fastställa slutlig brottsrubricering. Frågan är om de konkreta omständigheterna gör att den framtida gärningen rimligen \textbf{kan} ligga på en nivå som omfattas. Se bilagan för orienterande exempel. Vid osäkerhet: konsultera regional juridisk funktion/bakjour enligt lokal rutin.
+\end{thinbox}
+
+\begin{alertbox}{ANVÄND INTE 10 KAP. 18 C \S\ OSL ENBART DÄRFÖR ATT}
+\begin{multicols}{2}
+\cb\ patienten berättat om tidigare våld\\
+\cb\ någon har slagit patienten\\
+\cb\ psykiskt våld eller kontroll förekommer\\
+\cb\ patienten har blivit hotad
+\columnbreak
+\cb\ en eller flera generella riskfaktorer finns\\
+\cb\ situationen känns allvarlig\\
+\cb\ fängelse finns någonstans i straffskalan\\
+\cb\ patienten eller personalen önskar en poliskontakt utan att samtycke eller annan rättslig grund finns
+\end{multicols}
+\textbf{Det krävs en konkret framtida riskbild och att den befarade gärningen kan ligga på den kvalificerade straffnivå som lagen anger.}
+\end{alertbox}
+
+\begin{thinbox}{Att svaret blir nej betyder inte att vården ska vara passiv}
+Försök när det är möjligt få patientens samtycke till poliskontakt. Gör säkerhetsplanering, erbjud eller initiera relevanta stödinsatser, följ reglerna om barn som far illa, överväg andra sekretessbrytande bestämmelser och bedöm reglerna om redan begångna brott separat. Planera klinisk uppföljning.
+\end{thinbox}
+
+\sectionbar{4. Vad innebär ``inte olämpligt''?}
+
+Detta är en \textbf{individuell avvägning}. Beakta bl.a. om ett utlämnande konkret riskerar att allvarligt försvåra en pågående eller planerad vård-/stödinsats, om personen kan komma att helt avbryta nödvändig kontakt med vården, samt barns eller andra närståendes intressen. Dessa omständigheter är inte automatiska hinder.
+
+\textbf{Utgångspunkten bör när det är möjligt vara att försöka få den enskildes samtycke.} Om allvarlig framtida risk kvarstår utan samtycke görs prövningen enligt 10 kap. 18 c \S\ OSL.
+
+\sectionbar{5. Håll isär de juridiska spåren}
+
+\begin{tabularx}{\linewidth}{>{\bfseries}p{36mm}X}
+Samtycke & Patienten medger att relevanta uppgifter lämnas; dokumentera omfattningen.\\
+\hline
+Framtida allvarligt våld, inget samtycke & Pröva 10 kap. 18 c \S\ OSL enligt fyrfrågetestet ovan.\\
+\hline
+Redan begånget brott & 10 kap. 18 c \S\ är inte i sig grund för uppgifter om det begångna brottet. För offentlig vård kan bl.a. 10 kap. 23 \S\ OSL bli aktuell: för fullbordat brott krävs där minimistraff på minst sex månaders fängelse; för försök/förberedelse/stämpling minst ett år.\\
+\hline
+Barn kan fara illa & Hälso- och sjukvården ska genast anmäla till socialnämnden vid kännedom eller misstanke om att ett barn far illa, 19 kap. 1 \S\ socialtjänstlagen (2025:400).\\
+\hline
+Akut fara & Överväg 112 och följ lokal säkerhetsrutin.\\
+\end{tabularx}
+
+\newpage
+
+{\Large\bfseries Praktiskt orienteringsstöd för ettårströskeln}
+
+\sectionbar{6. Misshandel: normalgraden kontra grov misshandel}
+
+\textbf{Misshandel av normalgraden} (3 kap. 5 \S\ BrB) har inget minimistraff på ett år. En befarad örfil, knuff eller ett enstaka slag med begränsade följder innebär därför \textbf{inte i sig} att 10 kap. 18 c \S\ OSL får användas.
+
+\textbf{Grov misshandel} (3 kap. 6 \S\ BrB) har minimistraff ett år och sex månader. Lagen anger särskilt livsfarlig gärning, svår kroppsskada, allvarlig sjukdom eller särskild hänsynslöshet/råhet som omständigheter att beakta. I kliniken kan exempelvis strypvåld, angrepp med vapen/farligt tillhygge, upprepade slag eller sparkar mot huvud/känslig kroppsdel, utdraget våld eller angrepp mot en särskilt skyddslös person \textbf{beroende på omständigheterna} tala för en allvarligare nivå. Ingen enskild faktor innebär automatiskt att brottet juridiskt är grovt.
+
+\sectionbar{7. Hot: normalgraden kontra grovt olaga hot}
+
+\textbf{Olaga hot av normalgraden} (4 kap. 5 \S\ BrB) har inget minimistraff på ett år och når därför inte ettårströskeln i sig. \textbf{Grovt olaga hot} har minimistraff ett år. Lagen anger bl.a. hot som påtagligt förstärkts med vapen, sprängämne eller vapenattrapp, anspelning på våldskapital, hot som annars är av allvarligt slag samt särskilt hänsynslöst eller farligt tillvägagångssätt. Slutlig rubricering görs av rättsväsendet.
+
+\sectionbar{8. Ett mönster kan vara allvarligare än en enskild gärning}
+
+Upprepade handlingar som var för sig kan bestå av exempelvis misshandel, hot, tvång, ofredande eller andra integritetskränkningar kan under lagens förutsättningar tillsammans ingå i \textbf{grov fridskränkning eller grov kvinnofridskränkning}. Dessa brott har minimistraff ett års fängelse.
+
+\textbf{En serie till synes mindre gärningar ska därför inte automatiskt betraktas som juridiskt mild.} Vårdpersonal ska däremot inte själv avgöra om kriterierna för grov fridskränkning är uppfyllda.
+
+\sectionbar{9. Sexualbrott visar varför ordet ``grov'' inte är avgörande}
+
+\begin{tabularx}{\linewidth}{p{49mm}p{41mm}X}
+\textbf{Brottsexempel} & \textbf{Aktuellt minimistraff} & \textbf{Ettårströskel?}\\
+\hline
+Våldtäkt, normalgraden & 3 års fängelse & Ja\\
+Sexuellt övergrepp, normalgraden & 6 månaders fängelse & Nej\\
+Grovt sexuellt övergrepp & 1 års fängelse & Ja\\
+\end{tabularx}
+
+Att ett brott heter ``grovt'' är alltså varken nödvändigt eller i alla situationer tillräckligt för ettårströskeln. Exempelvis har grovt hemfridsbrott ett minimistraff på sex månader och når därför inte tröskeln trots ordet ``grovt''.
+
+\sectionbar{10. Två kliniska kontraster}
+
+\begin{thinbox}{Exempel A -- talar inte i sig för 10 kap. 18 c \S\ OSL}
+Patienten berättar att en partner slog med öppen hand för tre månader sedan. Det har inte hänt igen. Inga nya hot har framförts och patienten upplever ingen aktuell risk för nytt allvarligt våld.
+
+Här är den framtida riskbilden svag och den beskrivna tidigare gärningen ger inte i sig stöd för att den \textbf{befarade framtida gärningen} når ettårströskeln. 10 kap. 18 c \S\ OSL är därför inte automatiskt tillämplig. Samtycke, säkerhetsplanering, uppföljning och andra rättsliga bestämmelser kan fortfarande vara aktuella.
+\end{thinbox}
+
+\begin{alertbox}{Exempel B -- tydlig anledning att PRÖVA 10 kap. 18 c \S\ OSL}
+Våldet har eskalerat. Patienten har utsatts för strypvåld. Separation har nyligen skett. Partnern har uttalat dödshot och har tillgång till vapen.
+
+Detta innebär inte automatiskt att sekretessen får brytas, men omständigheterna innebär att en prövning enligt 10 kap. 18 c \S\ OSL tydligt aktualiseras.
+\end{alertbox}
+
+\sectionbar{11. Beslut om poliskontakt}
+
+\begin{tabularx}{\linewidth}{X X}
+\cb\ Patienten samtycker till poliskontakt. & \cb\ Polis kontaktas akut (112).\\[1mm]
+\cb\ Kontakt utan samtycke med sekretessbrytande stöd. & \cb\ Polis kontaktas icke-akut enligt regional rutin.\\[1mm]
+\cb\ 10 kap. 18 c \S\ OSL bedöms inte tillämplig. & \cb\ Ingen poliskontakt nu -- motivering dokumenterad.\\[1mm]
+\cb\ Juridiskt stöd/bakjour/verksamhetsansvarig konsulterad. & \cb\ Annan rättslig grund: \rule{26mm}{0.32pt}\\
+\end{tabularx}
+
+\textbf{Rättslig grund och motivering:}\\[0.7mm]
+\blankline\\[2.3mm]
+\blankline
+
+\newpage
+
+{\Large\bfseries Dokumentation, barn och fortsatt säkerhetsplanering}
+
+\sectionbar{12. Vad behöver polisen veta om kontakt är tillåten?}
+
+\textbf{Princip: minsta relevanta informationsmängd.} Lämna endast uppgifter som är relevanta och proportionerliga för syftet. Lämna inte hela journalen som standard.
+
+\begin{tabularx}{\linewidth}{@{}p{0.48\linewidth}@{\hspace{5mm}}p{0.48\linewidth}@{}}
+\textbf{Identitet och relation} & \textbf{Aktuell risk}\\
+\cb\ Person som riskerar att utöva våld & \cb\ Vad befaras hända? När?\\
+\cb\ Person som riskerar att utsättas & \cb\ Var finns misstänkt våldsutövare?\\
+\cb\ Relation mellan personerna & \cb\ Dödshot/suicidalitet\\
+\cb\ Var personerna uppehåller sig & \cb\ Strypvåld/eskalerande/sexuellt våld\\
+\cb\ Relevanta familjeförhållanden & \cb\ Separation/vårdnadstvist\\
+& \cb\ Skjutvapen/annan relevant vapentillgång\\
+& \cb\ Barn/andra närstående i risk\\
+\end{tabularx}
+
+\textbf{Relevanta medicinska/psykosociala uppgifter}\\
+\cb\ Konstaterade skador/fynd \quad
+\cb\ Relevant psykiskt tillstånd/riskuppgift \quad
+\cb\ Riskbruk \quad
+\cb\ Planerade/pågående/avbrutna vårdinsatser \quad
+\cb\ Annat direkt relevant
+
+\textbf{Markera källa för centrala uppgifter:}
+\quad \cb\ patientens uppgift \quad \cb\ egen observation \quad \cb\ journaluppgift \quad \cb\ tredje person
+
+\begin{thinbox}{Praktiskt vid tips enligt 10 kap. 18 c \S\ OSL}
+Ange tydligt att kontakten gäller \textbf{risk för framtida allvarligt våld med stöd av 10 kap. 18 c \S\ OSL}. Följ regional rutin för hur tidigare våld beskrivs och vilka uppgifter som lämnas. Vid osäkerhet kan polis enligt förarbetena konsulteras i avidentifierad form om sekretessfrågan.
+\end{thinbox}
+
+\textbf{Journal och säker kommunikation:} Dokumentera enligt lokal journalrutin. Beakta risken att en våldsutövare kan få tillgång till känsliga uppgifter via journal, aviseringar, meddelanden eller annan kommunikation. Följ lokal rutin för skyddad/dold dokumentation och säker kontaktväg där sådan funktion finns.
+
+\sectionbar{13. Dokumentera uppgifternas källa}
+
+\begin{thinbox}{}
+\begin{tabularx}{\linewidth}{@{}p{0.47\linewidth}@{\hspace{4mm}}p{0.47\linewidth}@{}}
+\textbf{Patientens egen berättelse:} & \textbf{Direkta observationer/statusfynd/skador:}\\[0.5mm]
+\rule{\linewidth}{0.32pt} & \rule{\linewidth}{0.32pt}\\[1.2mm]
+\textbf{Tidigare dokumenterat våld/journaluppgift:} & \textbf{Tredjepartsuppgift -- ange vem/källa:}\\[0.5mm]
+\rule{\linewidth}{0.32pt} & \rule{\linewidth}{0.32pt}\\
+\end{tabularx}
+\end{thinbox}
+
+\sectionbar{14. Dokumentation av poliskontakt}
+
+\begin{tabularx}{\linewidth}{@{}p{40mm}X@{}}
+Datum/tid & \rule{\linewidth}{0.32pt}\\[1.0mm]
+Kontaktväg & \cb\ 112 \quad \cb\ 114 14 \quad \cb\ Lokal/regional funktion \quad \cb\ Annat\\[1.0mm]
+Kontaktperson/befattning & \rule{\linewidth}{0.32pt}\\[1.0mm]
+Polisens ärende-/diarienr & \rule{\linewidth}{0.32pt}\\[1.0mm]
+Vilka uppgifter lämnades & \rule{\linewidth}{0.32pt}\\[1.0mm]
+Rättslig grund & \rule{\linewidth}{0.32pt}\\[1.0mm]
+Bedömning/motivering & \rule{\linewidth}{0.32pt}\\[1.0mm]
+Fortsatta åtgärder & \rule{\linewidth}{0.32pt}\\
+\end{tabularx}
+
+\sectionbar{15. Barn}
+
+\textbf{Finns barn som är utsatta, har sett/hört/upplevt våld eller på annat sätt kan fara illa?}
+\quad \cb\ Nej \quad \cb\ Ja \quad \cb\ Oklart
+
+\textbf{Barn i hushållet/regelbundet umgänge -- namn/ålder:}\\[0.4mm]
+\rule{\linewidth}{0.32pt}
+
+\textbf{Är misstänkt våldsutövare vårdnadshavare?}
+\quad \cb\ Nej \quad \cb\ Ja \quad \cb\ Oklart
+
+\cb\ Orosanmälan gjord \quad Datum/tid: \rule{35mm}{0.32pt}
+\qquad
+\cb\ Socialtjänst/socialjour kontaktad
+
+\sectionbar{16. Fortsatt säkerhetsplanering och vård}
+
+\begin{tabularx}{\linewidth}{@{}p{0.48\linewidth}@{\hspace{5mm}}p{0.48\linewidth}@{}}
+\cb\ Kan patienten återvända hem säkert? & \cb\ Plan för säker kommunikation med patienten\\
+\cb\ Socialtjänst kontaktad/erbjuden & \cb\ Barnens säkerhet beaktad\\
+\cb\ Skyddat boende/annan säker plats övervägd & \cb\ Stödlinje/ideell stödorganisation\\
+\cb\ Uppföljande vårdkontakt planerad & \cb\ Annat: \rule{33mm}{0.32pt}\\
+\end{tabularx}
+
+\textbf{Plan:}\quad \rule{0.92\linewidth}{0.32pt}
+
+\sectionbar{17. Lokala kontaktvägar}
+
+\begin{tabularx}{\linewidth}{p{44mm}X}
+\textbf{Akut polis/SOS} & \textbf{112}\\
+\textbf{Icke-akut tips till polisen} & Följ regional VINR-rutin; nationellt kan 114 14 användas (säg ``tips'')\\
+Lokal polis/VINR-funktion & \blankline\\[1.9mm]
+Socialjour/socialtjänst & \blankline\\[1.9mm]
+Regional VINR-samordnare & \blankline\\[1.9mm]
+Juridiskt stöd/bakjour & \blankline\\[1.9mm]
+\end{tabularx}
+
+\begin{alertbox}{}
+\textbf{Före klinisk implementering:} låt verksamhetens jurist, medicinskt ansvariga och VINR-funktion granska innehållet. Fastställ versionsstyrning, journalplacering, ansvarsfördelning, lokala kontaktvägar och uppföljning.
+\end{alertbox}
+
+\newpage
+
+{\Large\bfseries Bilaga -- juridiskt orienteringsstöd och källor}
+
+\sectionbar{18. Exempel på ettårströskeln i 10 kap. 18 c \S\ OSL}
+
+\scriptsize
+\begin{tabularx}{\linewidth}{p{43mm}p{26mm}p{35mm}X}
+\textbf{Brottsexempel} & \textbf{Lagrum} & \textbf{Straffskala 2026-10-15} & \textbf{Tröskel}\\
+\hline
+Grov misshandel & BrB 3:6 & 1 år 6 mån--7 år & Ja\\
+Synnerligen grov misshandel & BrB 3:6 & 6--12 år & Ja\\
+Grovt olaga tvång & BrB 4:4 & 1--6 år & Ja\\
+Grov fridskränkning & BrB 4:4 a & 1--6 år & Ja\\
+Grov kvinnofridskränkning & BrB 4:4 a & 1--6 år & Ja\\
+Hedersförtryck & BrB 4:4 e & 1--6 år & Ja\\
+Grovt olaga hot & BrB 4:5 & 1--4 år & Ja\\
+Våldtäkt, normalgraden & BrB 6:1 & 3--6 år & Ja\\
+Grov våldtäkt & BrB 6:1 & 5--12 år & Ja\\
+Grovt sexuellt övergrepp & BrB 6:2 & 1--6 år & Ja\\
+Våldtäkt mot barn & BrB 6:4 & 3--6 år & Ja\\
+Grovt sexuellt övergrepp mot barn & BrB 6:6 & 1 år 6 mån--6 år & Ja\\
+\hline
+Misshandel, normalgraden & BrB 3:5 & upp till 2 år & Nej\\
+Olaga hot, normalgraden & BrB 4:5 & böter--2 år & Nej\\
+Psykiskt våld & BrB 4:7 b & upp till 4 år & Nej\\
+Grovt hemfridsbrott & BrB 4:6 & 6 mån--3 år & Nej\\
+Sexuellt övergrepp, normalgraden & BrB 6:2 & 6 mån--2 år & Nej\\
+\end{tabularx}
+\footnotesize
+
+\textbf{Orienteringsstöd -- inte brottsrubricering.} Vårdpersonal ska inte själv göra slutlig juridisk brottsrubricering. Tabellen visar varför ordet ``grov'' inte är avgörande: vissa normalgrader når ettårströskeln, medan vissa brott som heter ``grovt'' inte gör det. Straffskalor kan ändras och måste versionskontrolleras före klinisk implementering.
+
+\textbf{Obs. psykiskt våld:} Psykiskt våld når inte ettårströskeln som självständig brottstyp, men psykiskt våld och andra upprepade integritetskränkningar kan vara relevanta i en helhetsbild och kan under lagens förutsättningar få betydelse för exempelvis grov fridskränkning. Vårdpersonal ska inte själv avgöra den slutliga brottsrubriceringen.
+
+\sectionbar{19. Källor och rättslig version}
+
+\scriptsize
+\textbf{Kontrollerat 2026-10-15.} OSL kontrollerad i Sveriges riksdags konsoliderade SFS-text (ändrad t.o.m. SFS 2026:1648). Brottsbalken kontrollerad i konsoliderad SFS-text (ändrad t.o.m. SFS 2026:1656). För de använda lagrummen har även ikraftträdandeuppgifter i SFS-texten beaktats.
+
+\begin{itemize}
+\item \href{https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/offentlighets-och-sekretesslag-2009400_sfs-2009-400/}{Sveriges riksdag: Offentlighets- och sekretesslag (2009:400)}, särskilt 10 kap. 18 c och 23 \S\S.
+\item \href{https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/brottsbalk-1962700_sfs-1962-700/}{Sveriges riksdag: Brottsbalk (1962:700)}, särskilt 3, 4 och 6 kap.
+\item \href{https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/forebyggande-av-vald-i-nara-relationer_h803163/html/}{Prop. 2020/21:163 Förebyggande av våld i nära relationer}, särskilt resonemangen om konkret risk, risk som inte är obetydlig eller avlägsen, samtycke och rekvisitet ``inte olämpligt''.
+\item \href{https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/okat-informationsflode-till-brottsbekampningen_hc0365/html/}{Prop. 2024/25:65 Ökat informationsflöde till brottsbekämpningen}, om 2025 års ändring till ``konkreta omständigheter'' och borttagandet av det tidigare kravet att uppgiften skulle kunna antas bidra till att förhindra brottet.
+\item \href{https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/socialtjanstlag-2025400_sfs-2025-400/}{Sveriges riksdag: Socialtjänstlag (2025:400)}, 19 kap. 1 \S.
+\item \href{https://kunskapsguiden.se/omraden-och-teman/vald-och-fortryck/vald-i-nara-relationer/socialtjansten-och-vald-i-nara-relationer/valdsutovare-i-nara-relationer/mojlighet-att-lamna-uppgifter-till-polisen-for-att-forebygga-vald-i-nara-relationer/}{Kunskapsguiden/Socialstyrelsen: möjlighet att lämna uppgifter till polisen för att förebygga våld i nära relationer}.
+\item \href{https://vardpersonal.1177.se/kunskapsstod/kliniska-kunskapsstod/vald-i-nara-relationer/}{1177 för vårdpersonal: Våld i nära relationer}.
+\item \href{https://www.vgregion.se/f/regionhalsan/valdinararelationer/vardens_uppgifter/tipsa-polisen/}{VKV/VGR: Tipsa polisen för att förhindra våld}.
+\item \href{https://polisen.se/om-polisen/kontakt/polisens-telefonnummer/}{Polismyndigheten: Telefonnummer och tips}.
+\end{itemize}
+
+\sectionbar{20. Licens och attribution}
+
+\textbf{\textcopyright\ 2026 Rickard Verner Hultgren.}
+
+Detta arbetsstöd är licensierat under \textbf{Creative Commons Erkännande 4.0 Internationell (CC BY 4.0)}:
+\href{https://creativecommons.org/licenses/by/4.0/deed.sv}{creativecommons.org/licenses/by/4.0/}.
+
+Du får dela och bearbeta materialet, även kommersiellt, under förutsättning att lämplig attribution ges och att ändringar anges.
+
+\textbf{Föreslagen attribution:} Rickard Verner Hultgren, \emph{Våld i nära relationer -- initial bedömning, säkerhet och poliskontakt}, version 2026-10-15, CC BY 4.0.
+
+Källmaterial, lagtext och material från tredje part omfattas av respektive rättighets- och användningsvillkor. Licensen innebär inte att någon region, myndighet eller annan organisation har granskat eller godkänt arbetsstödet.
+
+\begin{alertbox}{}
+\textbf{Versionsprincip:} Om dokumentet anpassas lokalt bör ursprunglig författare och licens behållas, samtidigt som lokal bearbetare, granskningsdatum och ansvarig verksamhet anges tydligt.
+\end{alertbox}
+
+\end{document}
